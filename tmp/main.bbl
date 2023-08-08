@@ -1,0 +1,217 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{brezis:2001}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=b56223d7226802e12deba4ce1c44304f}{%
+           family={Bourgain},
+           familyi={B\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod}}}%
+        {{hash=31e0c25a6fb0297f0536bede27a04cd4}{%
+           family={Brezis},
+           familyi={B\bibinitperiod},
+           given={Haim},
+           giveni={H\bibinitperiod}}}%
+        {{hash=38c7c81080fe56fb59b8e92ed6a0d702}{%
+           family={Mironescu},
+           familyi={M\bibinitperiod},
+           given={Petru},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOS, Amsterdam}%
+      }
+      \strng{namehash}{33e3d302f3f2024db32079155d19c5b5}
+      \strng{fullhash}{33e3d302f3f2024db32079155d19c5b5}
+      \strng{bibnamehash}{33e3d302f3f2024db32079155d19c5b5}
+      \strng{authorbibnamehash}{33e3d302f3f2024db32079155d19c5b5}
+      \strng{authornamehash}{33e3d302f3f2024db32079155d19c5b5}
+      \strng{authorfullhash}{33e3d302f3f2024db32079155d19c5b5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Optimal control and partial differential equations}
+      \field{isbn}{1-58603-096-5}
+      \field{title}{Another look at {S}obolev spaces}
+      \field{year}{2001}
+      \field{pages}{439\bibrangedash 455}
+      \range{pages}{17}
+    \endentry
+    \entry{brezis:2002}{article}{}
+      \name{author}{1}{}{%
+        {{hash=99f5ee3a3cd91b18bcb1cd40b73126ae}{%
+           family={Brezis},
+           familyi={B\bibinitperiod},
+           given={Kh.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{99f5ee3a3cd91b18bcb1cd40b73126ae}
+      \strng{fullhash}{99f5ee3a3cd91b18bcb1cd40b73126ae}
+      \strng{bibnamehash}{99f5ee3a3cd91b18bcb1cd40b73126ae}
+      \strng{authorbibnamehash}{99f5ee3a3cd91b18bcb1cd40b73126ae}
+      \strng{authornamehash}{99f5ee3a3cd91b18bcb1cd40b73126ae}
+      \strng{authorfullhash}{99f5ee3a3cd91b18bcb1cd40b73126ae}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0042-1316,2305-2872}
+      \field{journaltitle}{Uspekhi Mat. Nauk}
+      \field{number}{4(346)}
+      \field{title}{How to recognize constant functions. {A} connection with {S}obolev spaces}
+      \field{volume}{57}
+      \field{year}{2002}
+      \field{pages}{59\bibrangedash 74}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1070/RM2002v057n04ABEH000533
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1070/RM2002v057n04ABEH000533
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1070/RM2002v057n04ABEH000533
+      \endverb
+    \endentry
+    \entry{davila:2002}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ca38936b1da6354748d66c9d3e887b79}{%
+           family={Dávila},
+           familyi={D\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca38936b1da6354748d66c9d3e887b79}
+      \strng{fullhash}{ca38936b1da6354748d66c9d3e887b79}
+      \strng{bibnamehash}{ca38936b1da6354748d66c9d3e887b79}
+      \strng{authorbibnamehash}{ca38936b1da6354748d66c9d3e887b79}
+      \strng{authornamehash}{ca38936b1da6354748d66c9d3e887b79}
+      \strng{authorfullhash}{ca38936b1da6354748d66c9d3e887b79}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0944-2669,1432-0835}
+      \field{journaltitle}{Calc. Var. Partial Differential Equations}
+      \field{number}{4}
+      \field{title}{On an open question about functions of bounded variation}
+      \field{volume}{15}
+      \field{year}{2002}
+      \field{pages}{519\bibrangedash 527}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/s005260100135
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s005260100135
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s005260100135
+      \endverb
+    \endentry
+    \entry{hitchhiker}{article}{}
+      \name{author}{3}{}{%
+        {{hash=03db39b10178ad7b10c8dbe488f60c39}{%
+           family={Di\bibnamedelima Nezza},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Eleonora},
+           giveni={E\bibinitperiod}}}%
+        {{hash=43667f6d345b3d06e46758f878502722}{%
+           family={Palatucci},
+           familyi={P\bibinitperiod},
+           given={Giampiero},
+           giveni={G\bibinitperiod}}}%
+        {{hash=71baca0287af1a889a5b5936c6fb275d}{%
+           family={Valdinoci},
+           familyi={V\bibinitperiod},
+           given={Enrico},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2ef9d16185580c0435912ccfc8dd53e}
+      \strng{fullhash}{a2ef9d16185580c0435912ccfc8dd53e}
+      \strng{bibnamehash}{a2ef9d16185580c0435912ccfc8dd53e}
+      \strng{authorbibnamehash}{a2ef9d16185580c0435912ccfc8dd53e}
+      \strng{authornamehash}{a2ef9d16185580c0435912ccfc8dd53e}
+      \strng{authorfullhash}{a2ef9d16185580c0435912ccfc8dd53e}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0007-4497}
+      \field{journaltitle}{Bull. Sci. Math.}
+      \field{number}{5}
+      \field{title}{Hitchhiker's guide to the fractional {S}obolev spaces}
+      \field{volume}{136}
+      \field{year}{2012}
+      \field{pages}{521\bibrangedash 573}
+      \range{pages}{53}
+      \verb{doi}
+      \verb 10.1016/j.bulsci.2011.12.004
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.bulsci.2011.12.004
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.bulsci.2011.12.004
+      \endverb
+    \endentry
+    \entry{lobardini:2019}{article}{}
+      \name{author}{1}{}{%
+        {{hash=15644ea296d3695a33a32f73db78b224}{%
+           family={Lombardini},
+           familyi={L\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{15644ea296d3695a33a32f73db78b224}
+      \strng{fullhash}{15644ea296d3695a33a32f73db78b224}
+      \strng{bibnamehash}{15644ea296d3695a33a32f73db78b224}
+      \strng{authorbibnamehash}{15644ea296d3695a33a32f73db78b224}
+      \strng{authornamehash}{15644ea296d3695a33a32f73db78b224}
+      \strng{authorfullhash}{15644ea296d3695a33a32f73db78b224}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1536-1365,2169-0375}
+      \field{journaltitle}{Adv. Nonlinear Stud.}
+      \field{number}{1}
+      \field{title}{Fractional perimeters from a fractal perspective}
+      \field{volume}{19}
+      \field{year}{2019}
+      \field{pages}{165\bibrangedash 196}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1515/ans-2018-2016
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1515/ans-2018-2016
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1515/ans-2018-2016
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

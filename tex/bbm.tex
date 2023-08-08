@@ -1,0 +1,79 @@
+%! TEX root = ../main.tex
+\documentclass[../main.tex]{subfiles}
+
+
+\begin{document}
+
+\section{Detour: the Bourgain-Brezis-Mironescu Formula}
+
+\begin{definition}
+Fron now on, $ (\rho_{i})_{i=1}^{\infty} $ will denote a sequence of \textit{radial mollifiers} in the sense that 
+\begin{equation}
+    \rho_{i}\in L^{1}_{loc}((0,+\infty)),\quad \rho_{i}\geq 0
+\end{equation}
+\begin{equation}
+    \lim_{i\to\infty}\int_{\delta}^{\infty} \rho_{i}(r)r^{n-1}\dd{r} = 0 \text{ for all } \delta>0 
+\end{equation}
+\begin{equation}
+    \int_{0}^{\infty}\rho_{i}(r)r^{n-1}\dd{r} = 1 \text{ for all } i\in \N.
+\end{equation}
+
+
+\end{definition}
+
+%TODO Replace R^n version with \Omega version 
+\begin{theorem}[\cite{brezis:2001,brezis:2002}, BBM Formula]
+    Let $ \Omega\sub \R^{n} $ be a bounded Lipschitz domain. For $ u\in L^{1}_{loc}(\Omega) $,
+    \[
+        \lim_{i\to\infty} \int_{\Omega}\int_{\R^{n}} \frac{|u(x)-u(y)|^{p}}{|x-y|^{p}} \rho_{i}(|x-y|)\dd{x} \dd{y} = \gamma_{n,p}\int_{\Omega}| \nabla{u}| \dd{x}
+    \]
+    when $ \nabla{u}\in L^{p}(\Omega) $ and $ \gamma_{n,p} $ is a constant given by . 
+\end{theorem}
+
+\begin{theorem}[\cite{davila:2002}, BBM-Davila Formula]\label{bbmd}
+    Let $ \Omega\sub \R^{n} $ be a bounded Lipschitz domain. Suppose $ u\in BV(\Omega) $. Then
+    \[
+        \lim_{i\to\infty} \int_{\Omega}\int_{\Omega} \frac{|u(x)-u(y)|}{|x-y|} \rho_{i}(|x-y|)\dd{x} \dd{y} = \gamma_{n,1}\int_{\Omega}| \nabla{u}| \dd{x}
+    \]
+    where $ \nabla u $ is the finite Radon measure corresponding to $ u $ and $ \int_{\Omega} |\nabla u| $ denotes the quantity $ |\nabla |(\Omega) $.
+\end{theorem}
+
+The constant $ \gamma_{n,p} $ above is given by 
+\[
+    \gamma_{n,p}:= \int_{S^{n-1}} |e\cdot \sigma|^p \dd{\H^{n-1}(\sigma)}
+\]
+where $ e\in S^{n-1} $ is arbitrary.\\
+
+
+
+%TODO add exposition on this
+We will outline the proof of Theorem \ref{bbmd}. This proof is the main technical novelty of this paper and we will connect it to asymptotics of fractional perimeter. \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Consider the Radon measures $ \mu_{i} $ given by  
+
+\[
+    \dd{\mu_{i}} := \lr{\int_{\Omega}\frac{|u(x)-u(y)|}{|x-y|} \rho_{i}(|x-y|) \dd{x}}\dd{y}
+\]
+
+
+Davila proves an extension theorem analagous to %TODO CITE EXTENSION THEOREMS IN APPENDIX
+but with an extra condition that, in addition to the BV norm in $ \R^{n} $ being controlled, we also have control over the BV measure in neighborhoods of $ \partial \Omega $.
+
+\begin{proposition}[\textcite{davila:2002}]
+    Existence of bounded extension operator $ \mc{E}: BV(\Omega)\to BV(\R^{n}) $ for nice $ \Omega\sub \R^{n} $.
+\end{proposition}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\end{document}

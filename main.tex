@@ -1,0 +1,95 @@
+%! TEX root = ./main.tex
+%\documentclass[12pt]{article}
+\documentclass[reqno, openany, amssymb, psamsfonts]{amsart}
+
+%--------Packages-------------
+\usepackage{kyrem1sty}
+
+\hypersetup{%
+  bookmarksnumbered=true,%
+  bookmarks=true,%
+  colorlinks=true,%
+  linkcolor=blue,%
+  citecolor=blue,%
+  filecolor=blue,%
+  menucolor=blue,%
+  pagecolor=blue,%
+  urlcolor=blue,%
+  pdfnewwindow=true,%
+  pdfstartview=FitBH}   
+ 
+\usepackage{mathrsfs,comment}
+\usepackage[normalem]{ulem}
+\usepackage{url}
+\usepackage[all,arc,2cell]{xy}
+
+\usepackage{svg}
+
+%----------------------------
+\usepackage{setspace}
+\setdisplayskipstretch{2}
+
+
+%--------Bibliography---------
+\usepackage[backend=biber]{biblatex}
+\addbibresource{fractional.bib}
+%----------------------------
+
+
+%--------Subfiles Setup-------
+\usepackage{subfiles}
+%----------------------------
+
+
+
+%--------Metadata------------
+\title{Asymptotics of Fractional Sobolev Norms and $s$-Perimeter}
+\author{James Harbour}
+%----------------------------
+
+
+%--------Content-------------
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+
+\subfile{./tex/introduction.tex}
+
+
+\subfile{./tex/preliminarydefs.tex}
+
+
+\subfile{./tex/bvandcacc.tex}
+
+
+\subfile{./tex/fracsobolev.tex}
+
+
+\subfile{./tex/bbm.tex}
+
+
+\subfile{./tex/fracperim.tex}
+
+
+\subfile{./tex/asymptotics.tex}
+
+
+
+
+%-----Appendix-----
+%\newpage
+\appendix
+
+\subfile{./tex/appendix/integersobolev.tex}
+
+
+\subfile{./tex/appendix/symmrearr.tex}
+
+
+%------Biblio------
+\newpage
+\printbibliography
+
+\end{document}

@@ -1,0 +1,117 @@
+%! TEX root = ../main.tex
+\documentclass[../main.tex]{subfiles}
+
+
+\begin{document}
+
+\section{Fractional $s$-Perimeter}
+
+\subsection{Why study the Asymptotics}
+
+\begin{fact}
+    For any measurable subset $ E\sub \R^{n} $ of finite positive measure, the characteristic function $ \chi_{E} $ is not an element of $ H^{\frac{1}{2}}(\R^{n}) $.
+\end{fact}
+
+\begin{proof}
+    By assumption $ \chi_{E}\in L^{2}(\R^{n})$, so it suffices to show that $ \chi_{E} $ is not in the corresponding homogenous sobolev space $ \dot H^{\frac{1}{2}}(\R^{n}) $. \\  
+
+    TODO INSERT SYMMETRIC REARRANGEMENT THINGS
+
+    Let $ B $ be the ball centered at $ 0 $ with the same (finite) measure as $ E $, i.e. the symmetric decreasing rearrangement of the set $ E $. (INSERT EXPOSITION ABOUT THIS)$ \chi_{E}^{*} = \chi^{B} $ and we have that 
+    \[
+        \norm{\chi_{E}}_{\dot H^{\frac{1}{2}}(\R^{n})} \geq \norm{\chi_{E}^{*}}_{\dot H^{\frac{1}{2}}(\R^{n})} = \norm{\chi_{B}}_{\dot H^{\frac{1}{2}}(\R^{n})}
+    \]
+    \begin{align*}
+        \norm{\chi_{B}}_{\dot H^{\frac{1}{2}}(\R^{n})} = \int_{\R^{n}} (1+| \xi|^{2})^{\frac{1}{2}}| \widehat{\xi_{B}}(\xi)|^{2} \dd{\xi}
+    \end{align*}
+
+    To estimate this ``symmetrized'' Gagliardo seminorm, we must compute the fourier transform of the characteristic function of a ball. Let $ R $ be the radius of $ B $ and note that, as $ \chi_{B} $ is rotationally symmetric, so is its Fourier transform. Hence we evaluate at the point $ \xi = (0,0,\ldots, 0, \rho) $ using polar coordinates
+    \begin{align*}
+        \widehat{\xi_{B_{R}(0)}}(\xi) &= \frac{1}{(2\pi)^{n/2}}\int_{B_{R}(0)} e^{-i x\cdot \xi} \dd{x} = \frac{1}{(2\pi)^{n/2}}\int_{B_{R}(0)} e^{-i \rho x_{n} } \dd{x} \\
+        &=  \frac{1}{(2\pi)^{n/2}}\int_{S^{n-1}}\int_0^{R} e^{-i \rho x_{n} } \dd{x} 
+    \end{align*}
+
+    \begin{align*}
+        \widehat{\chi_{B_{R}(0)}}(\xi) &= \frac{1}{(2\pi)^{n/2}}\int_{\R^{n}} \chi_{B_{R}(0)}(x) e^{-i x\cdot \xi} \dd{x} = \frac{1}{(2\pi)^{n/2}}\int_{\R^{n}} \chi_{B_{R}(0)}(x) e^{-i \rho x_{n}} \dd{x}  \\
+    \end{align*}
+\end{proof}
+
+\begin{fact}
+    For any measurable subset $ E\sub \R^{n} $ of finite positive measure, the characteristic function $ \chi_{E} $ is not an element of $ W^{1,1}(\R^{n})$.
+\end{fact}
+
+
+
+% ToDO include stuff about symmetric rearrangement
+
+However this is rectified by the following fact. Note that this does not follow from embedding of fractional sobolev spaces as $  $
+
+
+
+\begin{proposition}
+    Let $ p\in[1,+\infty) $ and $ 0 < s \leq s^{\prime} < 1 $. Let $ \Omega\sub \R^{n} $ be an open set and $ u:\Omega\to \R $ a measurable function. Then there exists a constant $ C \geq 1 $ depending only on $ n$,$s$, $p$, such that
+    \[
+        \norm{u}_{W^{s,p}(\Omega)} \leq C\norm{u}_{W^{s^{\prime},p}(\Omega)}
+    \]
+    Hence, there is a continuous inclusion $ W^{s^{\prime},p}(\Omega)\sub W^{s,p}(\Omega)$.
+\end{proposition}
+
+
+
+\subsection{Motivation for the definition of fractional perimeter}
+
+%TODO talk about where it was introduced and its usage
+
+\begin{definition}
+    Let $ \Omega\sub \R^{n} $ be a smooth bounded domain, $ s\in (0,1) $, and $ E\sub \R^{n} $ measurable. The \textit{fractional $ s $-perimeter of $ E $ in $ \Omega $} is the quantity
+    \begin{align*}
+        P_{s}(E; \Omega) :&= \frac{1}{2}[\chi_{E}]_{W^{s,1}(\Omega)} + \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} 
+        %&= L_{s}(E\cap \Omega, E^{c}\cap \Omega) + L_{s}(E\cap \Omega, E^{c}\cap \Omega^{c}) + L(E\cap \Omega^{c}, E^{c} \cap \Omega)
+    \end{align*}
+    where $ L(A,B) $ denotes the following interaction energy integral
+    \[
+        L(A,B) := \int_{A}\int_{B}\frac{1}{|x-y|^{n+s}}\dd{x}\dd{y} \text{ for all } A,B\sub \R^{n}
+    \]
+    with the convention that $ L(A,B) = 0 $ if either $ A $ or $ B $ is empty.
+\end{definition}
+To make this definition more transparent, consider the following reformulation:
+\begin{align*}
+    P_{s}(E; \Omega) &= \frac{1}{2}\int_{\Omega}\int_{\Omega} \frac{|\chi_{E}(x)-\chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} +  \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} \\
+    &= \frac{1}{2}\int_{\Omega}\int_{\Omega} \frac{\chi_{E}(x) \chi_{E^{c}}(y) + \chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y} +  \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{\chi_{E}(x) \chi_{E^{c}}(y) + \chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y}\\
+    &= L(E\cap \Omega, E^{c} \cap \Omega) + L(E^{c}\cap \Omega, E\cap \Omega^{c}) + L(E\cap \Omega, E^{c}\cap \Omega^{c}).
+\end{align*}
+
+%TODO insert photo showing interactions
+
+\begin{theorem}
+    Let $ \Omega\sub \R^{n} $ be a smooth bounded domain, $ E\sub \R^{n} $ measurable, and suppose that
+    \[
+        \lim_{s\searrow 0} s Per_{s}(E ; \Omega) \quad\text{exists.}
+    \]
+    If we have $ E\sub \Omega $, then in fact, 
+    \[
+        \lim_{s\searrow 0} s Per_{s}(E ; \Omega) = \H^{n-1}(S^{n-1}) |E| .
+    \]
+\end{theorem}
+
+\begin{proposition}
+    Let $ \Omega $ be nice and suppose that $ f\in BV(\Omega) $ and $ \rho\in L^{1}(\R^{n}) $.
+
+
+    TODO INSERT ACTUAL THEOREM I FORGOT
+\end{proposition}
+
+\begin{proof}
+    Since $ \mc{E}f\in BV(\R^{n}) $, there exists a universal constant $ C>0 $ such that 
+    \[
+        \int_{\R^{n}} |\mc{E}f(x+h) - \mc{E}f(x)|\dd{x} \leq C|h| \quad \text{ for all } h\in \R^{n}.
+    \]
+    Moreover, we can take $ C = \int_{\R^{n}} |D(\mc{E}f)| $.
+
+
+\end{proof}
+
+% TODO Extension operators
+
+
+end{document}

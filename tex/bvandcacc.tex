@@ -1,0 +1,136 @@
+%! TEX root = ../main.tex
+\documentclass[../main.tex]{subfiles}
+
+
+\begin{document}
+
+\section{Bounded Variation and Cacciopoli Sets}
+
+\subsection{The Spaces $ BV $ and $ BV_{loc} $}
+
+%TODO TALK ABOUT BV for one variable and history of attempts to generalize it.
+
+
+\includesvg{figures/indicator.svg}
+
+
+Our story begins with the classical Gauss-Green formula. Recall, when $ \Omega\sub \R^{n} $ is open, bounded with smooth boundary, we have for every smooth $ \R^{n} $-valued function $ \Phi $ that
+\begin{equation}\label{gaussgreen}
+    \int_{\Omega} \div{\Phi} \dd{\H^{n}} = \int_{\partial \Omega} \Phi\cdot \nu \dd{\H^{n-1}},
+\end{equation}
+where $ \nu\in C^{1}(\partial \Omega, \R^{n})  $ is the outward pointing unit normal vector field on $ \partial \Omega $.
+
+
+%Suppose now that we have such a set $ \Omega $. Intuitively, the perimeter of the set $ \Omega $ should be given by $ \H^{n-1}(\partial \Omega) $.
+% TODO motivate why this turns into perimeter
+
+De Giorgi`s program in the 1950s revolved around trying to make sense of \eqref{gaussgreen} when the topological boundary of $ \Omega $ is no longer smooth. The following section will outline his work in this area. De Giorgi begins with the following idea. Suppose that now we have a set $ E $ which is not necessarily smooth. As the characteristic function $ \chi_{E} $ is locally integrable in $ \R^{n} $, we can consider $ \chi_{E} $ as a distribution via integration against $ \chi_{E} $. Thus, it makes sense to talk about the distributional derivatives $ D_{i}\chi_{E} $ of $ \chi_{E} $. 
+
+Assume that each distribution $ D_{i} \chi_{E} $ is in fact represented by some Radon measure, which by abuse of notation we also write $ D_{i} \chi_{E} $. Then the distributional gradient is in fact represented by the vector-valued Radon measure $ D\chi_{E} = (D_{1} \chi_{E}, \ldots, D_{n}\chi_{E}) $.
+
+Following this discussion, we then compute for smooth vector fields $ \Phi = ( \Phi^{1}, \ldots, \Phi^{n})\in [\D(\R^{n})]^{n} $,
+\begin{align*}
+    \int_{\R^{n}} \chi_{E}\div{\Phi} \dd{x} &= \sum_{i=1}^{n}\int_{\R^{n}} \chi_{E} \pdv{\Phi^{i}}{x_{i}} \dd{x} = \sum_{i=1}^{n} -\inp{D_{i} \chi_{E}}{\Phi^{i}} \\
+    &= \sum_{i=1}^{n} -\int_{\R^{n}} \Phi^{i} \dd{D_{i} \chi_{E}}= - \int_{\R^{n}} \Phi\cdot \dd{D \chi_{E}}.
+\end{align*}
+
+Now let $ \norm{D \chi_{E}} $ denote the total variation measure of $ D \chi_{E} $. Then by Radon-Nikodym, there exists a $ \mu $-measurable function $ \sigma:\R^{n}\to \R^{n} $ with $ | \sigma | = 1 $ $ \norm{D \chi_{E}} $-a.e. such that 
+\[
+    \dd{D \chi_{E}} = \sigma\cdot \dd{\norm{D \chi_{E}}}.
+\]
+Then the above equation becomes
+\[
+    \int_{E} \div{\Phi} \dd{x} = \int_{\R^{n}} \chi_{E} \div{\Phi} \dd{x} = -\int_{\R^{n}} \Phi\cdot \sigma \dd{\norm{D \chi_{E}}}.
+\]
+
+The latter integral being over all of $ \R^{n} $ is quite unsatisfactory, so it is a natural question to ask where the measure $ D \chi_{E} $ (and thus $ \norm{D \chi_{E}} $) is supported.
+
+\begin{claim}
+    $ \supp(D \chi_{E}) \sub \partial E $.
+\end{claim}
+
+\begin{proof}
+    Suppose $ z\in \R^{n}\setminus \partial E $. Then there is some open, bounded neighborhood $ U $ of $ z $ with smooth boundary such that $ U\sub (\R^{n}\setminus \partial E)^{o} $. Thus $ U $ is either in the interior of $ E $ or the interior of $ \R^{n}\setminus E $. 
+
+    If $ U\sub (\R^{n}\setminus E)^{o} $, then for $ \Phi\in [\D(\R^{n})]^{n} $ with $ \supp(\Phi)\sub U $, we have
+    \[ 
+        \int_{\R^{n}} \Phi\cdot \dd{D \chi_{E}} = -\int_{\R^{n}}\chi_{E} \div{\Phi} \dd{x} = -\int_{U} \chi_{E}\div{\Phi}\dd{x} = 0.
+    \]
+
+    If $ U\sub E^{o} $, then for smooth vector fields supported within $ U $ we have by \eqref{gaussgreen} that
+    \[
+        \int_{\R^{n}} \Phi\cdot \dd{D \chi_{E}} = -\int_{\R^{n}}\chi_{E} \div{\Phi} \dd{x} = -\int_{U} \div{\Phi}\dd{x} = -\int_{\partial U} \Phi\cdot \nu_{U} \dd{\H^{n-1}} = 0.
+    \]
+    By density, these formulae actually hold for all $ \Phi\in C^{1}_{c} (\R^{n},\R^{n}) $ with $ \supp(\Phi)\sub U $. Hence, $ D\chi_{E}\vert_{U} \equiv 0 $, so $ z\not\in \supp(D\chi_{E}) $.
+\end{proof}
+
+
+Hence, setting $ \nu = -\sigma $ (so $ \nu $ is like a generalized outward normal vector field), we recover a statement which looks like Gauss Green:
+\[
+    \int_{E} \div{\Phi} \dd{\H^{n}} = \int_{\partial E} \Phi\cdot \nu\dd{\norm{D \chi_{E}}}
+\]
+We obtained such a formula by considering sets $ E $ such that the distributional gradient of $ \chi_{E} $  is represented by a vector-valued Radon measure. More generally, we can consider integrable (or locally integrable) functions $ f $ whose distributional gradient is represented by a vector-valued Radon measure. This line of thought leads to the notion of \textit{functions of bounded variation}.
+
+% TODO redo definitions of BV and BV_loc to better fit this story
+
+% TODO include story/exposition about reduced boundary
+
+\begin{definition}\label{def:BV}
+    Given a function $ u\in L^{1}(\Omega) $, define the \textit{total variation of $ u $} to be the quantity
+    \[
+        V(u,\Omega) = \sup\left\{ \int_{\Omega} u\div{\phi}\dd{x} : \phi\in[C_{c}^{1}(\Omega,\R)]^{n}, \norm{\phi}_{\infty} \leq 1 \right\}.
+    \]
+    If $ V(u,\Omega) $ is finite, then we say that $ u $ is of \textit{bounded variation} and write $ u\in BV(\Omega) $. 
+\end{definition}
+
+\begin{definition}\label{def:BVloc}
+    Similarly, given $ u\in L^{1}_{loc}(\Omega) $ and $ U\Subset \Omega $, define the \textit{local variation of $ u $ in $ U $} by
+    \[
+        V(u, U) = \sup\left\{ \int_{U} u\div{\phi}\dd{x} : \phi\in[C_{c}^{1}(U,\R)]^{n}, \norm{\phi}_{\infty} \leq 1 \right\}.
+    \]
+    We define the set of functions of \textit{locally bounded variation} to be
+    \[
+        BV_{loc}(\Omega) = \{u\in L^{1}_{loc}(\Omega) : V(u,U)< +\infty \text{ for all } U\Subset \Omega\}.
+    \]
+\end{definition}
+
+An equivalent, and admittedly more transparent, characterization of $ BV_{loc} $ functions can be given as follows. 
+
+\begin{proposition}[Characterization of $ BV_{loc} $]\label{bvchar}
+    Suppose $ u\in BV_{loc}(\Omega) $. Then there exists a Radon measure $ \mu $ on $ \Omega $ and a $ \mu $-measurable $ \sigma:\Omega\to \R^{n} $ with $ | \sigma| = 1$ $ \mu $-a.e. and
+    \[
+        \int_{\Omega} u\div{\phi}\dd{x} = -\int_{\Omega} \phi\cdot \sigma \dd{\mu} \text{ for all } \phi\in C_{c}^{1}(\Omega,\R^{n}).
+    \]
+\end{proposition}
+
+\begin{proof}
+    This is a routine application of the Riesz–Markov–Kakutani representation theorem. To this end, define a linear functional $ L:C_{c}^{1}(\Omega,\R^{n}) \to \R $ by $ L(\phi) = -\int_{\Omega} u\div{\phi}\dd{x} $.
+    
+    For open $ U\Subset \Omega $, the quantity $ c(U):= \sup\{L(\phi) : \phi\in C_{c}^{1}(U,\R^{n}), \norm{\phi}_{\infty} \leq 1\} $ is finite by assumption, whence 
+    \[
+        |L(\phi)| \leq c(U) \norm{\phi}_{\infty} \text{ for all } \phi\in C_{c}^{1}(U,\R^{n}).
+    \]
+    Let $ K\sub \Omega $ be a fixed compact set, and choose open $ U\Subset\Omega $ containing $ K $. Then for $ \phi\in C_{c}(\Omega,\R^{n}) $ with $ \supp(\phi)\sub K $, there exists a sequence $ (\phi_{k})_{k} $ in $ C_{c}^{1}(U,\R^{n}) $ such that $ \phi_{k}\to \phi $ uniformly on $ U $. \\
+
+    Define an extension $ \widetilde{L}:C_{c}(\Omega,\R^{n})\to \R $ of $ L $ by $ \widetilde{L}(\phi) = \lim_{k\to\infty}L(\phi_{k}) $, which exists and is well-defined by the above inequality. Applying the Riesz Representation Theorem to $ \widetilde{L} $ gives the conclusion.
+\end{proof}
+
+\begin{definition}
+    For $ u\in BV_{loc}(\Omega) $, we will write $ \norm{Du} $ for the measure $ \mu $ and 
+    \[
+        d[Du] := \sigma \dd{\norm{Du}}, \text{ i.e } \int\cdot \dd{[Du]} = \int \inp{\cdot}{\sigma}\dd{\norm{Du}}.
+    \]
+    Then the conclusion of Proposition \ref{bvchar} can be rewritten as
+    \[
+        \int u\div{\phi} \dd{x} = -\int \phi \cdot \sigma \dd{\norm{Du}} = -\int \phi \cdot \dd{[Du]} \text{ for all } \phi\in C_{c}^{1}(\Omega,\R^{n}).
+    \]
+\end{definition}
+
+
+\subsection{Classical Perimeter}
+
+% TODO Hint towards why this is a "good" definition of perimeter. I.e. relation btw Dchi_E and boundary E
+
+    
+
+\end{document}
