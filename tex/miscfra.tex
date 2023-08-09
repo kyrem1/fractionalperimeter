@@ -1,0 +1,45 @@
+%! TEX root = ../main.tex
+\documentclass[../main.tex]{subfiles}
+
+
+\begin{document}
+
+\section{Miscellaneous Fractional Proofs}\label{appendix:misc}
+
+% TODO show regularity stuff i.e. that we can remove the PV.
+
+\begin{proof}[Proof of Proposition \ref{laplacianisintegral}]
+    Let $ \Lambda_{s}:\S\to L^{2}(\R^{n}) $ denote the operator $ \Lambda_{s}u(x) := C(n,s)\, P.V. \int_{\R^{n}}\frac{u(x)-u(y)}{|x-y|^{n+2s}}\dd{y} $. After applying the ansatzes $ y \usub x+h$ and $ y\usub x-h $, we have the second order difference quotient representation
+    \begin{equation}\label{secondorder}
+        \Lambda_{s}u(x) = -\frac{1}{2}C(n,s)\, P.V.\int_{\R^{n}} \frac{u(x+h) + u(x-h) -2u(x)}{|h|^{n+2s}} \dd{h}.
+    \end{equation}
+    Fix $ u\in \S $ and $ x\in \R^{n} $. Consider the second-order Taylor expansion of $ u $ about $ x $ given for $ h $ small by 
+    \begin{equation}
+        u(x+h) = u(x) + Du(x)\cdot h + \frac{1}{2}h^{T}\cdot D^{2}u(x)\cdot h + R(h)
+    \end{equation}
+    where $ R(h) \in o(|h|^{2}) $. Then 
+    \[
+        u(x+h)+u(x-h)-2u(x) = h^{T}\cdot D^{2}u(x)\cdot h + R(h) + R(-h).
+    \]
+    and 
+    \[
+        |h^{T}D^{2}u(x)h| \leq |h|\cdot |D^{2}u(x)h| \leq \norm{D^{2}u(x)}_{op}|h|^{2},
+    \]
+    leading to a bound on the integral kernel
+    \begin{equation}\label{kernelbound}
+        \frac{u(x+h)+u(x-h)-2u(x)}{|h|^{n+2s}} \leq \frac{\norm{D^{2}u(x)}_{op}}{|h|^{n+2s-2}} + \frac{1}{|h|^{n+2s-2}}\cdot\frac{R(h)+R(-h)}{|h|^{2}}.
+    \end{equation}
+    Note that \ref{kernelbound} is integrable in $ h $ within a bounded neighborhood of $ 0 $, so in fact the equation \ref{secondorder} holds true even without the ``PV.'' Moreover, one may refine the estimate \ref{kernelbound} slightly further to justify an application of Fubini-Tonelli and find that, for $ \xi\in \R^{n} $,
+    \begin{align*}
+        \mathscr{F}_{x} (\Lambda_{s}u)(\xi) &= -\frac{1}{2}C(n,s) \int_{\R^{n}} \frac{\mathscr{F}\{u(\bigcdot+h)+u(\bigcdot-h)-2u(\bigcdot)\}(\xi)}{|h|^{n+2s}} \dd{h} \\
+        &= -\frac{1}{2}C(n,s) \mathscr{F}u(\xi)\int_{\R^{n}} \frac{e^{-ih \xi}+e^{ih \xi}-2}{|h|^{n+2s}}\dd{h} \\
+        &= C(n,s) \mathscr{F}u(\xi)\int_{\R^{n}} \frac{1-\cos(h\cdot \xi)}{|h|^{n+2s}}\dd{h} \\
+    \end{align*}
+    It is an exercise to the reader to show that the quantity $ I(\xi):= \int_{\R^{n}} \frac{1-\cos(h\cdot \xi)}{|h|^{n+2s}}\dd{h} $ is rotation invariant and $ I(\xi) = | \xi|^{2s}I(e_{1}) =| \xi|^{2s} C(n,s)^{-1} $, whence
+    \[
+        \mathscr{F}(\Lambda_{s}u)(\xi) = | \xi|^{2s}\mathscr{F}u(\xi) \implies \Lambda_{s}u(x) = (-\Delta )^{s}u(x).
+    \]
+
+\end{proof}
+
+\end{document}

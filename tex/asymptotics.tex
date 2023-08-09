@@ -4,10 +4,25 @@
 
 \begin{document}
 
-\section{Asymptotics of $ W^{s,1}(\R^{n}) $ and $ Per_{s}(E,\Omega) $}
+\section{Asymptotics of $ W^{s,1}(\R^{n}) $ and $ P_{s}(E,\Omega) $}
+
+\begin{lemma}
+    Let $ A, B\sub \R^{n} $ be bounded measurable sets such that $ dist(A,B)\geq C > 0  $ for some $ C>0 $. Then $ \lim_{s\to0} sL(A,B) = 0 $.
+\end{lemma}
+
+\begin{proof}
+    \begin{align*}
+        sL(A,B) = s\int_{A}\int_{B} \frac{\dd{x}\dd{y}}{|x-y|^{n+s}} \leq s\int_{A} \int_{B} \frac{1}{C^{n+s}}\dd{x}\dd{y} = \frac{s |A| |B|}{C^{n+s}} \xrightarrow{s\to0} 0
+    \end{align*}
+\end{proof}
 
 \begin{proof}[Proof of Theorem \ref{sto0}]
-     
+    Suppose first that $ \Omega = \R^{n} $. Note that then $ P_{s}^{NL}(E,\R^{n}) = 0 $, so we are left with only a local term.
+
+    \begin{align*}
+        [\chi_{E}]_{W^{s,1}(\R^{n})} = \int_{\R^{n}} \int_{\R^{n}} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}} \dd{x}\dd{y} = \int_{\R^{n}} \int_{\R^{n}} \frac{| \chi_{E}(x) - \chi_{E}(y)|^{2}}{|x-y|^{n+2\cdot\frac{s}{2}}} \dd{x}\dd{y} = [ \chi_{E} ]_{W^{\frac{s}{2},2}(\R^{n})} 
+    \end{align*}
+    
 \end{proof}
 
 

@@ -88,6 +88,23 @@ Armed with this definition, we explore the properties of $ BV(\Omega) $ when $ \
     \]
 \end{definition}
 
+\begin{proposition}\label{laplacianisintegral}
+    Fix $ s\in (0,1) $ and let $ C(n,s) $ be the constant 
+    \begin{equation}
+        C(n,s) := \lr{ \int_{\R^{n}}\frac{1-\cos(\zeta_{1})}{| \zeta|^{n+2s}}\dd{\zeta}  }^{-1}.
+    \end{equation}
+    Then for $ u\in \S $, we have that 
+    \begin{equation}
+        (-\Delta )^{s}u(x) = C(n,s)\, P.V. \int_{\R^{n}} \frac{u(x) - u(y)}{|x-y|^{n+2s}} \dd{y}
+    \end{equation}
+\end{proposition}
+
+\begin{proof}
+    See Appendix \ref{appendix:misc} for the proof.
+\end{proof}
+
+
+
 \subsection{$ H^{s} $: An Alternative approach to fractional Sobolev spaces using $ \mathscr{F} $}
 
 \begin{definition}
@@ -101,5 +118,17 @@ Armed with this definition, we explore the properties of $ BV(\Omega) $ when $ \
     \]
 \end{definition}
 
+
+
+\begin{proposition}[{\cite[Prop.~3.4]{hitchhiker}}]\label{fracnormislaplacian}
+    Let $ s\in (0,1) $ and $ n\in \N $. Then for $ u\in W^{s,2}(\R^{n}) $, we have 
+    \begin{equation}
+        [u]_{W^{s,2}(\R^{n})}^{2} = \frac{2}{C(n,s)} \norm{(-\Delta )^{\frac{s}{2}}u}_{L^{2}(\R^{n})}^{2} = \frac{2}{C(n,s)} \int_{\R^{n}} | \xi|^{2s} |\mathscr{F}u|^{2} \dd{x} 
+    \end{equation}
+\end{proposition}
+
+\begin{proof}
+    This is an immediate corollary of Proposition \ref{laplacianisintegral}.
+\end{proof}
 
 \end{document}

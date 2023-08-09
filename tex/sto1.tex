@@ -1,0 +1,53 @@
+%! TEX root = ../main.tex
+\documentclass[../main.tex]{subfiles}
+
+
+\begin{document}
+
+\section{Asymptotics of $ P_{s}(E,\Omega) $ as $ s\to 1^{-} $}
+
+\subsection{Local Contribution to $ P_{s}(E,\Omega) $}
+
+In this subsection, we estimate the contribution of $ P_{s}^{L} $ to the $ s $-perimeter as $ s\to1^{-} $. Our main tool is the Bourgain-Brezis-Mironescu-Davila Formula \ref{bbmd}.\\
+
+Recall that $ P_{s}^{L}(E,\Omega) = \frac{1}{2}[ \chi_{E} ]_{W^{s,1}(\Omega)} $. Let $ (s_{i})_{i=1}^{\infty} $ be a sequence of integers with $ s_{i}\to1^{-} $. Choose $ R>>0 $ such that $ \Omega\sub B_{\frac{R}{2}}(0) $. Define mollifiers $ \rho_{i}:(0,+\infty)\to[0,+\infty) $ as in \ref{bbmd} by
+\begin{equation}\label{mollifiers}
+    \rho_{i}(t):= a_{s_{i}}\frac{1-s_{i}}{t^{n+s_{i}-1}}\chi_{(0,R)}(t)
+\end{equation}
+Where $ a_{s_{i}} := \frac{1}{\omega_{n-1}R^{1-s_{i}}}$ is chosen such that $ \int_{\R^{n}} \rho_{i}(|x|)\dd{x} = 1 $. Using polar coordinates, one may check that the mollifiers $ (\rho_{i})_{i} $ satisfy the conditions of \ref{bbmd}, namely that
+\[
+    \text{for all } \delta>0,\quad\lim_{i\to\infty}\int_{\delta}^{\infty} \rho_{i}(r)r^{n-1}\dd{r} = \lim_{i\to\infty} \frac{1}{\omega_{n-1}} \lr{1-\lr{\frac{\delta}{R}}^{1-s_{i}}} = 0.
+\]
+For $ u\in W^{s,1}(\Omega) $, as $ \Omega-\Omega\sub B_{R}(0) $, we expand 
+\begin{align*}
+    \int_{\Omega} \int_{\Omega} \frac{|u(x)-u(y)|}{|x-y|} \rho_{i}(|x-y|) \dd{x}\dd{y} &= a_{s_{i}}(1-s_{i})\int_{\Omega}\int_{\Omega} \frac{|u(x)-u(y)|}{|x-y|^{n+s_{i}}}\dd{x}\dd{y} \\
+    &= a_{s_{i}}(1-s_{i})[u]_{W^{s_{i},1}(\Omega)}.
+\end{align*}
+% TODO justify why BV(\Omega)\sub intersection of W^{s,1}(\Omega)
+Then for $ u\in BV(\Omega) $,
+\begin{align*}
+    \lim_{i\to\infty} (1-s_{i}) [u]_{W^{s_{i},1}(\Omega)} &= \lim_{i\to\infty}\frac{1}{a_{s_{i}}}\int_{\Omega} \int_{\Omega} \frac{|u(x)-u(y)|}{|x-y|} \rho_{i}(|x-y|) \dd{x}\dd{y} \\
+    &= \omega_{n-1}K_{1,n}[u]_{BV(\Omega)}.
+\end{align*}
+As the sequence $ (s_{i}) $ was arbitrary, we conclude that $ \lim_{s\to1^{-}}(1-s)[u]_{W^{s,1}(\Omega)} = \omega_{n-1}K_{n,1}[u]_{BV(\Omega)} $. In summary, we have shown the following proposition.
+
+\begin{proposition}
+    Let $ \Omega\sub \R^{n} $ be a bounded domain with Lipschitz boundary. If $ E\sub \R^{n} $ has finite perimeter inside $ \Omega $, then
+    \[
+        \lim_{s\to1^{-}}(1-s)P_{s}^{L}(E,\Omega) = \frac{\omega_{n-1}}{2}K_{n,1}Per(E,\Omega).
+    \]
+\end{proposition}
+
+
+
+\subsection{Nonlocal Contribution to $ P_{s}(E,\Omega) $}
+
+The aim of this subsection is to show that the limiting behavior of the nonlocal contribution to $ s $-perimeter, $ P_{s}^{NL}(E,\Omega) $, is controlled by how much the set $ E $ fails to intersect $ \partial \Omega $ ``transversally.'' Namely, we will demonstrate that
+\[
+    \limsup_{s\to1^{-}}(1-s)P_{s}^{NL}(E,\Omega) \preceq \lim_{\delta\to0^{+}}Per(E,N_{\delta}(\partial \Omega))
+\]
+where $ N_{\delta}(\partial \Omega) $ denotes the $ \delta $-tubular neighborhood of $ \partial \Omega $.
+%TODO determine constant for this preceq
+%TODO insert pictures for failure of transversal intersection
+
+\end{document}

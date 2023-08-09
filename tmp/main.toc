@@ -11,7 +11,12 @@
 \contentsline {section}{\tocsection {}{6}{Fractional $s$-Perimeter}}{6}{section.6}%
 \contentsline {subsection}{\tocsubsection {}{6.1}{Why study the Asymptotics}}{6}{subsection.6.1}%
 \contentsline {subsection}{\tocsubsection {}{6.2}{Motivation for the definition of fractional perimeter}}{7}{subsection.6.2}%
-\contentsline {section}{\tocsection {}{7}{Asymptotics of $ W^{s,1}(\mathbb {R}\xspace ^{n}) $ and $ Per_{s}(E,\Omega ) $}}{7}{section.7}%
-\contentsline {section}{\tocsection {Appendix}{A}{Integer Sobolev Spaces}}{7}{appendix.A}%
-\contentsline {section}{\tocsection {Appendix}{B}{Symmetric Decreasing Rearrangement}}{7}{appendix.B}%
-\contentsline {section}{\tocsection {Appendix}{}{References}}{8}{section*.2}%
+\contentsline {subsection}{\tocsubsection {}{6.3}{Supplementary Observations}}{7}{subsection.6.3}%
+\contentsline {section}{\tocsection {}{7}{Asymptotics of $ P_{s}(E,\Omega ) $ as $ s\to 0^{+} $}}{8}{section.7}%
+\contentsline {subsection}{\tocsubsection {}{}{Proof of Theorem \ref {sto0}}}{8}{section*.2}%
+\contentsline {section}{\tocsection {}{8}{Asymptotics of $ P_{s}(E,\Omega ) $ as $ s\to 1^{-} $}}{8}{section.8}%
+\contentsline {subsection}{\tocsubsection {}{8.1}{Local Contribution to $ P_{s}(E,\Omega ) $}}{8}{subsection.8.1}%
+\contentsline {subsection}{\tocsubsection {}{8.2}{Nonlocal Contribution to $ P_{s}(E,\Omega ) $}}{9}{subsection.8.2}%
+\contentsline {section}{\tocsection {Appendix}{A}{Symmetric Decreasing Rearrangement}}{9}{appendix.A}%
+\contentsline {section}{\tocsection {Appendix}{B}{Miscellaneous Fractional Proofs}}{9}{appendix.B}%
+\contentsline {section}{\tocsection {Appendix}{}{References}}{11}{section*.3}%

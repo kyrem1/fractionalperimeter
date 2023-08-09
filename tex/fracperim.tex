@@ -62,56 +62,74 @@ However this is rectified by the following fact. Note that this does not follow 
 
 %TODO talk about where it was introduced and its usage
 
-\begin{definition}
+\begin{definition}\label{fracperim}
     Let $ \Omega\sub \R^{n} $ be a smooth bounded domain, $ s\in (0,1) $, and $ E\sub \R^{n} $ measurable. The \textit{fractional $ s $-perimeter of $ E $ in $ \Omega $} is the quantity
     \begin{align*}
-        P_{s}(E; \Omega) :&= \frac{1}{2}[\chi_{E}]_{W^{s,1}(\Omega)} + \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} 
+        P_{s}(E, \Omega) :&= \frac{1}{2}[\chi_{E}]_{W^{s,1}(\Omega)} + \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} 
         %&= L_{s}(E\cap \Omega, E^{c}\cap \Omega) + L_{s}(E\cap \Omega, E^{c}\cap \Omega^{c}) + L(E\cap \Omega^{c}, E^{c} \cap \Omega)
     \end{align*}
     where $ L(A,B) $ denotes the following interaction energy integral
     \[
         L(A,B) := \int_{A}\int_{B}\frac{1}{|x-y|^{n+s}}\dd{x}\dd{y} \text{ for all } A,B\sub \R^{n}
     \]
-    with the convention that $ L(A,B) = 0 $ if either $ A $ or $ B $ is empty.
+    with the convention that $ L(A,B) = 0 $ if either $ A $ or $ B $ is empty. We denote the local and nonlocal energy terms by
+    \[
+        P_{s}^{L}(E,\Omega) := \frac{1}{2}[\chi_{E}]_{W^{s,1}(\Omega)} \quad \quad P_{s}^{NL}(E,\Omega) := \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} 
+    \]
+    When $ \Omega =\R^{n} $, we write $ P_{s}(E):= P_{s}(E,\R^{n}) $.
 \end{definition}
+
 To make this definition more transparent, consider the following reformulation:
 \begin{align*}
-    P_{s}(E; \Omega) &= \frac{1}{2}\int_{\Omega}\int_{\Omega} \frac{|\chi_{E}(x)-\chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} +  \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} \\
+    P_{s}(E, \Omega) &= \frac{1}{2}\int_{\Omega}\int_{\Omega} \frac{|\chi_{E}(x)-\chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} +  \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} \\
     &= \frac{1}{2}\int_{\Omega}\int_{\Omega} \frac{\chi_{E}(x) \chi_{E^{c}}(y) + \chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y} +  \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{\chi_{E}(x) \chi_{E^{c}}(y) + \chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y}\\
     &= L(E\cap \Omega, E^{c} \cap \Omega) + L(E^{c}\cap \Omega, E\cap \Omega^{c}) + L(E\cap \Omega, E^{c}\cap \Omega^{c}).
 \end{align*}
 
-%TODO insert photo showing interactions
 
-\begin{theorem}
-    Let $ \Omega\sub \R^{n} $ be a smooth bounded domain, $ E\sub \R^{n} $ measurable, and suppose that
-    \[
-        \lim_{s\searrow 0} s Per_{s}(E ; \Omega) \quad\text{exists.}
-    \]
-    If we have $ E\sub \Omega $, then in fact, 
-    \[
-        \lim_{s\searrow 0} s Per_{s}(E ; \Omega) = \H^{n-1}(S^{n-1}) |E| .
-    \]
-\end{theorem}
-
-\begin{proposition}
-    Let $ \Omega $ be nice and suppose that $ f\in BV(\Omega) $ and $ \rho\in L^{1}(\R^{n}) $.
-
-
-    TODO INSERT ACTUAL THEOREM I FORGOT
-\end{proposition}
+\subsection{Supplementary Observations}
+\begin{lemma}
+    Let $ A, B\sub \R^{n} $ be bounded measurable sets such that $ dist(A,B)\geq C > 0  $ for some $ C>0 $. Then $ \lim_{s\to0} sL(A,B) = 0 $.
+\end{lemma}
 
 \begin{proof}
-    Since $ \mc{E}f\in BV(\R^{n}) $, there exists a universal constant $ C>0 $ such that 
-    \[
-        \int_{\R^{n}} |\mc{E}f(x+h) - \mc{E}f(x)|\dd{x} \leq C|h| \quad \text{ for all } h\in \R^{n}.
-    \]
-    Moreover, we can take $ C = \int_{\R^{n}} |D(\mc{E}f)| $.
-
-
+    \begin{align*}
+        sL(A,B) = s\int_{A}\int_{B} \frac{\dd{x}\dd{y}}{|x-y|^{n+s}} \leq s\int_{A} \int_{B} \frac{1}{C^{n+s}}\dd{x}\dd{y} = \frac{s |A| |B|}{C^{n+s}} \xrightarrow{s\to0} 0
+    \end{align*}
 \end{proof}
+
+
+%TODO insert photo showing interactions
+
+%\begin{theorem}
+%    Let $ \Omega\sub \R^{n} $ be a smooth bounded domain, $ E\sub \R^{n} $ measurable, and suppose that
+%    \[
+%        \lim_{s\searrow 0} s P_{s}(E , \Omega) \quad\text{exists.}
+%    \]
+%    If we have $ E\sub \Omega $, then in fact, 
+%    \[
+%        \lim_{s\searrow 0} s P_{s}(E , \Omega) = \H^{n-1}(S^{n-1}) |E| .
+%    \]
+%\end{theorem}
+
+%\begin{proposition}
+%    Let $ \Omega $ be nice and suppose that $ f\in BV(\Omega) $ and $ \rho\in L^{1}(\R^{n}) $.
+%
+%
+%    TODO INSERT ACTUAL THEOREM I FORGOT
+%\end{proposition}
+
+%\begin{proof}
+%    Since $ \mc{E}f\in BV(\R^{n}) $, there exists a universal constant $ C>0 $ such that 
+%    \[
+%        \int_{\R^{n}} |\mc{E}f(x+h) - \mc{E}f(x)|\dd{x} \leq C|h| \quad \text{ for all } h\in \R^{n}.
+%    \]
+%    Moreover, we can take $ C = \int_{\R^{n}} |D(\mc{E}f)| $.
+%
+%
+%\end{proof}
 
 % TODO Extension operators
 
 
-end{document}
+\end{document}
