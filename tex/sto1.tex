@@ -38,16 +38,142 @@ As the sequence $ (s_{i}) $ was arbitrary, we conclude that $ \lim_{s\to1^{-}}(1
     \]
 \end{proposition}
 
-
-
 \subsection{Nonlocal Contribution to $ P_{s}(E,\Omega) $}
 
 The aim of this subsection is to show that the limiting behavior of the nonlocal contribution to $ s $-perimeter, $ P_{s}^{NL}(E,\Omega) $, is controlled by how much the set $ E $ fails to intersect $ \partial \Omega $ ``transversally.'' Namely, we will demonstrate that
 \[
     \limsup_{s\to1^{-}}(1-s)P_{s}^{NL}(E,\Omega) \preceq \lim_{\delta\to0^{+}}Per(E,N_{\delta}(\partial \Omega))
 \]
-where $ N_{\delta}(\partial \Omega) $ denotes the $ \delta $-tubular neighborhood of $ \partial \Omega $.
+where $ N_{\delta}(\partial \Omega) $ denotes the $ \delta $-tubular neighborhood of $ \partial \Omega $. The results and methods in this subsection are new developments due to Lombardini \cite{lombardini:2019}.
 %TODO determine constant for this preceq
 %TODO insert pictures for failure of transversal intersection
+
+
+\begin{proposition}
+    Let $ \Omega\sub \R^{n} $ be a bounded open set with Lipschitz boundary. Suppose that $ E\sub \R^{n} $ has finite perimeter inside $ \Omega $ and $ Per(E,\partial \Omega) = 0 $. Then 
+    \[
+        \lim_{s\to1^{-}}(1-s) P_{s}^{NL}(E,\Omega) = 0 
+    \]
+%TODO maybe have to assume finite perimeter in a neighborhood of $ \Omega $ (e.g. D_1).
+\end{proposition}
+
+
+%TODO make graphic accurate (i.e. remove touching of boundaries
+\begin{wrapfigure}{r}{0.5\textwidth}
+    \begin{center}
+    \includesvg[width=0.48\textwidth]{figures/approximation1.svg}
+    \end{center}
+    \vspace{-20mm} 
+\end{wrapfigure}
+
+
+We strictly approximate $ \Omega $ from inside and outside by bounded open sets with Lipschitz boundary, i.e. consider sets $ (A_{i})_{i}, (D_{i})_{i} $ such that
+\begin{itemize}
+    \item $ A_{i}\sub A_{i+1} \Subset \Omega $ and $ \Omega = \bigcup_{i\in\N}A_{i} $;
+    \item $ D_{i}\supseteq D_{i+1}\Supset \cls{\Omega}  $ and $ \cls{\Omega} = \bigcap_{i\in\N}D_{i}$.
+\end{itemize}
+We make a couple auxiliary definitions.
+\begin{itemize}
+    \item $ \Omega_{i}^{+} := D_{i}\setminus \cls{\Omega} $, the outer excess portion;
+    \item $ \Omega_{i}^{-} := \Omega\setminus \cls{A_{i}} $, the inner excess portion;
+    \item $ T_{i}:= \Omega_{i}^{+}\cup \Omega_{i}^{-} \cup \partial \Omega $, the total excess;
+    \item $ d_{i}:= \min\{d(A_{i}, \partial \Omega), d(\partial D_{i},  \Omega) \} $ minimum distance from approximation to the boundary of $ \Omega $.
+\end{itemize}
+
+
+
+
+
+
+
+%TODO investigate possible typo in d_i
+As $ |D \chi_{E}| $ is a finite Radon measure on $ D_{1} $ and all other relevant sets are nested inside $ D_{1} $, continuity from above implies that
+\[
+    Per(E,\partial \Omega) = |D \chi_{E}|(\cap_{i} T_{i}) = \lim_{i\to\infty}|D \chi_{E}|(T_{i}) = \lim_{i\to\infty}Per(E,T_{i}).
+\]
+Hence, in order to control the nonlocal contribution ot the $ s $-perimeter in terms of $ Per(E,\partial \Omega) $, it suffices to obtain control in terms of $ Per(E,T_{i}) $ for fixed $ i $. First, recall the two interactions involved in $ P_{s}^{NL} $ are given by
+\[
+    P_{s}^{NL}(E,\Omega) = L(E\cap \Omega, E^{c}\cap \Omega^{c}) + L(E^{c}\cap \Omega, E\cap \Omega^{c})
+\]
+As $ P_{s}^{NL}(E,\Omega) = P_{s}^{NL}(E^{c},\Omega) $ and $ Per(E,T_{i}) = Per(E^{c},T_{i}) $, it suffices to estimate only the first interaction term as an estimate for the second term would follow from this via the replacement $ E\usub E^{c} $. We proceed by decomposing the interaction as 
+\begin{align*}
+    L(E\cap \Omega, E^{c}\setminus\Omega) = L(E\cap \Omega, E^{c}\cap \Omega_{i}^{+}) + L(E\cap \Omega, E^{c}\cap (\Omega^{c}\setminus D_{i})).
+\end{align*}
+\begin{figure}[H]
+    \vspace{-5mm}
+    \includesvg[scale=0.75]{figures/interactionOmegaPlusDecompose.svg}
+    \vspace{-5mm}
+\end{figure}
+\[
+    L(E\cap \Omega, E^{c}\cap (\Omega^{c}\setminus D_{i})) \leq L(\Omega, \Omega^{c}\setminus D_{i}) = \int_{\Omega}\int_{\Omega^{c}\setminus D_{i}}\frac{1}{|x-y|^{n+s}} \dd{x}\dd{y}.
+\]
+
+Fix $ y\in \Omega $ and let $ \rho_{y}>0 $ be such that $ B_{\rho_{y}}(y)\sub D_{i} $. Then we estimate
+\[
+    \int_{\Omega^{c}\setminus D_{i}} \frac{1}{|x-y|^{n+s}}\dd{x} \leq \int_{\R^{n}\setminus B_{\rho_{y}}(y)}\frac{1}{|x|^{n+s}}\dd{x} = \frac{\omega_{n-1}}{s} \rho_{y}^{-s} .
+\]
+%TODO show can take rho_y = d_i for all y
+\[
+    B_{d_{i}}(y)\sub D_{i}? \implies \rho_{y}\geq d_{i}
+\]
+so it follows that 
+\[
+    L(\Omega,\Omega^{c}\setminus D_{i}) \leq \omega_{n-1}\frac{\mathcal{L}^{n}(\Omega)}{s}d_{i}^{-s}
+\]
+\[
+    L(E\cap \Omega, E^{c}\cap \Omega_{i}^{+}) =  L(E\cap \Omega_{i}^{-}, E^{c}\cap \Omega_{i}^{+}) + L(E\cap A_{i}, E^{c}\cap \Omega_{i}^{+})
+\]
+
+\[
+    L(E\cap A_{i}, E^{c}\cap \Omega_{i}^{+}) \leq L(A_{i}, \Omega_{i}^{+}) \leq 
+\]
+
+\[
+    L(A_{i}, \Omega_{i}^{+}) = \int_{A_{i}}\int_{D_{i}\setminus \cls{\Omega}}\frac{1}{|x-y|^{n+s}}\dd{x}\dd{y} \leq \frac{\omega_{n-1}}{s} d_{i}^{-s} .
+\]
+
+\[
+    L(E\cap \Omega_{i}^{-}, E^{c}\cap \Omega_{i}^{+}) \leq L(E\cap T_{i}, E^{c}\cap T_{i}) = P_{s}^{L}(E, T_{i})
+\]
+Hence we have 
+\[
+    L(E\cap \Omega, E^{c}\cap \Omega^{c}) \leq P_{s}^{L}(E,T_{i}) + 2 \omega_{n-1}\frac{\mathcal{L}^{n}(\Omega)}{s}d_{i}^{-s}.
+\]
+Similarly for the other term, so 
+\[
+    P_{s}^{NL}(E,\Omega) \leq 2P_{s}^{L}(E,T_{i}) + 4 \omega_{n-1}\frac{\mathcal{L}^{n}(\Omega)}{s}d_{i}^{-s}.
+\]
+By the local part
+\[
+    \lim_{s\to1^{-}}(1-s)P_{s}^{L}(E,T_{i}) = \frac{\omega_{n-1}}{2}K_{n,1}Per(E,T_{i})
+\]
+hence
+\[
+    \limsup_{s\to1^{-}}(1-s)P_{s}^{NL}(E,\Omega) \leq \omega_{n-1}K_{n,1}Per(E,T_{i}).
+\]
+As this holds for all $ i $, it follows that 
+\[
+    \limsup_{s\to1^{-}}(1-s)P_{s}^{NL}(E,\Omega) \leq \lim_{i\to\infty}\omega_{n-1}K_{n,1}Per(E,T_{i}) = \omega_{n-1}K_{n,1}Per(E,\partial \Omega).
+\]
+When the RHS is zero, the claim follows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}

@@ -38,11 +38,11 @@ The theory behind fractional perimeter is written in the language of fractional 
 
 Althought these spaces and (semi)norms seem somewhat natural from the viewpoint of being an analogue of the H\"{o}lder condition for $ L^{p} $ spaces instead of $ L^{\infty} $, when presented as above they are ultimately quite artificial. Where would one find such spaces appearing in nature?
 
-If one takes for granted that integer sobolev spaces ``appear in nature,'' then the answer to the previous question is that \textit{fractional sobolev spaces appear as the correct image of the trace operator} (see Appendix A for background on the trace operator).
-%TODO insert trace theorem as evidence of W^{s,2} appearing in nature
+If one takes for granted that integer sobolev spaces ``appear in nature,'' then the answer to the previous question is that \textit{fractional sobolev spaces are the correct image of the trace operator} (see TODOINSERT THIS for background on the trace operator).
+%TODO cite evans and maybe adams for info on classical trace 
+
 %TODO maybe do different trace theorem like the one for $ W^1,p $
 
-%TODO DEFINE W_0
 \begin{proposition}
     Suppose $ \Omega\sub \R^{n} $ is a nice domain (see definition \ref{extndomain}) and $ k\in \N $. Then there is a split exact sequence of Hilbert spaces
 \[\begin{tikzcd}
@@ -56,6 +56,16 @@ If one takes for granted that integer sobolev spaces ``appear in nature,'' then 
     
 \end{proposition}
 
+\begin{proposition}\label{fracisscale}
+    Let $ p\in[1,+\infty) $ and $ 0 < s \leq s^{\prime} < 1 $. Let $ \Omega\sub \R^{n} $ be an open set and $ u:\Omega\to \R $ a measurable function. Then there exists a constant $ C \geq 1 $ depending only on $ n$,$s$, $p$, such that
+    \[
+        \norm{u}_{W^{s,p}(\Omega)} \leq C\norm{u}_{W^{s^{\prime},p}(\Omega)}
+    \]
+    Hence, there is a continuous inclusion $ W^{s^{\prime},p}(\Omega)\sub W^{s,p}(\Omega)$.
+\end{proposition}
+
+%TODO prove this in appendix
+
 \subsection{Extension Domains}
 
 \begin{definition}\label{extndomain}
@@ -65,17 +75,18 @@ If one takes for granted that integer sobolev spaces ``appear in nature,'' then 
     \]
 \end{definition}
 
-We remark that any bounded open set with Lipschitz boundary is an extension domain. See Hitchhiker`s Guide (\cite{hitchhiker}) for details. 
+We remark that any bounded open set with Lipschitz boundary is a $ W^{s,1} $ extension domain for all $ s\in (0,1) $ (see Hitchhiker`s Guide \cite{hitchhiker} for details). This fact somewhat explains why in both \ref{sto0} and \ref{sto1} we restrict. One might imagine extending these results to general extension domains,
+%TODO insert references to extending results to arbitrary extension domains
 
-Armed with this definition, we explore the properties of $ BV(\Omega) $ when $ \Omega $ is an extension domain.
+We have seen that $ BV(\Omega) $ is in some sense a replacement for $ W^{1,1}(\Omega) $ with better compactness properties. Moreover, as is the case with classical Sobolev spaces, $ W^{1,1}(\Omega) $ embeds continuously into $ W^{s,1}(\Omega) $. Hence, one is lead to wonder if the same is true for $ BV $ instead of $ W^{1,1}(\Omega) $. Under the assumption that $ \Omega $ is a $ W^{s,1} $-extension domain, the answer is in the affirmative.
 
 
-\begin{proposition}\label{BVinWs}
-    Suppose that $ \Omega\sub \R^{n} $ is an extension domain. Then for $ s\in (0,1) $ we have a continuous embedding $ BV(\Omega)\hookrightarrow W^{s,1}(\Omega) $.
+\begin{proposition}[{\cite[Prop.~2.1]{lombardini:2019}}]\label{BVinWs}
+    Suppose that $ \Omega\sub \R^{n} $ is an extension domain. Then for $ s\in (0,1) $ we have a continuous embedding $ BV(\Omega)\hookrightarrow W^{s,1}(\Omega) $. 
 \end{proposition}
 
 \begin{proof}
-    We follow \textcite{lobardini:2019}. 
+    We follow \textcite{lombardini:2019}. 
 \end{proof}
 
 

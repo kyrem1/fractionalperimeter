@@ -44,17 +44,9 @@
 
 % ToDO include stuff about symmetric rearrangement
 
-However this is rectified by the following fact. Note that this does not follow from embedding of fractional sobolev spaces as $  $
+However this is rectified by the following fact. Note that this does not follow from embedding of fractional sobolev spaces as 
 
 
-
-\begin{proposition}
-    Let $ p\in[1,+\infty) $ and $ 0 < s \leq s^{\prime} < 1 $. Let $ \Omega\sub \R^{n} $ be an open set and $ u:\Omega\to \R $ a measurable function. Then there exists a constant $ C \geq 1 $ depending only on $ n$,$s$, $p$, such that
-    \[
-        \norm{u}_{W^{s,p}(\Omega)} \leq C\norm{u}_{W^{s^{\prime},p}(\Omega)}
-    \]
-    Hence, there is a continuous inclusion $ W^{s^{\prime},p}(\Omega)\sub W^{s,p}(\Omega)$.
-\end{proposition}
 
 
 
@@ -85,6 +77,10 @@ To make this definition more transparent, consider the following reformulation:
     &= \frac{1}{2}\int_{\Omega}\int_{\Omega} \frac{\chi_{E}(x) \chi_{E^{c}}(y) + \chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y} +  \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{\chi_{E}(x) \chi_{E^{c}}(y) + \chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y}\\
     &= L(E\cap \Omega, E^{c} \cap \Omega) + L(E^{c}\cap \Omega, E\cap \Omega^{c}) + L(E\cap \Omega, E^{c}\cap \Omega^{c}).
 \end{align*}
+
+\begin{figure}[H]
+    \includesvg[scale=0.7]{figures/interactions.svg}
+\end{figure}
 
 
 \subsection{Supplementary Observations}
