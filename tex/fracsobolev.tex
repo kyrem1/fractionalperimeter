@@ -75,18 +75,50 @@ If one takes for granted that integer sobolev spaces ``appear in nature,'' then 
     \]
 \end{definition}
 
-We remark that any bounded open set with Lipschitz boundary is a $ W^{s,1} $ extension domain for all $ s\in (0,1) $ (see Hitchhiker`s Guide \cite{hitchhiker} for details). This fact somewhat explains why in both \ref{sto0} and \ref{sto1} we restrict. One might imagine extending these results to general extension domains,
+We remark that any bounded open set with Lipschitz boundary is a $ W^{s,1} $ extension domain for all $ s\in (0,1) $ (see Hitchhiker`s Guide \cite{hitchhiker} for details) and a $ W^{1,p} $ extension domain for all $ 1\leq p <\infty $ (see Gilbarg and Trudinger \cite[Thm.~7.25]{}). This fact somewhat explains why in both \ref{sto0} and \ref{sto1} we restrict to bounded open sets with Lipschitz boundary. One might imagine extending these results to general extension domains,
 %TODO insert references to extending results to arbitrary extension domains
+%TODO insert reference to Gilbarg and Trudinger
 
-We have seen that $ BV(\Omega) $ is in some sense a replacement for $ W^{1,1}(\Omega) $ with better compactness properties. Moreover, as is the case with classical Sobolev spaces, $ W^{1,1}(\Omega) $ embeds continuously into $ W^{s,1}(\Omega) $. Hence, one is lead to wonder if the same is true for $ BV $ instead of $ W^{1,1}(\Omega) $. Under the assumption that $ \Omega $ is a $ W^{s,1} $-extension domain, the answer is in the affirmative.
+The general principle with fractional Sobolev spaces is that, on an extension domain, statements that for classical integer Sobolev spaces likely generalize to the fractional setting. One example of this is the intuitive notion that functions with high regularity automatically lie in all spaces requiring only lower regularity (that is, functions that are $ k+1 $-differentiable are automatically $ k $-differentiable). When $ \Omega $ is a $ W^{s,p} $ extension domain this intuition does not break.
+
+\begin{proposition}[{\cite[Prop.~2.2]{hitchhiker}}]\label{highertolower}
+    Suppose $ s\in (0,1) $, $ 1\leq p <\infty $, and let $ \Omega\sub \R^{n} $ be a bounded $ W^{1,p} $-extension domain. Then the identity map is a continuous embedding 
+    \[
+        W^{1,p}(\Omega)\hookrightarrow W^{s,p}(\Omega).
+    \]
+\end{proposition}
+
+\begin{proof}
+    
+\end{proof}
+
+We have seen that $ BV(\Omega) $ is in some sense a replacement for $ W^{1,1}(\Omega) $ with better compactness properties. Moreover, as is the case with classical Sobolev spaces, $ W^{1,1}(\Omega) $ embeds continuously into $ W^{s,1}(\Omega) $. Hence, one is lead to wonder if the same is true for $ BV $ instead of $ W^{1,1}(\Omega) $. Under the assumption that $ \Omega $ is a $ W^{s,1} $-extension domain, this is true.
 
 
 \begin{proposition}[{\cite[Prop.~2.1]{lombardini:2019}}]\label{BVinWs}
     Suppose that $ \Omega\sub \R^{n} $ is an extension domain. Then for $ s\in (0,1) $ we have a continuous embedding $ BV(\Omega)\hookrightarrow W^{s,1}(\Omega) $. 
 \end{proposition}
 
+%TODO insert approximation fact about BV functions in BV section
 \begin{proof}
-    We follow \textcite{lombardini:2019}. 
+    Suppose $ u\in BV(\Omega) $. By mollification, there exists a sequence $ u_{i}\in C^{\infty}(\Omega)\cap BV(\Omega) $ such that 
+    \begin{itemize}
+        \item $ u_{n}\xrightarrow{L^{1}(\Omega)}u $
+        \item $ \norm{Du_{i}}_{L^{1}(\Omega)}  \leq |Du|(\Omega) $ for all $ i\in \N $,
+        \item $ \norm{Du_{i}}_{L^{1}(\Omega)}\to |Du|(\Omega) $
+    \end{itemize}
+    Since $ \Omega $ is a $ W^{1,1} $ extension domain, by Proposition \ref{highertolower} the identity map is a continuous embedding $W^{1,1}(\Omega)\hookrightarrow W^{s,1}(\Omega) $.
+    \[
+        [u_{i}]_{W^{s,1}(\Omega)} \leq \norm{u_{i}}_{W^{s,1}(\Omega)} \leq C\norm{u_{i}}_{W^{1,1}(\Omega)} = C\norm{u_{i}}_{BV(\Omega)}.
+    \]
+    Now, appealing to Fatou's lemma, we find
+    \begin{align*}
+        [u]_{W^{s,1}(\Omega)} \leq \liminf_{i\to\infty} \norm{u_{i}}_{W^{s,1}(\Omega)} \leq \liminf_{i\to\infty} C \norm{u_{i}}_{BV(\Omega)} = C \norm{u}_{BV(\Omega)}.
+    \end{align*}
+    Hence, 
+    \[
+        \norm{u}_{W^{s,1}(\Omega)} = \norm{u}_{L^{1}(\Omega)}+ [u]_{W^{s,1}(\Omega)} \leq (C+1)\norm{u}_{L^{1}(\Omega)} +  C[u]_{BV(\Omega)} \leq (C+1)\norm{u}_{BV(\Omega)}.
+    \]
 \end{proof}
 
 

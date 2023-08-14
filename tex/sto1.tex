@@ -31,7 +31,7 @@ Then for $ u\in BV(\Omega) $,
 \end{align*}
 As the sequence $ (s_{i}) $ was arbitrary, we conclude that $ \lim_{s\to1^{-}}(1-s)[u]_{W^{s,1}(\Omega)} = \omega_{n-1}K_{n,1}[u]_{BV(\Omega)} $. In summary, we have shown the following proposition.
 
-\begin{proposition}
+\begin{proposition}\label{localsto1}
     Let $ \Omega\sub \R^{n} $ be a bounded domain with Lipschitz boundary. If $ E\sub \R^{n} $ has finite perimeter inside $ \Omega $, then
     \[
         \lim_{s\to1^{-}}(1-s)P_{s}^{L}(E,\Omega) = \frac{\omega_{n-1}}{2}K_{n,1}Per(E,\Omega).
@@ -49,21 +49,29 @@ where $ N_{\delta}(\partial \Omega) $ denotes the $ \delta $-tubular neighborhoo
 %TODO insert pictures for failure of transversal intersection
 
 
-\begin{proposition}
+%TODO find the right place for this.
+Recall the following fact from point-set topology.
+\begin{fact}\label{distancefact}
+    If $ X\sub \R^{n} $ is nonempty and $ y\in \R^{n}\setminus\Int{X} $, then $ d(y,X) = d(y,\partial X) = d(y, \partial X^{c})$.
+\end{fact}
+\newpage
+
+
+
+\begin{theorem}[{\cite[Prop.~2.5]{lombardini:2019}}]
     Let $ \Omega\sub \R^{n} $ be a bounded open set with Lipschitz boundary. Suppose that $ E\sub \R^{n} $ has finite perimeter inside $ \Omega $ and $ Per(E,\partial \Omega) = 0 $. Then 
     \[
         \lim_{s\to1^{-}}(1-s) P_{s}^{NL}(E,\Omega) = 0 
     \]
+\end{theorem}
 %TODO maybe have to assume finite perimeter in a neighborhood of $ \Omega $ (e.g. D_1).
-\end{proposition}
-
 
 %TODO make graphic accurate (i.e. remove touching of boundaries
 \begin{wrapfigure}{r}{0.5\textwidth}
     \begin{center}
     \includesvg[width=0.48\textwidth]{figures/approximation1.svg}
     \end{center}
-    \vspace{-20mm} 
+    \vspace{-10mm}
 \end{wrapfigure}
 
 
@@ -82,72 +90,67 @@ We make a couple auxiliary definitions.
 
 
 
-
-
-
-
+\vspace{1.6mm}
 %TODO investigate possible typo in d_i
 As $ |D \chi_{E}| $ is a finite Radon measure on $ D_{1} $ and all other relevant sets are nested inside $ D_{1} $, continuity from above implies that
 \[
     Per(E,\partial \Omega) = |D \chi_{E}|(\cap_{i} T_{i}) = \lim_{i\to\infty}|D \chi_{E}|(T_{i}) = \lim_{i\to\infty}Per(E,T_{i}).
 \]
 Hence, in order to control the nonlocal contribution ot the $ s $-perimeter in terms of $ Per(E,\partial \Omega) $, it suffices to obtain control in terms of $ Per(E,T_{i}) $ for fixed $ i $. First, recall the two interactions involved in $ P_{s}^{NL} $ are given by
-\[
+\begin{equation}\label{nlenergydef}
     P_{s}^{NL}(E,\Omega) = L(E\cap \Omega, E^{c}\cap \Omega^{c}) + L(E^{c}\cap \Omega, E\cap \Omega^{c})
-\]
+\end{equation}
 As $ P_{s}^{NL}(E,\Omega) = P_{s}^{NL}(E^{c},\Omega) $ and $ Per(E,T_{i}) = Per(E^{c},T_{i}) $, it suffices to estimate only the first interaction term as an estimate for the second term would follow from this via the replacement $ E\usub E^{c} $. We proceed by decomposing the interaction as 
-\begin{align*}
+\begin{equation}\label{decomp1}
     L(E\cap \Omega, E^{c}\setminus\Omega) = L(E\cap \Omega, E^{c}\cap \Omega_{i}^{+}) + L(E\cap \Omega, E^{c}\cap (\Omega^{c}\setminus D_{i})).
-\end{align*}
+\end{equation}
 \begin{figure}[H]
     \vspace{-5mm}
     \includesvg[scale=0.75]{figures/interactionOmegaPlusDecompose.svg}
     \vspace{-5mm}
 \end{figure}
-\[
-    L(E\cap \Omega, E^{c}\cap (\Omega^{c}\setminus D_{i})) \leq L(\Omega, \Omega^{c}\setminus D_{i}) = \int_{\Omega}\int_{\Omega^{c}\setminus D_{i}}\frac{1}{|x-y|^{n+s}} \dd{x}\dd{y}.
-\]
 
-Fix $ y\in \Omega $ and let $ \rho_{y}>0 $ be such that $ B_{\rho_{y}}(y)\sub D_{i} $. Then we estimate
-\[
-    \int_{\Omega^{c}\setminus D_{i}} \frac{1}{|x-y|^{n+s}}\dd{x} \leq \int_{\R^{n}\setminus B_{\rho_{y}}(y)}\frac{1}{|x|^{n+s}}\dd{x} = \frac{\omega_{n-1}}{s} \rho_{y}^{-s} .
-\]
-%TODO show can take rho_y = d_i for all y
-\[
-    B_{d_{i}}(y)\sub D_{i}? \implies \rho_{y}\geq d_{i}
-\]
-so it follows that 
-\[
-    L(\Omega,\Omega^{c}\setminus D_{i}) \leq \omega_{n-1}\frac{\mathcal{L}^{n}(\Omega)}{s}d_{i}^{-s}
-\]
-\[
-    L(E\cap \Omega, E^{c}\cap \Omega_{i}^{+}) =  L(E\cap \Omega_{i}^{-}, E^{c}\cap \Omega_{i}^{+}) + L(E\cap A_{i}, E^{c}\cap \Omega_{i}^{+})
-\]
+%TODO insert transition phrase
 
-\[
-    L(E\cap A_{i}, E^{c}\cap \Omega_{i}^{+}) \leq L(A_{i}, \Omega_{i}^{+}) \leq 
-\]
+To estimate these interactions, we need the following claim. %TODO possibly adjust this sentence
+\begin{claim}
+    If $ y\in \Omega $ and $ \rho_{y}:= \sup\{\rho>0: B_{\rho}(y)\sub D_{i}\} $, then $ \rho_{y}\geq d_{i} $ and thus $ B_{d_{i}}(y)\sub D_{i} $.
+\end{claim}
+This claim follows by taking $ X=D_{i}^{c} $ in Fact \ref{distancefact} and then noting that $ B_{d(y,D_{i}^{c})}(y)\sub D_{i} $ holds by definition.
 
-\[
-    L(A_{i}, \Omega_{i}^{+}) = \int_{A_{i}}\int_{D_{i}\setminus \cls{\Omega}}\frac{1}{|x-y|^{n+s}}\dd{x}\dd{y} \leq \frac{\omega_{n-1}}{s} d_{i}^{-s} .
-\]
-
-\[
+Now for $ y\in \Omega $, by the following claim we estimate
+\begin{equation}\label{intestimate1}
+    \int_{\Omega^{c}\setminus D_{i}} \frac{1}{|x-y|^{n+s}}\dd{x} \leq \int_{\R^{n}\setminus B_{d_{i}}(y)}\frac{1}{|x-y|^{n+s}}\dd{x} = \frac{\omega_{n-1}}{s} d_{i}^{-s} .
+\end{equation}
+Hence, after integrating over $ \Omega $,
+\begin{align}\label{energyest1}
+    L(E\cap \Omega, E^{c}\cap (\Omega^{c}\setminus D_{i})) \leq L(\Omega, \Omega^{c}\setminus D_{i}) = \int_{\Omega}\int_{\Omega^{c}\setminus D_{i}} \frac{1}{|x-y|^{n+s}}\dd{x}\dd{y} \leq \omega_{n-1}\frac{\mathcal{L}^{n}(\Omega)}{s}d_{i}^{-s} 
+\end{align}
+giving us a bound on the second term in \ref{decomp1}. To deal with the first term, we use a similar technique as in \ref{decomp1}.  We decompose the interaction with respect to the inner approximation $ A_{i}\nearrow \Omega $ and its inner excess $ \Omega_{i}^{-} $ to obtain
+\begin{equation}\label{decomp2}
+    L(E\cap \Omega, E^{c}\cap \Omega_{i}^{+}) =  L(E\cap \Omega_{i}^{-}, E^{c}\cap \Omega_{i}^{+}) + L(E\cap A_{i}, E^{c}\cap \Omega_{i}^{+}).
+\end{equation}
+We analyze the second term in $ \ref{decomp2} $ and use similar logic to the estimate in \ref{intestimate1} to find
+\begin{align}\label{energyest2}
+    L(E\cap A_{i}, E^{c}\cap \Omega_{i}^{+}) \leq L(A_{i}, \Omega_{i}^{+}) \leq L(A_{i}, \Omega^{c}) = \int_{A_{i}}\int_{\Omega^{c}}\frac{1}{|x-y|^{n+s}}\dd{x}\dd{y} \leq \omega_{n-1}\frac{\mathcal{L}^{n}(A_{i})}{s} d_{i}^{-s}.
+\end{align}
+To deal with the first interaction term in \ref{decomp2}, we note that both $ \Omega_{i}^{-} $ and $ \Omega_{i}^{+} $ are contained in $ T_{k} $. Hence by definition, we see
+\begin{equation}\label{symmetricest}
     L(E\cap \Omega_{i}^{-}, E^{c}\cap \Omega_{i}^{+}) \leq L(E\cap T_{i}, E^{c}\cap T_{i}) = P_{s}^{L}(E, T_{i})
-\]
-Hence we have 
+\end{equation}
+which, in the context of Proposition \ref{localsto1}, hints towards an asymptotic connection between the energy in question and the classical perimeters of $ E $ relative to the $ T_{i} $s. Now, combining estimates \ref{energyest1}, \ref{energyest2}, and \ref{symmetricest}, we have
 \[
     L(E\cap \Omega, E^{c}\cap \Omega^{c}) \leq P_{s}^{L}(E,T_{i}) + 2 \omega_{n-1}\frac{\mathcal{L}^{n}(\Omega)}{s}d_{i}^{-s}.
 \]
-Similarly for the other term, so 
-\[
+As discussed previously, the same estimate holds for the other term in \ref{nlenergydef}, so our final energy bound becomes
+\begin{equation}\label{finalenergy}
     P_{s}^{NL}(E,\Omega) \leq 2P_{s}^{L}(E,T_{i}) + 4 \omega_{n-1}\frac{\mathcal{L}^{n}(\Omega)}{s}d_{i}^{-s}.
-\]
-By the local part
+\end{equation}
+By Proposition \ref{localsto1}, 
 \[
     \lim_{s\to1^{-}}(1-s)P_{s}^{L}(E,T_{i}) = \frac{\omega_{n-1}}{2}K_{n,1}Per(E,T_{i})
 \]
-hence
+hence \ref{finalenergy} implies
 \[
     \limsup_{s\to1^{-}}(1-s)P_{s}^{NL}(E,\Omega) \leq \omega_{n-1}K_{n,1}Per(E,T_{i}).
 \]
@@ -156,15 +159,6 @@ As this holds for all $ i $, it follows that
     \limsup_{s\to1^{-}}(1-s)P_{s}^{NL}(E,\Omega) \leq \lim_{i\to\infty}\omega_{n-1}K_{n,1}Per(E,T_{i}) = \omega_{n-1}K_{n,1}Per(E,\partial \Omega).
 \]
 When the RHS is zero, the claim follows.
-
-
-
-
-
-
-
-
-
 
 
 

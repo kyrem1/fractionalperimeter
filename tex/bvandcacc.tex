@@ -14,7 +14,6 @@
 \includesvg{figures/indicator.svg}
 \end{figure}
 
-
 Our story begins with the classical Gauss-Green formula. Recall, when $ \Omega\sub \R^{n} $ is open, bounded with smooth boundary, we have for every smooth $ \R^{n} $-valued function $ \Phi $ that
 \begin{equation}\label{gaussgreen}
     \int_{\Omega} \div{\Phi} \dd{\H^{n}} = \int_{\partial \Omega} \Phi\cdot \nu \dd{\H^{n-1}},
@@ -35,16 +34,16 @@ Following this discussion, we then compute for smooth vector fields $ \Phi = ( \
     &= \sum_{i=1}^{n} -\int_{\R^{n}} \Phi^{i} \dd{D_{i} \chi_{E}}= - \int_{\R^{n}} \Phi\cdot \dd{D \chi_{E}}.
 \end{align*}
 
-Now let $ \norm{D \chi_{E}} $ denote the total variation measure of $ D \chi_{E} $. Then by Radon-Nikodym, there exists a $ \mu $-measurable function $ \sigma:\R^{n}\to \R^{n} $ with $ | \sigma | = 1 $ $ \norm{D \chi_{E}} $-a.e. such that 
+Now let $ |D \chi_{E}| $ denote the total variation measure of $ D \chi_{E} $. Then by Radon-Nikodym, there exists a $ \mu $-measurable function $ \sigma:\R^{n}\to \R^{n} $ with $ | \sigma | = 1 $ $ |D \chi_{E}| $-a.e. such that 
 \[
-    \dd{D \chi_{E}} = \sigma\cdot \dd{\norm{D \chi_{E}}}.
+    \dd{D \chi_{E}} = \sigma\cdot \dd{|D \chi_{E}|}.
 \]
 Then the above equation becomes
 \[
-    \int_{E} \div{\Phi} \dd{x} = \int_{\R^{n}} \chi_{E} \div{\Phi} \dd{x} = -\int_{\R^{n}} \Phi\cdot \sigma \dd{\norm{D \chi_{E}}}.
+    \int_{E} \div{\Phi} \dd{x} = \int_{\R^{n}} \chi_{E} \div{\Phi} \dd{x} = -\int_{\R^{n}} \Phi\cdot \sigma \dd{|D \chi_{E}|}.
 \]
 
-The latter integral being over all of $ \R^{n} $ is quite unsatisfactory, so it is a natural question to ask where the measure $ D \chi_{E} $ (and thus $ \norm{D \chi_{E}} $) is supported.
+The latter integral being over all of $ \R^{n} $ is quite unsatisfactory, so it is a natural question to ask where the measure  $ |D \chi_{E}| $ is supported. Our intuition would point to $ |D \chi_{E}| $ being supported on the boundary, since the quantity is some kind of ``gradient'' of $ \chi_{E} $ which is constant everywhere else. Moreover, as there are vertical jumps on $ \partial E $, it would make sense for the ``gradient'' at these jumps to be vertical of ``infinite length'' (that is, a dirac delta at every point on the boundary). Of course, this is just intuition and not rigorous mathematics, but it is not bad intuition.
 
 \begin{claim}
     $ \supp(D \chi_{E}) \sub \partial E $.
@@ -73,19 +72,30 @@ Hence, setting $ \nu = -\sigma $ (so $ \nu $ is like a generalized outward norma
 We obtained such a formula by considering sets $ E $ such that the distributional gradient of $ \chi_{E} $  is represented by a vector-valued Radon measure. More generally, we can consider integrable (or locally integrable) functions $ f $ whose distributional gradient is represented by a vector-valued Radon measure. This line of thought leads to the notion of \textit{functions of bounded variation}.
 
 % TODO redo definitions of BV and BV_loc to better fit this story
+\begin{definition}\label{def:BV}
+    Let $ \Omega\sub \R^{n} $ be an open set and $ u\in L^{1}(\Omega) $. We say that $ u $ is of \textit{bounded variation in $\Omega$}, written $ u\in BV(\Omega) $, if the the distributional derivatives $ D_{i}u $ are represented by finite Radon measures, (that is, the distributional gradient $ Du $ is represened by a finite vector-valued Radon measure).
+
+    Given $ u\in BV(\Omega) $, the $ BV(\Omega) $-seminorm of $ u $ is the quantity 
+    \[
+        [u]_{BV(\Omega)} := |Du|(\Omega)
+    \]
+\end{definition}
+
+
+We would like a quantitative way to test whether a given function $ u\in L^{1}(\Omega) $ is of bounded variation. The above definition of $ BV(\Omega) $-seminorm is not satisfactory as it requires a function to have distributional derivative represented by a measure to be intelligible. We need a definition which makes no reference to the distributional derivative.
+
 
 % TODO include story/exposition about reduced boundary
 
-\begin{definition}\label{def:BV}
-    Given a function $ u\in L^{1}(\Omega) $, define the \textit{total variation of $ u $} to be the quantity
+
+\begin{definition}Given a function $ u\in L^{1}(\Omega) $, define the \textit{total variation of $ u $} to be the quantity
     \[
         V(u,\Omega) = \sup\left\{ \int_{\Omega} u\div{\phi}\dd{x} : \phi\in[C_{c}^{1}(\Omega,\R)]^{n}, \norm{\phi}_{\infty} \leq 1 \right\}.
     \]
     If $ V(u,\Omega) $ is finite, then we say that $ u $ is of \textit{bounded variation} and write $ u\in BV(\Omega) $. 
 \end{definition}
 
-\begin{definition}\label{def:BVloc}
-    Similarly, given $ u\in L^{1}_{loc}(\Omega) $ and $ U\Subset \Omega $, define the \textit{local variation of $ u $ in $ U $} by
+\begin{definition}    Similarly, given $ u\in L^{1}_{loc}(\Omega) $ and $ U\Subset \Omega $, define the \textit{local variation of $ u $ in $ U $} by
     \[
         V(u, U) = \sup\left\{ \int_{U} u\div{\phi}\dd{x} : \phi\in[C_{c}^{1}(U,\R)]^{n}, \norm{\phi}_{\infty} \leq 1 \right\}.
     \]
@@ -132,6 +142,5 @@ An equivalent, and admittedly more transparent, characterization of $ BV_{loc} $
 
 % TODO Hint towards why this is a "good" definition of perimeter. I.e. relation btw Dchi_E and boundary E
 
-    
 
 \end{document}

@@ -5,18 +5,18 @@
 \contentsline {section}{\tocsection {}{4}{Sobolev Space Preliminaries}}{4}{section.4}%
 \contentsline {subsection}{\tocsubsection {}{4.1}{Fractional Sobolev Spaces}}{4}{subsection.4.1}%
 \contentsline {subsection}{\tocsubsection {}{4.2}{Extension Domains}}{5}{subsection.4.2}%
-\contentsline {subsection}{\tocsubsection {}{4.3}{The Fractional Laplacian}}{5}{subsection.4.3}%
-\contentsline {subsection}{\tocsubsection {}{4.4}{$ H^{s} $: An Alternative approach to fractional Sobolev spaces using $ \mathscr {F} $}}{5}{subsection.4.4}%
-\contentsline {section}{\tocsection {}{5}{Detour: the Bourgain-Brezis-Mironescu Formula}}{5}{section.5}%
-\contentsline {section}{\tocsection {}{6}{Fractional $s$-Perimeter}}{6}{section.6}%
-\contentsline {subsection}{\tocsubsection {}{6.1}{Why study the Asymptotics}}{6}{subsection.6.1}%
-\contentsline {subsection}{\tocsubsection {}{6.2}{Motivation for the definition of fractional perimeter}}{7}{subsection.6.2}%
+\contentsline {subsection}{\tocsubsection {}{4.3}{The Fractional Laplacian}}{6}{subsection.4.3}%
+\contentsline {subsection}{\tocsubsection {}{4.4}{$ H^{s} $: An Alternative approach to fractional Sobolev spaces using $ \mathscr {F} $}}{6}{subsection.4.4}%
+\contentsline {section}{\tocsection {}{5}{Detour: the Bourgain-Brezis-Mironescu Formula}}{6}{section.5}%
+\contentsline {section}{\tocsection {}{6}{Fractional $s$-Perimeter}}{7}{section.6}%
+\contentsline {subsection}{\tocsubsection {}{6.1}{Why study the Asymptotics}}{7}{subsection.6.1}%
+\contentsline {subsection}{\tocsubsection {}{6.2}{Motivation for the definition of fractional perimeter}}{8}{subsection.6.2}%
 \contentsline {subsection}{\tocsubsection {}{6.3}{Supplementary Observations}}{8}{subsection.6.3}%
-\contentsline {section}{\tocsection {}{7}{Asymptotics of $ P_{s}(E,\Omega ) $ as $ s\to 0^{+} $}}{8}{section.7}%
-\contentsline {subsection}{\tocsubsection {}{}{Proof of Theorem \ref {sto0}}}{8}{section*.2}%
-\contentsline {section}{\tocsection {}{8}{Asymptotics of $ P_{s}(E,\Omega ) $ as $ s\to 1^{-} $}}{8}{section.8}%
-\contentsline {subsection}{\tocsubsection {}{8.1}{Local Contribution to $ P_{s}(E,\Omega ) $}}{8}{subsection.8.1}%
-\contentsline {subsection}{\tocsubsection {}{8.2}{Nonlocal Contribution to $ P_{s}(E,\Omega ) $}}{9}{subsection.8.2}%
-\contentsline {section}{\tocsection {Appendix}{A}{Symmetric Decreasing Rearrangement}}{11}{appendix.A}%
-\contentsline {section}{\tocsection {Appendix}{B}{Miscellaneous Fractional Proofs}}{11}{appendix.B}%
-\contentsline {section}{\tocsection {Appendix}{}{References}}{13}{section*.3}%
+\contentsline {section}{\tocsection {}{7}{Asymptotics of $ P_{s}(E,\Omega ) $ as $ s\to 0^{+} $}}{9}{section.7}%
+\contentsline {subsection}{\tocsubsection {}{}{Proof of Theorem \ref {sto0}}}{9}{section*.2}%
+\contentsline {section}{\tocsection {}{8}{Asymptotics of $ P_{s}(E,\Omega ) $ as $ s\to 1^{-} $}}{9}{section.8}%
+\contentsline {subsection}{\tocsubsection {}{8.1}{Local Contribution to $ P_{s}(E,\Omega ) $}}{9}{subsection.8.1}%
+\contentsline {subsection}{\tocsubsection {}{8.2}{Nonlocal Contribution to $ P_{s}(E,\Omega ) $}}{10}{subsection.8.2}%
+\contentsline {section}{\tocsection {Appendix}{A}{Symmetric Decreasing Rearrangement}}{12}{appendix.A}%
+\contentsline {section}{\tocsection {Appendix}{B}{Miscellaneous Fractional Proofs}}{12}{appendix.B}%
+\contentsline {section}{\tocsection {Appendix}{}{References}}{14}{section*.3}%
