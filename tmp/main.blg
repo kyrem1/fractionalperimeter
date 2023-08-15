@@ -1,15 +1,18 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'tmp/main.blg'
-[66] biber:340> INFO - === Mon Aug 14, 2023, 15:35:59
-[77] Biber.pm:419> INFO - Reading 'tmp/main.bcf'
-[128] Biber.pm:979> INFO - Found 5 citekeys in bib section 0
-[140] Biber.pm:4419> INFO - Processing section 0
-[148] Biber.pm:4610> INFO - Looking for bibtex file 'fractional.bib' for section 0
-[149] bibtex.pm:1713> INFO - LaTeX decoding ...
-[156] bibtex.pm:1519> INFO - Found BibTeX data source 'fractional.bib'
-[212] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[212] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[212] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[212] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[219] bbl.pm:660> INFO - Writing 'tmp/main.bbl' with encoding 'UTF-8'
-[221] bbl.pm:763> INFO - Output to tmp/main.bbl
+[74] biber:340> INFO - === Mon Aug 14, 2023, 23:48:58
+[88] Biber.pm:419> INFO - Reading 'tmp/main.bcf'
+[159] Biber.pm:979> INFO - Found 12 citekeys in bib section 0
+[174] Biber.pm:4419> INFO - Processing section 0
+[183] Biber.pm:4610> INFO - Looking for bibtex file 'fractional.bib' for section 0
+[184] bibtex.pm:1713> INFO - LaTeX decoding ...
+[202] bibtex.pm:1519> INFO - Found BibTeX data source 'fractional.bib'
+[300] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[300] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[300] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[300] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[312] bbl.pm:660> INFO - Writing 'tmp/main.bbl' with encoding 'UTF-8'
+[316] bbl.pm:763> INFO - Output to tmp/main.bbl
+[316] Biber.pm:131> WARN - legacy year field '[2023] ©2023' in entry 'leoni:sobolev' is not an integer - this will probably not sort properly.
+[316] Biber.pm:131> WARN - ISBN '[9781470468989]; [9781470472535]; [9781470472528]' in entry 'leoni:sobolev' is invalid - run biber with '--validate_datamodel' for details.
+[316] Biber.pm:133> INFO - WARNINGS: 2

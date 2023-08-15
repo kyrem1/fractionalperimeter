@@ -1,22 +1,20 @@
 \contentsline {section}{\tocsection {}{1}{Introduction}}{1}{section.1}%
-\contentsline {section}{\tocsection {}{2}{Preliminary Definitions}}{2}{section.2}%
-\contentsline {section}{\tocsection {}{3}{Bounded Variation and Cacciopoli Sets}}{2}{section.3}%
-\contentsline {subsection}{\tocsubsection {}{3.1}{The Spaces $ BV $ and $ BV_{loc} $}}{2}{subsection.3.1}%
-\contentsline {section}{\tocsection {}{4}{Sobolev Space Preliminaries}}{4}{section.4}%
-\contentsline {subsection}{\tocsubsection {}{4.1}{Fractional Sobolev Spaces}}{4}{subsection.4.1}%
-\contentsline {subsection}{\tocsubsection {}{4.2}{Extension Domains}}{5}{subsection.4.2}%
-\contentsline {subsection}{\tocsubsection {}{4.3}{The Fractional Laplacian}}{6}{subsection.4.3}%
-\contentsline {subsection}{\tocsubsection {}{4.4}{$ H^{s} $: An Alternative approach to fractional Sobolev spaces using $ \mathscr {F} $}}{6}{subsection.4.4}%
-\contentsline {section}{\tocsection {}{5}{Detour: the Bourgain-Brezis-Mironescu Formula}}{6}{section.5}%
-\contentsline {section}{\tocsection {}{6}{Fractional $s$-Perimeter}}{7}{section.6}%
-\contentsline {subsection}{\tocsubsection {}{6.1}{Why study the Asymptotics}}{7}{subsection.6.1}%
-\contentsline {subsection}{\tocsubsection {}{6.2}{Motivation for the definition of fractional perimeter}}{8}{subsection.6.2}%
-\contentsline {subsection}{\tocsubsection {}{6.3}{Supplementary Observations}}{8}{subsection.6.3}%
-\contentsline {section}{\tocsection {}{7}{Asymptotics of $ P_{s}(E,\Omega ) $ as $ s\to 0^{+} $}}{9}{section.7}%
+\contentsline {section}{\tocsection {}{2}{Bounded Variation and Cacciopoli Sets}}{1}{section.2}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{The Spaces $ BV $ and $ BV_{loc} $}}{2}{subsection.2.1}%
+\contentsline {subsection}{\tocsubsection {}{2.2}{Classical Perimeter}}{4}{subsection.2.2}%
+\contentsline {section}{\tocsection {}{3}{Sobolev Space Preliminaries}}{4}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Fractional Sobolev Spaces}}{5}{subsection.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Extension Domains}}{6}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{$ H^{s} $: An Alternative approach to fractional Sobolev spaces using $ \mathscr {F} $}}{7}{subsection.3.3}%
+\contentsline {section}{\tocsection {}{4}{Detour: the Bourgain-Brezis-Mironescu Formula}}{7}{section.4}%
+\contentsline {section}{\tocsection {}{5}{Fractional $s$-Perimeter}}{8}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Why study the Asymptotics}}{8}{subsection.5.1}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{Motivation for the definition of fractional perimeter}}{9}{subsection.5.2}%
+\contentsline {section}{\tocsection {}{6}{Asymptotics of $ P_{s}(E,\Omega ) $ as $ s\to 0^{+} $}}{9}{section.6}%
 \contentsline {subsection}{\tocsubsection {}{}{Proof of Theorem \ref {sto0}}}{9}{section*.2}%
-\contentsline {section}{\tocsection {}{8}{Asymptotics of $ P_{s}(E,\Omega ) $ as $ s\to 1^{-} $}}{9}{section.8}%
-\contentsline {subsection}{\tocsubsection {}{8.1}{Local Contribution to $ P_{s}(E,\Omega ) $}}{9}{subsection.8.1}%
-\contentsline {subsection}{\tocsubsection {}{8.2}{Nonlocal Contribution to $ P_{s}(E,\Omega ) $}}{10}{subsection.8.2}%
-\contentsline {section}{\tocsection {Appendix}{A}{Symmetric Decreasing Rearrangement}}{12}{appendix.A}%
-\contentsline {section}{\tocsection {Appendix}{B}{Miscellaneous Fractional Proofs}}{12}{appendix.B}%
-\contentsline {section}{\tocsection {Appendix}{}{References}}{14}{section*.3}%
+\contentsline {section}{\tocsection {}{7}{Asymptotics of $ P_{s}(E,\Omega ) $ as $ s\to 1^{-} $}}{10}{section.7}%
+\contentsline {subsection}{\tocsubsection {}{7.1}{Local Contribution to $ P_{s}(E,\Omega ) $}}{10}{subsection.7.1}%
+\contentsline {subsection}{\tocsubsection {}{7.2}{Nonlocal Contribution to $ P_{s}(E,\Omega ) $}}{10}{subsection.7.2}%
+\contentsline {section}{\tocsection {Appendix}{A}{Symmetric Decreasing Rearrangement}}{13}{appendix.A}%
+\contentsline {section}{\tocsection {Appendix}{B}{Miscellaneous Fractional Proofs}}{13}{appendix.B}%
+\contentsline {section}{\tocsection {Appendix}{}{References}}{15}{section*.3}%

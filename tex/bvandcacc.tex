@@ -6,23 +6,20 @@
 
 \section{Bounded Variation and Cacciopoli Sets}
 
-\subsection{The Spaces $ BV $ and $ BV_{loc} $}
+\subsection{The Spaces $ BV $ and $ BV_{loc} $}\label{sec:bv}
 
-%TODO TALK ABOUT BV for one variable and history of attempts to generalize it.
 
 \begin{figure}[H]
 \includesvg{figures/indicator.svg}
 \end{figure}
 
-Our story begins with the classical Gauss-Green formula. Recall, when $ \Omega\sub \R^{n} $ is open, bounded with smooth boundary, we have for every smooth $ \R^{n} $-valued function $ \Phi $ that
+Our story begins with the classical Gauss-Green formula. Recall, when $ \Omega\sub \R^{n} $ is open, bounded with $ C^{1} $ boundary, we have for every smooth $ \R^{n} $-valued function $ \Phi $ that
 \begin{equation}\label{gaussgreen}
     \int_{\Omega} \div{\Phi} \dd{\H^{n}} = \int_{\partial \Omega} \Phi\cdot \nu \dd{\H^{n-1}},
 \end{equation}
 where $ \nu\in C^{1}(\partial \Omega, \R^{n})  $ is the outward pointing unit normal vector field on $ \partial \Omega $.
 
 
-%Suppose now that we have such a set $ \Omega $. Intuitively, the perimeter of the set $ \Omega $ should be given by $ \H^{n-1}(\partial \Omega) $.
-% TODO motivate why this turns into perimeter
 
 De Giorgi`s program in the 1950s revolved around trying to make sense of \eqref{gaussgreen} when the topological boundary of $ \Omega $ is no longer smooth. The following section will outline his work in this area. De Giorgi begins with the following idea. Suppose that now we have a set $ E $ which is not necessarily smooth. As the characteristic function $ \chi_{E} $ is locally integrable in $ \R^{n} $, we can consider $ \chi_{E} $ as a distribution via integration against $ \chi_{E} $. Thus, it makes sense to talk about the distributional derivatives $ D_{i}\chi_{E} $ of $ \chi_{E} $. 
 
@@ -43,7 +40,7 @@ Then the above equation becomes
     \int_{E} \div{\Phi} \dd{x} = \int_{\R^{n}} \chi_{E} \div{\Phi} \dd{x} = -\int_{\R^{n}} \Phi\cdot \sigma \dd{|D \chi_{E}|}.
 \]
 
-The latter integral being over all of $ \R^{n} $ is quite unsatisfactory, so it is a natural question to ask where the measure  $ |D \chi_{E}| $ is supported. Our intuition would point to $ |D \chi_{E}| $ being supported on the boundary, since the quantity is some kind of ``gradient'' of $ \chi_{E} $ which is constant everywhere else. Moreover, as there are vertical jumps on $ \partial E $, it would make sense for the ``gradient'' at these jumps to be vertical of ``infinite length'' (that is, a dirac delta at every point on the boundary). Of course, this is just intuition and not rigorous mathematics, but it is not bad intuition.
+The latter integral being over all of $ \R^{n} $ is quite unsatisfactory, so it is a natural question to ask where the measure  $ |D \chi_{E}| $ is supported. Our intuition would point to $ |D \chi_{E}| $ being supported on the boundary, since the quantity is some kind of ``gradient'' of $ \chi_{E} $ which is constant everywhere else. Moreover, as there are vertical jumps on $ \partial E $, it would make sense for the ``gradient'' at these jumps to be vertical of ``infinite length'' (that is, a dirac delta at every point on the boundary). Of course, this is just intuition and not rigorous mathematics, but it is not bad intuition (see Section \ref{sec:perimeter}).
 
 \begin{claim}
     $ \supp(D \chi_{E}) \sub \partial E $.
@@ -67,80 +64,133 @@ The latter integral being over all of $ \R^{n} $ is quite unsatisfactory, so it 
 
 Hence, setting $ \nu = -\sigma $ (so $ \nu $ is like a generalized outward normal vector field), we recover a statement which looks like Gauss Green:
 \[
-    \int_{E} \div{\Phi} \dd{\H^{n}} = \int_{\partial E} \Phi\cdot \nu\dd{\norm{D \chi_{E}}}
+    \int_{E} \div{\Phi} \dd{\H^{n}} = \int_{\partial E} \Phi\cdot \nu\dd{|D \chi_{E}|}
 \]
 We obtained such a formula by considering sets $ E $ such that the distributional gradient of $ \chi_{E} $  is represented by a vector-valued Radon measure. More generally, we can consider integrable (or locally integrable) functions $ f $ whose distributional gradient is represented by a vector-valued Radon measure. This line of thought leads to the notion of \textit{functions of bounded variation}.
 
-% TODO redo definitions of BV and BV_loc to better fit this story
 \begin{definition}\label{def:BV}
-    Let $ \Omega\sub \R^{n} $ be an open set and $ u\in L^{1}(\Omega) $. We say that $ u $ is of \textit{bounded variation in $\Omega$}, written $ u\in BV(\Omega) $, if the the distributional derivatives $ D_{i}u $ are represented by finite Radon measures, (that is, the distributional gradient $ Du $ is represened by a finite vector-valued Radon measure).
-
-    Given $ u\in BV(\Omega) $, the $ BV(\Omega) $-seminorm of $ u $ is the quantity 
+    Let $ \Omega\sub \R^{n} $ be an open set and $ u\in L^{1}(\Omega) $. We say that $ u $ is of \textit{bounded variation in $\Omega$}, written $ u\in BV(\Omega) $, if the the distributional derivatives $ D_{i}u $ are represented by finite Radon measures. We then form the vector-valued measure $ Du:=(D_{1}u,\ldots, D_{n}u) $. Given $ u\in BV(\Omega) $, the $ BV(\Omega) $-seminorm of $ u $ is the quantity 
     \[
-        [u]_{BV(\Omega)} := |Du|(\Omega)
+        [u]_{BV(\Omega)} := |Du|(\Omega).
+    \]
+    We note that $ BV(\Omega) $ is in fact a Banach space with norm 
+    \[
+        \norm{u}_{BV(\Omega)} := \norm{u}_{L^{1}(\Omega)} + [u]_{BV(\Omega)}.
     \]
 \end{definition}
 
+\begin{example}
+    If $ u\in W^{1,1}(\Omega) $, then $ u\in BV(\Omega) $ and $ dD \chi_{E} = Du \,d \mathcal{L}^{n} $. This follows by definition of the distributional derivative.
+\end{example}
 
-We would like a quantitative way to test whether a given function $ u\in L^{1}(\Omega) $ is of bounded variation. The above definition of $ BV(\Omega) $-seminorm is not satisfactory as it requires a function to have distributional derivative represented by a measure to be intelligible. We need a definition which makes no reference to the distributional derivative.
+We would like a quantitative way to test whether a given function $ u\in L^{1}(\Omega) $ is of bounded variation. The above definition of $ BV(\Omega) $-seminorm is not satisfactory as it requires a function to have distributional derivative represented by a measure to be intelligible. \textit{A priori}, the distributional gradient is just a continuous linear functional on the locally convex space $ C^{\infty}_{c}(\Omega,\R^{n}) $. It is not true that such a functional is in general given by a integration against an $ \R^{n} $-valued Radon measure.
 
+Thankfully, the Riesz(-Markov-Kakutani) representation theorem (see TODO INSERT REFERENCES) gives us conditions upon which 
+% TODO insert reference to Riesz rep thm
+Since 
 
-% TODO include story/exposition about reduced boundary
-
-
+We state the vector-valued version of the theorem, as this form may not be as familiar to the reader. 
+\begin{theorem}[Riesz Representation Theorem]\label{rrt}
+    Let $ X $ be a locally compact, Hausdorff space. Suppose $ L: C_{0}(X,\R^{n})\to \R $ is a linear functional which is bounded, i.e. 
+    \[
+        \norm{L}:= \sup\{L(\phi) : \phi\in C_{0}(X,\R^{n}), | \phi|\leq 1\} < +\infty.
+    \]
+    Then there is a unique finite $ \R^{n} $-valued Radon measure $ \mu = (\mu_{1},\ldots, \mu_{n}) $ on $ X $ such that 
+    \[
+        L(u) = \int_{X} \phi\cdot \dd{\mu} = \sum_{i=1}^{n}\int_{X} \phi_{i} \dd{\mu_{i}}.
+    \]
+    Moreover, we have $ \norm{L} = | \mu|(X) $.
+\end{theorem}
+Motivated by the norm-boundedness condition in the above theorem, we make the following definition.
 \begin{definition}Given a function $ u\in L^{1}(\Omega) $, define the \textit{total variation of $ u $} to be the quantity
     \[
-        V(u,\Omega) = \sup\left\{ \int_{\Omega} u\div{\phi}\dd{x} : \phi\in[C_{c}^{1}(\Omega,\R)]^{n}, \norm{\phi}_{\infty} \leq 1 \right\}.
-    \]
-    If $ V(u,\Omega) $ is finite, then we say that $ u $ is of \textit{bounded variation} and write $ u\in BV(\Omega) $. 
-\end{definition}
-
-\begin{definition}    Similarly, given $ u\in L^{1}_{loc}(\Omega) $ and $ U\Subset \Omega $, define the \textit{local variation of $ u $ in $ U $} by
-    \[
-        V(u, U) = \sup\left\{ \int_{U} u\div{\phi}\dd{x} : \phi\in[C_{c}^{1}(U,\R)]^{n}, \norm{\phi}_{\infty} \leq 1 \right\}.
-    \]
-    We define the set of functions of \textit{locally bounded variation} to be
-    \[
-        BV_{loc}(\Omega) = \{u\in L^{1}_{loc}(\Omega) : V(u,U)< +\infty \text{ for all } U\Subset \Omega\}.
+        V(u,\Omega) = \sup\left\{ \int_{\Omega} u\div{\phi}\dd{x} : \phi\in C_{c}^{1}(\Omega,\R^{n}), | \phi| \leq 1 \right\}.
     \]
 \end{definition}
+Note that this is simply saying that the  distributional gradient is bounded when considered as a linear functional on $ C_{c}^{1}(\Omega,\R^{n}) $. This does not automatically satisfy the conditions of Theorem \ref{rrt} as $ L $ is not defined on all of $ C_{0}(\Omega,\R^{n}) $; however, a density argument rectifies this problem.
 
-An equivalent, and admittedly more transparent, characterization of $ BV_{loc} $ functions can be given as follows. 
-
-\begin{proposition}[Characterization of $ BV_{loc} $]\label{bvchar}
-    Suppose $ u\in BV_{loc}(\Omega) $. Then there exists a Radon measure $ \mu $ on $ \Omega $ and a $ \mu $-measurable $ \sigma:\Omega\to \R^{n} $ with $ | \sigma| = 1$ $ \mu $-a.e. and
+\begin{proposition}[Characterization of $ BV $]\label{bvchar}
+    Suppose $ u\in L^{1}(\Omega) $ has finite total variation. Then there exists a finite Radon measure $ \mu $ on $ \Omega $ and a $ \mu $-measurable $ \sigma:\Omega\to \R^{n} $ with $ | \sigma| = 1$ $ \mu $-a.e. and
     \[
         \int_{\Omega} u\div{\phi}\dd{x} = -\int_{\Omega} \phi\cdot \sigma \dd{\mu} \text{ for all } \phi\in C_{c}^{1}(\Omega,\R^{n}).
     \]
+    Moreover, $ V(u,\Omega) = | \mu|(\Omega) $.
 \end{proposition}
 
 \begin{proof}
-    This is a routine application of the Riesz–Markov–Kakutani representation theorem. To this end, define a linear functional $ L:C_{c}^{1}(\Omega,\R^{n}) \to \R $ by $ L(\phi) = -\int_{\Omega} u\div{\phi}\dd{x} $.
-    
-    For open $ U\Subset \Omega $, the quantity $ c(U):= \sup\{L(\phi) : \phi\in C_{c}^{1}(U,\R^{n}), \norm{\phi}_{\infty} \leq 1\} $ is finite by assumption, whence 
+    Define a linear functional $ L:C_{c}^{1}(\Omega,\R^{n})\to \R $ by $ L(\phi):= -\int_{\Omega}u\div{\phi} \dd{x} $. The boundedness of $ L $ combined with linearity implies
     \[
-        |L(\phi)| \leq c(U) \norm{\phi}_{\infty} \text{ for all } \phi\in C_{c}^{1}(U,\R^{n}).
+        |L(\phi)|\leq V(u,\Omega)\norm{\phi}_{\infty}\text{ for all } \phi\in C_{c}^{1}(\Omega,\R^{n}).
     \]
-    Let $ K\sub \Omega $ be a fixed compact set, and choose open $ U\Subset\Omega $ containing $ K $. Then for $ \phi\in C_{c}(\Omega,\R^{n}) $ with $ \supp(\phi)\sub K $, there exists a sequence $ (\phi_{k})_{k} $ in $ C_{c}^{1}(U,\R^{n}) $ such that $ \phi_{k}\to \phi $ uniformly on $ U $. \\
 
-    Define an extension $ \widetilde{L}:C_{c}(\Omega,\R^{n})\to \R $ of $ L $ by $ \widetilde{L}(\phi) = \lim_{k\to\infty}L(\phi_{k}) $, which exists and is well-defined by the above inequality. Applying the Riesz Representation Theorem to $ \widetilde{L} $ gives the conclusion.
+    Fix $ \phi\in C_{c}(\Omega,\R^{n}) $. Since $ \phi $ is continuous and compactly supported, we can choose a sequence $ (\phi_{i})_{i} $ in $ C_{c}(\Omega,\R^{n}) $ such that $ \supp(\phi)\sub \supp(\phi_{i}) $ and $ \phi_{i}\to \phi $ uniformly in a fixed compactly contained neighborhood of $ \supp(\phi) $. 
+
+    Define an extension $ \widetilde{L}:C_{c}(\Omega,\R^{n})\to \R $ of $ L $ by $ \widetilde{L}(\phi) = \lim_{k\to\infty}L(\phi_{k}) $, which exists and is well-defined by the above inequality. As $ C_{c}(\Omega, \R^{n}) $ is dense in $ C_{0}(\Omega, \R^{n}) $, continuity guarantees a unique continuous linear extension to the whole of $ C_{0}(\Omega,\R^{n}) $. Applying the Riesz Representation Theorem to this extension gives the conclusion.
 \end{proof}
+The above proposition allows us to extend our definition of $ BV(\Omega) $-seminorm to all of $ L^{1}(\Omega) $.
+\begin{definition}
+    Given a function $ u\in L^{1}(\Omega) $, define the \textit{$ BV(\Omega) $-seminorm of $ u $} to be the quantity $ [u]_{BV(\Omega)} := V(u,\Omega) $. Note that for $ u\in L^{1(\Omega)} $, we have $ u\in BV(\Omega)\iff [u]_{BV(\Omega)} <+\infty $.
+\end{definition}
+
+\begin{remark}
+    Although not used in this paper, we remark that there are local versions of both Definition \ref{def:BV} and Proposition \ref{bvchar}.
+\end{remark}
+
+
+%\begin{definition}    Similarly, given $ u\in L^{1}_{loc}(\Omega) $ and $ U\Subset \Omega $, define the \textit{local variation of $ u $ in $ U $} by
+%    \[
+%        V(u, U) = \sup\left\{ \int_{U} u\div{\phi}\dd{x} : \phi\in[C_{c}^{1}(U,\R)]^{n}, \norm{\phi}_{\infty} \leq 1 \right\}.
+%    \]
+%    We define the set of functions of \textit{locally bounded variation} to be
+%    \[
+%        BV_{loc}(\Omega) = \{u\in L^{1}_{loc}(\Omega) : V(u,U)< +\infty \text{ for all } U\Subset \Omega\}.
+%    \]
+%\end{definition}
+
+%An equivalent, and admittedly more transparent, characterization of $ BV_{loc} $ functions can be given as follows. 
+%
+%\begin{proposition}[Characterization of $ BV_{loc} $]\label{bvlocchar}
+%    Suppose $ u\in BV_{loc}(\Omega) $. Then there exists a Radon measure $ \mu $ on $ \Omega $ and a $ \mu $-measurable $ \sigma:\Omega\to \R^{n} $ with $ | \sigma| = 1$ $ \mu $-a.e. and
+%    \[
+%        \int_{\Omega} u\div{\phi}\dd{x} = -\int_{\Omega} \phi\cdot \sigma \dd{\mu} \text{ for all } \phi\in C_{c}^{1}(\Omega,\R^{n}).
+%    \]
+%\end{proposition}
+%
+%\begin{proof}
+%    This is a routine application of the Riesz–Markov–Kakutani representation theorem. To this end, define a linear functional $ L:C_{c}^{1}(\Omega,\R^{n}) \to \R $ by $ L(\phi) = -\int_{\Omega} u\div{\phi}\dd{x} $.
+%    
+%    For open $ U\Subset \Omega $, the quantity $ c(U):= \sup\{L(\phi) : \phi\in C_{c}^{1}(U,\R^{n}), \norm{\phi}_{\infty} \leq 1\} $ is finite by assumption, whence 
+%    \[
+%        |L(\phi)| \leq c(U) \norm{\phi}_{\infty} \text{ for all } \phi\in C_{c}^{1}(U,\R^{n}).
+%    \]
+%    Let $ K\sub \Omega $ be a fixed compact set, and choose open $ U\Subset\Omega $ containing $ K $. Then for $ \phi\in C_{c}(\Omega,\R^{n}) $ with $ \supp(\phi)\sub K $, there exists a sequence $ (\phi_{k})_{k} $ in $ C_{c}^{1}(U,\R^{n}) $ such that $ \phi_{k}\to \phi $ uniformly on $ U $. 
+%
+%    Define an extension $ \widetilde{L}:C_{c}(\Omega,\R^{n})\to \R $ of $ L $ by $ \widetilde{L}(\phi) = \lim_{k\to\infty}L(\phi_{k}) $, which exists and is well-defined by the above inequality. As $ C_{c}(\Omega, \R^{n}) $ is dense in $ C_{0}(\Omega, \R^{n}) $, continuity guarantees a unique continuous linear extension to the whole of $ C_{0}(\Omega,\R^{n}) $. Applying the Riesz Representation Theorem to this extension gives the conclusion.
+%\end{proof}
+%
+
+\subsection{Classical Perimeter}\label{sec:perimeter}
+
+As alluded to earlier, the entire discussion around functions of (locally) bounded variation and Gauss-Green formula leads to properties of the boundary of a set. One of the first such properties one becomes intuitively ``familiar'' with is the notion of \textit{perimeter}. From a young age, we are led to believe that perimeter is an ``obvious'' concept.
+
+%TODO insert more history.
+Hence, it might surprise the reader that the notion of perimeter was not systematically (and definitively) treated until the 1950s. 
+Equipped with the Hausdorff measure, one initially jumps to thinking of the perimeter of a set in $ \R^{n} $ as the $ (n-1) $-dimensional Hausdorff measure of its boundary. Indeed, for nice enough boundaries (say $ C^1 $), this definition is good enough. Moreover,  one can show using just the Gauss-Green formula that the ``perimeter'' of a set is the total variation of its indicator function.
+\begin{factexercise}
+    Let $ E\sub \R^{n} $ be a bounded open set with $ C^{2} $ boundary. Then $ \H^{n-1}(\partial E) = V(\chi_{E},\R^{n}) $.
+\end{factexercise}
+
+%TODO insert graphic of square versus square with line
+
 
 \begin{definition}
-    For $ u\in BV_{loc}(\Omega) $, we will write $ \norm{Du} $ for the measure $ \mu $ and 
+    Let $ \Omega\sub \R^{n} $ be an open set and $ E\sub \R^{n} $ measurable. We define the \textit{perimeter of $ E $ in $ \Omega $} to be the quantity
     \[
-        d[Du] := \sigma \dd{\norm{Du}}, \text{ i.e } \int\cdot \dd{[Du]} = \int \inp{\cdot}{\sigma}\dd{\norm{Du}}.
+        Per(E,\Omega):= V( \chi_{E}, \Omega).
     \]
-    Then the conclusion of Proposition \ref{bvchar} can be rewritten as
-    \[
-        \int u\div{\phi} \dd{x} = -\int \phi \cdot \sigma \dd{\norm{Du}} = -\int \phi \cdot \dd{[Du]} \text{ for all } \phi\in C_{c}^{1}(\Omega,\R^{n}).
-    \]
+    The set $ E $ is a \textit{Caccioppoli set} or has \textit{locally finite perimeter} if $ Per(E,\Omega) <+\infty $ for every bounded open subset $ \Omega $. Define the \textit{global perimeter of $ E $} to be the quantity $ Per(E,\R^{n}) $.
 \end{definition}
 
 
-\subsection{Classical Perimeter}
-
-% TODO Hint towards why this is a "good" definition of perimeter. I.e. relation btw Dchi_E and boundary E
-
-
+To build intuition, suppose $ E $ is open and has both finite measure and finite (global) perimeter in $ \R^{n} $. Then by Proposition \ref{bvchar}, $ \chi_{E}\in BV(\R^{n}) $ and $ Per(E,\R^{n}) = |D \chi_{E}|(\R^{n}) = \int_{\R^{n}}|D \chi_{E}|$. Recall from Section \ref{sec:bv} that the mesaure $ |D \chi_{E}| $ gives us a rigorous way to treat the intuition that the ``gradient'' of $ \chi_{E} $ should a dirac delta at every point of $ \partial E $ and $ 0 $ everywhere else. Moreover, because the distributional gradient $ |D \chi_{E}| $ is a measure, we can ``integrate'' it (that is, take its total mass). Intuitively, integrating dirac deltas on the boundary of a set ``should'' extract the perimeter of that set, so the definition matches our intuition.
 \end{document}

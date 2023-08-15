@@ -32,7 +32,7 @@
     \end{align*}
 
     \begin{align*}
-        \widehat{\chi_{B_{R}(0)}}(\xi) &= \frac{1}{(2\pi)^{n/2}}\int_{\R^{n}} \chi_{B_{R}(0)}(x) e^{-i x\cdot \xi} \dd{x} = \frac{1}{(2\pi)^{n/2}}\int_{\R^{n}} \chi_{B_{R}(0)}(x) e^{-i \rho x_{n}} \dd{x}  \\
+        \widehat{\chi_{B_{R}(0)}}(\xi) &= \frac{1}{(2\pi)^{n/2}}\int_{\R^{n}} \chi_{B_{R}(0)}(x) e^{-i x\cdot \xi} \dd{x} = \frac{1}{(2\pi)^{n/2}}\int_{\R^{n}} \chi_{B_{R}(0)}(x) e^{-i \rho x_{n}} \dd{x}  
     \end{align*}
 \end{proof}
 
@@ -82,19 +82,18 @@ To make this definition more transparent, consider the following reformulation:
 \end{figure}
 
 
-\subsection{Supplementary Observations}
-\begin{lemma}
-    Let $ A, B\sub \R^{n} $ be bounded measurable sets such that $ dist(A,B)\geq C > 0  $ for some $ C>0 $. Then $ \lim_{s\to0} sL(A,B) = 0 $.
-\end{lemma}
+%\subsection{Supplementary Observations}
+%\begin{lemma}
+%    Let $ A, B\sub \R^{n} $ be bounded measurable sets such that $ dist(A,B)\geq C > 0  $ for some $ C>0 $. Then $ \lim_{s\to0} sL(A,B) = 0 $.
+%\end{lemma}
+%
+%\begin{proof}
+%    \begin{align*}
+%        sL(A,B) = s\int_{A}\int_{B} \frac{\dd{x}\dd{y}}{|x-y|^{n+s}} \leq s\int_{A} \int_{B} \frac{1}{C^{n+s}}\dd{x}\dd{y} = \frac{s |A| |B|}{C^{n+s}} \xrightarrow{s\to0} 0
+%    \end{align*}
+%\end{proof}
 
-\begin{proof}
-    \begin{align*}
-        sL(A,B) = s\int_{A}\int_{B} \frac{\dd{x}\dd{y}}{|x-y|^{n+s}} \leq s\int_{A} \int_{B} \frac{1}{C^{n+s}}\dd{x}\dd{y} = \frac{s |A| |B|}{C^{n+s}} \xrightarrow{s\to0} 0
-    \end{align*}
-\end{proof}
 
-
-%TODO insert photo showing interactions
 
 %\begin{theorem}
 %    Let $ \Omega\sub \R^{n} $ be a smooth bounded domain, $ E\sub \R^{n} $ measurable, and suppose that
@@ -111,7 +110,6 @@ To make this definition more transparent, consider the following reformulation:
 %    Let $ \Omega $ be nice and suppose that $ f\in BV(\Omega) $ and $ \rho\in L^{1}(\R^{n}) $.
 %
 %
-%    TODO INSERT ACTUAL THEOREM I FORGOT
 %\end{proposition}
 
 %\begin{proof}

@@ -7,11 +7,29 @@
 \section{Sobolev Space Preliminaries}
 
 
-The theory behind fractional perimeter is written in the language of fractional Sobolev spaces. As such, we will motivate and define these function spaces as well as discuss their most relevant properties. 
+The theory behind fractional perimeter is written in the language of fractional Sobolev spaces. As such, we will motivate and define these function spaces as well as discuss their most relevant properties. For brevity, the majority of proofs are either omitted or relegated to Appendix \ref{appendix:misc}. There are plenty of good monographs on the subject. We mention the recent book by Leoni \cite{leoni:sobolev}, the book by Adams \cite{adams:sobolev}, and the Hitchhikers Guide \cite{hitchhiker}. For an overview of the theory of classical Sobolev spaces, see the books by Evans \cite{evans:pde, evans:gmt}.
 
-% TODO Talk about including illuminating proofs in the appendix
 
 \subsection{Fractional Sobolev Spaces}
+
+
+Like classical Sobolev spaces, fractional Sobolev spaces attempt to capture both the regularity (that is, (weak) differentiability) and decay of functions. Unlike classical Sobolev spaces, this regularity parameter is no longer assumed to be an integer. There are two main ways to introduce fractional Sobolev spaces:
+
+\begin{itemize}
+    \item \textit{Explicitly}: using explicit norms which are analogues of those of the H\"older spaces $ C^{\alpha} $. Proceeding with the intuition that the difference quotients 
+        \[
+            \mathcal{Q}_{s}u(x,h):= \frac{u(x+h)-u(x)}{|h|^{s}},\quad x,h\in \R^{n}
+        \]
+    are our ``s''-fractional derivatives. We then would capture $ L^{p} $-decay and $ s $-regularity with the norm
+    \[
+        \lr{\int_{\R^{n}} \norm{\mathcal{Q}_{s}u(\bigcdot,h)}_{L^{p}_{x}(\R^{n})}^{p}\frac{\dd{h}}{|h|^{n}}}^{\frac{1}{p}}.
+    \]
+    The presence of the singular kernel $ |h|^{-n} $ intuitively ensures that there is good behavoir around zero in the variable $ h $, and thus when the difference quotient is actually modelling some sort of ``derivative.'' This is the approach we will take throughout the paper.\\
+
+    \item \textit{Abstractly}: as interpolation spaces between $ W^{1,p} $ and $ L^{p} $. Using the interpolation methods pioneered by Calderon and Gagliardo in the 1960s (K method and J method), one can abstractly construct the spaces $ W^{s,p} $ as the ones which arise from \textit{real interpolation}. See \cite{ponce:2017} for more details. For an introduction to interpolation methods, see Bergh`s book \cite{bergh:interpolation}.
+
+    Although we will not take this approach in the following paper, it does provide some context for why we are able to recover $ W^{1,p} $-norms from $ W^{s,p} $-norms. Moreover, the fact that the interpolation spaces between $ W^{1,1} $ and $ L^{1} $ are the same as those between $ BV $ and $ L^{1} $ explains why we are able to recover $ BV $-norms from $ W^{s,1} $-norms.
+\end{itemize}
 
 \begin{definition}\label{fracnorms}
     Fix $ 1\leq p <+\infty $ and let $ s\in (0,1) $ be a fractional exponent. For $ u\in L^{p}(\Omega) $, define the \textit{Gagliardo (semi)norm} of $ u $ to be the quantity
@@ -31,9 +49,10 @@ The theory behind fractional perimeter is written in the language of fractional 
         \inp{u}{v}_{H^{s}(\Omega)} := \int_{\Omega} u(x)v(x)\dd{x} + \int_{\Omega}\int_{\Omega} \frac{(u(x)-u(y))(v(x)-v(y))}{|x-y|^{n+2s}} \dd{x}\dd{y}.
     \]
 
-    In a somewhat precise sense (real interpolation), the fractional sobolev spaces $ W^{s,p}(\Omega) $ are intermediary spaces between $ L^{p}(\Omega) $ and the classical Sobolev space $ W^{1,p}(\Omega) $.
 \end{definition}
 
+
+%In a precise sense (real interpolation), the fractional sobolev spaces $ W^{s,p}(\Omega) $ are intermediary spaces between $ L^{p}(\Omega) $ and the classical Sobolev space $ W^{1,p}(\Omega) $.
 
 
 Althought these spaces and (semi)norms seem somewhat natural from the viewpoint of being an analogue of the H\"{o}lder condition for $ L^{p} $ spaces instead of $ L^{\infty} $, when presented as above they are ultimately quite artificial. Where would one find such spaces appearing in nature?
@@ -56,6 +75,8 @@ If one takes for granted that integer sobolev spaces ``appear in nature,'' then 
     
 \end{proposition}
 
+When thinking of the fractional parameter $ s $ as measuring some notion of regularity, one would hope that the intuition of functions with high regularity automatically lying in all spaces requiring only lower regularity (that is, functions that are $ k+1 $-differentiable are automatically $ k $-differentiable). When comparing two fractional parameters of regularity, this inuition generalizes unconditionally.
+
 \begin{proposition}\label{fracisscale}
     Let $ p\in[1,+\infty) $ and $ 0 < s \leq s^{\prime} < 1 $. Let $ \Omega\sub \R^{n} $ be an open set and $ u:\Omega\to \R $ a measurable function. Then there exists a constant $ C \geq 1 $ depending only on $ n$,$s$, $p$, such that
     \[
@@ -68,6 +89,9 @@ If one takes for granted that integer sobolev spaces ``appear in nature,'' then 
 
 \subsection{Extension Domains}
 
+One difficulty that occurs with the Gagliardo definition of fractional sobolev spaces is how different the seminorm is to the classical Sobolev seminorms.
+This manifests itself whenever one tries to compare (say for inclusions) classical Sobolev spaces and fractional sobolev spaces. Oftentimes well-behavedness of the domain $ \Omega $ can quell this friction between definitions. We begin with a definition.
+
 \begin{definition}\label{extndomain}
     An open set $ \Omega\sub \R^{n} $ is an \textit{extension domain for $ W^{s,p} $} if  there exists a constant $ C = C(s,p,n,\Omega) > 0 $ such that for every $ u\in W^{s,p}(\Omega) $, there exists a $ \widetilde{u}\in W^{s,p}(\R^{n}) $ such that 
     \[
@@ -75,11 +99,13 @@ If one takes for granted that integer sobolev spaces ``appear in nature,'' then 
     \]
 \end{definition}
 
-We remark that any bounded open set with Lipschitz boundary is a $ W^{s,1} $ extension domain for all $ s\in (0,1) $ (see Hitchhiker`s Guide \cite{hitchhiker} for details) and a $ W^{1,p} $ extension domain for all $ 1\leq p <\infty $ (see Gilbarg and Trudinger \cite[Thm.~7.25]{}). This fact somewhat explains why in both \ref{sto0} and \ref{sto1} we restrict to bounded open sets with Lipschitz boundary. One might imagine extending these results to general extension domains,
+We remark that any bounded open set with Lipschitz boundary is a $ W^{s,1} $ extension domain for all $ s\in (0,1) $ (see Hitchhiker`s Guide \cite{hitchhiker} for details) and a $ W^{1,p} $ extension domain for all $ 1\leq p <\infty $ (see Gilbarg and Trudinger \cite[Thm.~7.25]{gilbarg}). This fact somewhat explains why in both \ref{sto0} and \ref{sto1} we restrict to bounded open sets with Lipschitz boundary. One might imagine extending these results to general extension domains,
 %TODO insert references to extending results to arbitrary extension domains
 %TODO insert reference to Gilbarg and Trudinger
 
-The general principle with fractional Sobolev spaces is that, on an extension domain, statements that for classical integer Sobolev spaces likely generalize to the fractional setting. One example of this is the intuitive notion that functions with high regularity automatically lie in all spaces requiring only lower regularity (that is, functions that are $ k+1 $-differentiable are automatically $ k $-differentiable). When $ \Omega $ is a $ W^{s,p} $ extension domain this intuition does not break.
+The general principle with fractional Sobolev spaces is that, on an extension domain, statements that hold for classical integer Sobolev spaces likely generalize to the fractional setting. Indeed, on an extension domain we can replace one of the fractional spaces in Proposition \ref{fracisscale} with a classical Sobolev space.
+
+%TODO find counterexample to \ref{fracisscale}
 
 \begin{proposition}[{\cite[Prop.~2.2]{hitchhiker}}]\label{highertolower}
     Suppose $ s\in (0,1) $, $ 1\leq p <\infty $, and let $ \Omega\sub \R^{n} $ be a bounded $ W^{1,p} $-extension domain. Then the identity map is a continuous embedding 
@@ -88,11 +114,8 @@ The general principle with fractional Sobolev spaces is that, on an extension do
     \]
 \end{proposition}
 
-\begin{proof}
-    
-\end{proof}
-
-We have seen that $ BV(\Omega) $ is in some sense a replacement for $ W^{1,1}(\Omega) $ with better compactness properties. Moreover, as is the case with classical Sobolev spaces, $ W^{1,1}(\Omega) $ embeds continuously into $ W^{s,1}(\Omega) $. Hence, one is lead to wonder if the same is true for $ BV $ instead of $ W^{1,1}(\Omega) $. Under the assumption that $ \Omega $ is a $ W^{s,1} $-extension domain, this is true.
+%TODO talk about how interpolation btw  L^1 and BV is same as interpolation btw L^1 and W^1,1
+ Moreover, as is the case with classical Sobolev spaces, $ W^{1,1}(\Omega) $ embeds continuously into $ W^{s,1}(\Omega) $. Hence, one is lead to wonder if the same is true for $ BV $ instead of $ W^{1,1}(\Omega) $. Under the assumption that $ \Omega $ is a $ W^{s,1} $-extension domain, this is true.
 
 
 \begin{proposition}[{\cite[Prop.~2.1]{lombardini:2019}}]\label{BVinWs}
@@ -121,9 +144,7 @@ We have seen that $ BV(\Omega) $ is in some sense a replacement for $ W^{1,1}(\O
     \]
 \end{proof}
 
-
-\subsection{The Fractional Laplacian}
-
+\subsection{$ H^{s} $: An Alternative approach to fractional Sobolev spaces using $ \mathscr{F} $}
 \begin{definition}
     Fix $ s\in (0,1) $. We define the fractional Laplacian $ (-\Delta)^{s}:\S\to L^{2}(\R^{n}) $ as a Fourier multiplier given by
     \[
@@ -147,8 +168,6 @@ We have seen that $ BV(\Omega) $ is in some sense a replacement for $ W^{1,1}(\O
 \end{proof}
 
 
-
-\subsection{$ H^{s} $: An Alternative approach to fractional Sobolev spaces using $ \mathscr{F} $}
 
 \begin{definition}
     Let $ s\in (0,1) $. Consider the space

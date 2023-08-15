@@ -19,6 +19,74 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{adams:sobolev}{book}{}
+      \name{author}{2}{}{%
+        {{hash=7a1d45e895aec3674e2d1ee0c8e193fe}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={Robert\bibnamedelima A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=8c6fd505a07e6a400bc55513d6de87a9}{%
+           family={Fournier},
+           familyi={F\bibinitperiod},
+           given={John\bibnamedelimb J.\bibnamedelimi F.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier/Academic Press, Amsterdam}%
+      }
+      \strng{namehash}{f04513d99eb5c05a5309eb430e88548a}
+      \strng{fullhash}{f04513d99eb5c05a5309eb430e88548a}
+      \strng{bibnamehash}{f04513d99eb5c05a5309eb430e88548a}
+      \strng{authorbibnamehash}{f04513d99eb5c05a5309eb430e88548a}
+      \strng{authornamehash}{f04513d99eb5c05a5309eb430e88548a}
+      \strng{authorfullhash}{f04513d99eb5c05a5309eb430e88548a}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Second}
+      \field{isbn}{0-12-044143-8}
+      \field{series}{Pure and Applied Mathematics (Amsterdam)}
+      \field{title}{Sobolev spaces}
+      \field{volume}{140}
+      \field{year}{2003}
+      \field{pages}{xiv+305}
+      \range{pages}{-1}
+    \endentry
+    \entry{bergh:interpolation}{book}{}
+      \name{author}{2}{}{%
+        {{hash=0688d4b2440a6400c52586045e6bb425}{%
+           family={Bergh},
+           familyi={B\bibinitperiod},
+           given={Jöran},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8df1352637ad87cabcb467b34ddfda07}{%
+           family={Löfström},
+           familyi={L\bibinitperiod},
+           given={Jörgen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag, Berlin-New York}%
+      }
+      \strng{namehash}{dc7a683630f4e344aac8679919748f28}
+      \strng{fullhash}{dc7a683630f4e344aac8679919748f28}
+      \strng{bibnamehash}{dc7a683630f4e344aac8679919748f28}
+      \strng{authorbibnamehash}{dc7a683630f4e344aac8679919748f28}
+      \strng{authornamehash}{dc7a683630f4e344aac8679919748f28}
+      \strng{authorfullhash}{dc7a683630f4e344aac8679919748f28}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Grundlehren der Mathematischen Wissenschaften}
+      \field{title}{Interpolation spaces. {A}n introduction}
+      \field{volume}{No. 223}
+      \field{year}{1976}
+      \field{pages}{x+207}
+      \range{pages}{-1}
+    \endentry
     \entry{brezis:2001}{incollection}{}
       \name{author}{3}{}{%
         {{hash=b56223d7226802e12deba4ce1c44304f}{%
@@ -175,6 +243,151 @@
       \verb https://doi.org/10.1016/j.bulsci.2011.12.004
       \endverb
     \endentry
+    \entry{evans:pde}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0d72932a7775f85a51622d3af75ae26e}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={Lawrence\bibnamedelima C.},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society, Providence, RI}%
+      }
+      \strng{namehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{fullhash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{bibnamehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{authorbibnamehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{authornamehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{authorfullhash}{0d72932a7775f85a51622d3af75ae26e}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Second}
+      \field{isbn}{978-0-8218-4974-3}
+      \field{series}{Graduate Studies in Mathematics}
+      \field{title}{Partial differential equations}
+      \field{volume}{19}
+      \field{year}{2010}
+      \field{pages}{xxii+749}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1090/gsm/019
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1090/gsm/019
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1090/gsm/019
+      \endverb
+    \endentry
+    \entry{evans:gmt}{book}{}
+      \name{author}{2}{}{%
+        {{hash=0d72932a7775f85a51622d3af75ae26e}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={Lawrence\bibnamedelima C.},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=87414fcdc0942b6b841dc38860476d90}{%
+           family={Gariepy},
+           familyi={G\bibinitperiod},
+           given={Ronald\bibnamedelima F.},
+           giveni={R\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press, Boca Raton, FL}%
+      }
+      \strng{namehash}{e332b68e2d60bbfa99c7ec5ef339003f}
+      \strng{fullhash}{e332b68e2d60bbfa99c7ec5ef339003f}
+      \strng{bibnamehash}{e332b68e2d60bbfa99c7ec5ef339003f}
+      \strng{authorbibnamehash}{e332b68e2d60bbfa99c7ec5ef339003f}
+      \strng{authornamehash}{e332b68e2d60bbfa99c7ec5ef339003f}
+      \strng{authorfullhash}{e332b68e2d60bbfa99c7ec5ef339003f}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Revised}
+      \field{isbn}{978-1-4822-4238-6}
+      \field{series}{Textbooks in Mathematics}
+      \field{title}{Measure theory and fine properties of functions}
+      \field{year}{2015}
+      \field{pages}{xiv+299}
+      \range{pages}{-1}
+    \endentry
+    \entry{gilbarg}{book}{}
+      \name{author}{2}{}{%
+        {{hash=d91d04ccf8e51f30c6f9eb4b6bc0ccc1}{%
+           family={Gilbarg},
+           familyi={G\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7d500e0b463a2ce688322509a10db6c5}{%
+           family={Trudinger},
+           familyi={T\bibinitperiod},
+           given={Neil\bibnamedelima S.},
+           giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag, Berlin}%
+      }
+      \strng{namehash}{7b31fa4bbbe430ec2608ecbe7894bf57}
+      \strng{fullhash}{7b31fa4bbbe430ec2608ecbe7894bf57}
+      \strng{bibnamehash}{7b31fa4bbbe430ec2608ecbe7894bf57}
+      \strng{authorbibnamehash}{7b31fa4bbbe430ec2608ecbe7894bf57}
+      \strng{authornamehash}{7b31fa4bbbe430ec2608ecbe7894bf57}
+      \strng{authorfullhash}{7b31fa4bbbe430ec2608ecbe7894bf57}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{3-540-41160-7}
+      \field{note}{Reprint of the 1998 edition}
+      \field{series}{Classics in Mathematics}
+      \field{title}{Elliptic partial differential equations of second order}
+      \field{year}{2001}
+      \field{pages}{xiv+517}
+      \range{pages}{-1}
+    \endentry
+    \entry{leoni:sobolev}{book}{}
+      \name{author}{1}{}{%
+        {{hash=10e9f2b445753b0567ac1e61d415746a}{%
+           family={Leoni},
+           familyi={L\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society, Providence, RI}%
+      }
+      \strng{namehash}{10e9f2b445753b0567ac1e61d415746a}
+      \strng{fullhash}{10e9f2b445753b0567ac1e61d415746a}
+      \strng{bibnamehash}{10e9f2b445753b0567ac1e61d415746a}
+      \strng{authorbibnamehash}{10e9f2b445753b0567ac1e61d415746a}
+      \strng{authornamehash}{10e9f2b445753b0567ac1e61d415746a}
+      \strng{authorfullhash}{10e9f2b445753b0567ac1e61d415746a}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{[9781470468989]; [9781470472535]; [9781470472528]}
+      \field{series}{Graduate Studies in Mathematics}
+      \field{title}{A first course in fractional {S}obolev spaces}
+      \field{volume}{229}
+      \field{year}{[2023] ©2023}
+      \field{pages}{xv+586}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1090/gsm/229
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1090/gsm/229
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1090/gsm/229
+      \endverb
+    \endentry
     \entry{lombardini:2019}{article}{}
       \name{author}{1}{}{%
         {{hash=15644ea296d3695a33a32f73db78b224}{%
@@ -209,6 +422,47 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1515/ans-2018-2016
+      \endverb
+    \endentry
+    \entry{ponce:2017}{article}{}
+      \name{author}{2}{}{%
+        {{hash=021323ffeab9004788ee95f9b1d56ecd}{%
+           family={Ponce},
+           familyi={P\bibinitperiod},
+           given={Augusto\bibnamedelima C.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=1713163cc68d8275c047b90c940315ec}{%
+           family={Spector},
+           familyi={S\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{d467ee950fdecf8f01446d71080a00ac}
+      \strng{fullhash}{d467ee950fdecf8f01446d71080a00ac}
+      \strng{bibnamehash}{d467ee950fdecf8f01446d71080a00ac}
+      \strng{authorbibnamehash}{d467ee950fdecf8f01446d71080a00ac}
+      \strng{authornamehash}{d467ee950fdecf8f01446d71080a00ac}
+      \strng{authorfullhash}{d467ee950fdecf8f01446d71080a00ac}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1631-073X,1778-3569}
+      \field{journaltitle}{C. R. Math. Acad. Sci. Paris}
+      \field{number}{9}
+      \field{title}{A note on the fractional perimeter and interpolation}
+      \field{volume}{355}
+      \field{year}{2017}
+      \field{pages}{960\bibrangedash 965}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.crma.2017.09.001
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.crma.2017.09.001
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.crma.2017.09.001
       \endverb
     \endentry
   \enddatalist
