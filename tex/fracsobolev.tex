@@ -13,7 +13,7 @@ The theory behind fractional perimeter is written in the language of fractional 
 \subsection{Fractional Sobolev Spaces}
 
 
-Like classical Sobolev spaces, fractional Sobolev spaces attempt to capture both the regularity (that is, (weak) differentiability) and decay of functions. Unlike classical Sobolev spaces, this regularity parameter is no longer assumed to be an integer. There are two main ways to introduce fractional Sobolev spaces:
+Like classical Sobolev spaces, fractional Sobolev spaces attempt to capture the regularity (that is, (weak) differentiability), decay, and oscillation of functions. Unlike classical Sobolev spaces, this regularity parameter is no longer assumed to be an integer. There are two main ways to introduce fractional Sobolev spaces:
 
 \begin{itemize}
     \item \textit{Explicitly}: using explicit norms which are analogues of those of the H\"older spaces $ C^{\alpha} $. Proceeding with the intuition that the difference quotients 
@@ -24,11 +24,12 @@ Like classical Sobolev spaces, fractional Sobolev spaces attempt to capture both
     \[
         \lr{\int_{\R^{n}} \norm{\mathcal{Q}_{s}u(\bigcdot,h)}_{L^{p}_{x}(\R^{n})}^{p}\frac{\dd{h}}{|h|^{n}}}^{\frac{1}{p}}.
     \]
-    The presence of the singular kernel $ |h|^{-n} $ intuitively ensures that there is good behavoir around zero in the variable $ h $, and thus when the difference quotient is actually modelling some sort of ``derivative.'' This is the approach we will take throughout the paper.\\
+    The presence of the singular kernel $ |h|^{-n} $ ensures that the norm also captures oscillatory behavoir. This is the approach we will take throughout the paper.\\
 
-    \item \textit{Abstractly}: as interpolation spaces between $ W^{1,p} $ and $ L^{p} $. Using the interpolation methods pioneered by Calderon and Gagliardo in the 1960s (K method and J method), one can abstractly construct the spaces $ W^{s,p} $ as the ones which arise from \textit{real interpolation}. See \cite{ponce:2017} for more details. For an introduction to interpolation methods, see Bergh`s book \cite{bergh:interpolation}.
+    \item \textit{Abstractly}: as interpolation spaces between $ W^{1,p} $ and $ L^{p} $. Using the interpolation methods first developed by Lions and Peetre in the 1960s (that is, the K- and J-methods), one can abstractly construct the spaces $ W^{s,p} $ as the ones which arise from \textit{real interpolation}. For an introduction to interpolation methods, see Bergh`s book \cite{bergh:interpolation} and Tice`s notes \cite{}
+    %TODO add Tice citation to bibtex https://www.math.cmu.edu/~iantice/notes/interpolation_notes.pdf 
 
-    Although we will not take this approach in the following paper, it does provide some context for why we are able to recover $ W^{1,p} $-norms from $ W^{s,p} $-norms. Moreover, the fact that the interpolation spaces between $ W^{1,1} $ and $ L^{1} $ are the same as those between $ BV $ and $ L^{1} $ explains why we are able to recover $ BV $-norms from $ W^{s,1} $-norms.
+    Although we will not take this approach in the following paper, it does provide some context for why we are able to recover $ W^{1,p} $-norms from $ W^{s,p} $-norms. Moreover, the fact that the interpolation spaces between $ W^{1,1} $ and $ L^{1} $ are the same as those between $ BV $ and $ L^{1} $ explains why we are able to recover $ BV $-norms from $ W^{s,1} $-norms. See \cite{ponce:2017} for details.
 \end{itemize}
 
 \begin{definition}\label{fracnorms}
@@ -75,7 +76,7 @@ If one takes for granted that integer sobolev spaces ``appear in nature,'' then 
     
 \end{proposition}
 
-When thinking of the fractional parameter $ s $ as measuring some notion of regularity, one would hope that the intuition of functions with high regularity automatically lying in all spaces requiring only lower regularity (that is, functions that are $ k+1 $-differentiable are automatically $ k $-differentiable). When comparing two fractional parameters of regularity, this inuition generalizes unconditionally.
+When thinking of the fractional parameter $ s $ as measuring some notion of regularity, one would hope that having a fixed regularity $ s $ implies having all of the regularities below $ s $ (e.g. functions that are $ k $-differentiable are automatically $ k-1 $-differentiable). When comparing two fractional parameters of regularity, this inuition generalizes unconditionally.
 
 \begin{proposition}\label{fracisscale}
     Let $ p\in[1,+\infty) $ and $ 0 < s \leq s^{\prime} < 1 $. Let $ \Omega\sub \R^{n} $ be an open set and $ u:\Omega\to \R $ a measurable function. Then there exists a constant $ C \geq 1 $ depending only on $ n$,$s$, $p$, such that
@@ -99,9 +100,8 @@ This manifests itself whenever one tries to compare (say for inclusions) classic
     \]
 \end{definition}
 
-We remark that any bounded open set with Lipschitz boundary is a $ W^{s,1} $ extension domain for all $ s\in (0,1) $ (see Hitchhiker`s Guide \cite{hitchhiker} for details) and a $ W^{1,p} $ extension domain for all $ 1\leq p <\infty $ (see Gilbarg and Trudinger \cite[Thm.~7.25]{gilbarg}). This fact somewhat explains why in both \ref{sto0} and \ref{sto1} we restrict to bounded open sets with Lipschitz boundary. One might imagine extending these results to general extension domains,
+We remark that any bounded open set with Lipschitz boundary is a $ W^{s,1} $ extension domain for all $ s\in (0,1) $ (see Hitchhiker`s Guide \cite{hitchhiker} for details) and a $ W^{1,p} $ extension domain for all $ 1\leq p <\infty $ (see Gilbarg and Trudinger \cite[Thm.~7.25]{gilbarg}). This fact somewhat explains why in both \ref{sto0} and \ref{sto1} we restrict to bounded open sets with Lipschitz boundary. One might imagine extending these results to general extension domains, 
 %TODO insert references to extending results to arbitrary extension domains
-%TODO insert reference to Gilbarg and Trudinger
 
 The general principle with fractional Sobolev spaces is that, on an extension domain, statements that hold for classical integer Sobolev spaces likely generalize to the fractional setting. Indeed, on an extension domain we can replace one of the fractional spaces in Proposition \ref{fracisscale} with a classical Sobolev space.
 
@@ -145,52 +145,155 @@ The general principle with fractional Sobolev spaces is that, on an extension do
 \end{proof}
 
 \subsection{$ H^{s} $: An Alternative approach to fractional Sobolev spaces using $ \mathscr{F} $}
+
+
+Another annoyance with the Gagliardo approach to fractional Sobolev spaces is that the they are defined in terms of singular integrals, and thus often require quite delicate care.
+
+When $ p=2 $ and $ \Omega=\R^{n} $, there is another approach. In this realm, we have access to the Fourier transform (denoted $ \mathscr{F}(\bigcdot) $ or $ \widehat{\bigcdot} $ throughout) and the Plancherel identity. These tools allow us to work purely in frequency space and avoid much (but not all) of the headache of singular integrals.\\
+Recall, for a Schwartz function $ u\in \mathscr{S} $, we have $ \mathscr{F}\partial_{j}u = -i\xi_{j}\mathscr{F}u $. Hence, by the Plancherel identity 
+\[
+    \int_{\R^{d}} | \partial_{j}u |^2 \dd{x} = \int_{\R^{d}} | \xi_{j}|^{2}\cdot |\mathscr{F}u|^{2} \dd{\xi}.
+\]
+Summing in $ 1\leq j\leq n $, we see
+\[
+    \int_{\R^{n}}|Du|^{2}\dd{x} = \sum_{j=1}^{n}\int |\partial_{j}u|^{2} \dd{x} = \sum_{j=1}^{n}\int_{\R^{n}}| \xi_{j}|^{2}\cdot |\mathscr{F}u|^{2}\dd{x} = \int_{\R^{n}} | \xi|^{2}\cdot|\mathscr{F}u|^{2} \dd{\xi}
+\]
+More generally, one can show that
+\[
+    \int_{\R^{n}}\sum_{| \alpha| = l} | \partial^{\alpha}u|^{2} \dd{x} = \int_{\R^{n}} | \xi|^{2l} \cdot |\widehat{u}|^{2} \dd{x} 
+\]
+whence summing in $ 0\leq l \leq k $ gives an expression for the classical $ W^{k,2} $-Sobolev norm
+\[
+    \norm{u}_{W^{k,2}(\R^{n})}^{2} = \int_{\R^{n}} \lr{\sum_{l=0}^{k} | \xi|^{2l} }\cdot |\mathscr{F}u|^{2} \dd{\xi}.
+\]
+We seek to rewrite the right hand side of the above equation as the $ L^2 $-norm of a single function. 
+Noting that the quantity $ \sum_{l=0}^{k}| \xi|^{2l} $ is comparable (up to dimensional constants) to $ (1+| \xi|^{2})^{k} $, we find that the norm
+\begin{equation}\label{fouriernorm}
+    \norm{(1+| \xi|^{2})^{k/2} \mathscr{F}u}_{L^2(\R^{n})}
+\end{equation}
+is equivalent to the classical $ W^{k,2} $ norm of $ u $. By limiting arguments, we can extend this result to all $ W^{k,2} $-functions. In summary, we have demonstrated 
+\[
+    W^{k,2}(\R^{n}) = \{u\in L^{2}(\R^{n}) : (1+| \xi|^{2})^{\frac{k}{2}}\mathscr{F}u \in L^2(\R^{n})\}.
+\]
+Observe that \ref{fouriernorm} makes sense for noninteger $ k $, hence we use this expression to model a Fourier-based fractional Sobolev space.
+
 \begin{definition}
-    Fix $ s\in (0,1) $. We define the fractional Laplacian $ (-\Delta)^{s}:\S\to L^{2}(\R^{n}) $ as a Fourier multiplier given by
-    \[
-        (-\Delta)^{s}u = \mathscr{F}^{-1} (| \xi|^{2s}( \mathscr{F}u)).
-    \]
-\end{definition}
-
-\begin{proposition}\label{laplacianisintegral}
-    Fix $ s\in (0,1) $ and let $ C(n,s) $ be the constant 
-    \begin{equation}
-        C(n,s) := \lr{ \int_{\R^{n}}\frac{1-\cos(\zeta_{1})}{| \zeta|^{n+2s}}\dd{\zeta}  }^{-1}.
-    \end{equation}
-    Then for $ u\in \S $, we have that 
-    \begin{equation}
-        (-\Delta )^{s}u(x) = C(n,s)\, P.V. \int_{\R^{n}} \frac{u(x) - u(y)}{|x-y|^{n+2s}} \dd{y}
-    \end{equation}
-\end{proposition}
-
-\begin{proof}
-    See Appendix \ref{appendix:misc} for the proof.
-\end{proof}
-
-
-
-\begin{definition}
-    Let $ s\in (0,1) $. Consider the space
+    Let $ s\in (0,1) $. Define the Bessel potential space as
     \[
          H^{s}(\R^{n}) := \{ u\in L^{2}(\R^{n}): \int_{\R^{n}}(1+| \xi|^{2})^{s}|\mathscr{F}u|^{2}\dd{\xi} < +\infty\} 
     \]
     equipped with the norm
     \[
-        [u]_{H^{s}}^{2} = \int_{\R^{n}}(1+| \xi|^{2})^{s}|\mathscr{F}u|^{2}\dd{\xi} 
+        \norm{u}_{H^{s}(\R^{n})}^{2} = \int_{\R^{n}}(1+| \xi|^{2})^{s}|\mathscr{F}u|^{2}\dd{\xi}.
+    \]
+    Define the $ H^{s} $-seminorm to be $ [u]_{H^{s}(\R^{n})}^{2}:= \int_{\R^{n}}| \xi|^{2s}|\mathscr{F}u|^{2}\dd{\xi} $. 
+\end{definition}
+
+\textit{A priori}, it is not at all clear how Bessel potential spaces relate to Gagliardo`s fractional Sobolev spaces. Indeed, there is work to be done here.
+We take a brief detour to introduce an important operator which will ultimately clarify the relationship between the two definitions. 
+
+Let $ (-\Delta)^{k}:= -\sum_{j=1}^{n} \pdv{^{2k}}{x_{j}^{2k}}$ and note that for a Schwartz function $ u\in \mathscr{S} $, we have $ (-\Delta)^{k} u =\mathscr{F}^{-1}( | \xi|^{2k} (\mathscr{F}u)) $. Again, the right-hand side of this expression makes sense for noninteger $ k $, so we make the following definition.
+\begin{definition}
+    Fix $ s\in (0,1) $. Define the \textit{fractional Laplacian} $ (-\Delta)^{s}:\S\to L^{2}(\R^{n}) $ as a Fourier multiplier given by
+    \[
+        (-\Delta)^{s}u = \mathscr{F}^{-1} (| \xi|^{2s}( \mathscr{F}u)).
     \]
 \end{definition}
 
+In order to relate the Bessel and Gagliardo spaces, we must somewhere pass from ordinary integration in frequency space (Bessel norm) to a singular integral in physical space (Gagliardo seminorm). This is where the fractional Laplacian comes in, as it has the following singular integral operatior representation.
 
+\begin{proposition}[{\cite[Thms.~14.2, 14.8]{leoni:sobolev}}]\label{laplacianisintegral}
+    For $ s\in (0,1) $ and $ u\in \S $, we have that 
+    \begin{equation}
+        (-\Delta )^{s}u(x) = C(n,s)\, P.V. \int_{\R^{n}} \frac{u(x) - u(y)}{|x-y|^{n+2s}} \dd{y}
+    \end{equation}
+    where $ C(n,s) $ is the constant 
+    \begin{equation}
+        C(n,s) := \lr{ \int_{\R^{n}}\frac{1-\cos(\zeta_{1})}{| \zeta|^{n+2s}}\dd{\zeta}  }^{-1}.
+    \end{equation}
+    Moreover, we can remove the P.V. from the above expression.
+\end{proposition}
+
+\begin{proof}
+    Let $ \Lambda_{s}:\S\to L^{2}(\R^{n}) $ denote the operator $ \Lambda_{s}u(x) := C(n,s)\, P.V. \int_{\R^{n}}\frac{u(x)-u(y)}{|x-y|^{n+2s}}\dd{y} $. After applying the ansatzes $ y \usub x+h$ and $ y\usub x-h $, we have the second order difference quotient representation
+    \begin{equation}\label{secondorder}
+        \Lambda_{s}u(x) = -\frac{1}{2}C(n,s)\, P.V.\int_{\R^{n}} \frac{u(x+h) + u(x-h) -2u(x)}{|h|^{n+2s}} \dd{h}.
+    \end{equation}
+    Fix $ u\in \S $ and $ x\in \R^{n} $. Consider the second-order Taylor expansion of $ u $ about $ x $ given for $ h $ small by 
+    \begin{equation}
+        u(x+h) = u(x) + Du(x)\cdot h + \frac{1}{2}h^{T}\cdot D^{2}u(x)\cdot h + R(h)
+    \end{equation}
+    where $ R(h) \in o(|h|^{2}) $. Then 
+    \[
+        u(x+h)+u(x-h)-2u(x) = h^{T}\cdot D^{2}u(x)\cdot h + R(h) + R(-h).
+    \]
+    and 
+    \[
+        |h^{T}D^{2}u(x)h| \leq |h|\cdot |D^{2}u(x)h| \leq \norm{D^{2}u(x)}_{op}|h|^{2},
+    \]
+    leading to a bound on the integral kernel
+    \begin{equation}\label{kernelbound}
+        \frac{u(x+h)+u(x-h)-2u(x)}{|h|^{n+2s}} \leq \frac{\norm{D^{2}u(x)}_{op}}{|h|^{n+2s-2}} + \frac{1}{|h|^{n+2s-2}}\cdot\frac{R(h)+R(-h)}{|h|^{2}}.
+    \end{equation}
+    Note that \ref{kernelbound} is integrable in $ h $ within a bounded neighborhood of $ 0 $, so in fact the equation \ref{secondorder} holds true even without the ``PV.'' Moreover, one may refine the estimate \ref{kernelbound} slightly further to justify an application of Fubini-Tonelli and find that, for $ \xi\in \R^{n} $,
+    \begin{align*}
+        \mathscr{F}_{x} (\Lambda_{s}u)(\xi) &= -\frac{1}{2}C(n,s) \int_{\R^{n}} \frac{\mathscr{F}\{u(\bigcdot+h)+u(\bigcdot-h)-2u(\bigcdot)\}(\xi)}{|h|^{n+2s}} \dd{h} \\
+        &= -\frac{1}{2}C(n,s) \mathscr{F}u(\xi)\int_{\R^{n}} \frac{e^{-ih \xi}+e^{ih \xi}-2}{|h|^{n+2s}}\dd{h} \\
+        &= C(n,s) \mathscr{F}u(\xi)\int_{\R^{n}} \frac{1-\cos(\xi\cdot h)}{|h|^{n+2s}}\dd{h} \\
+    \end{align*}
+    Consider the quantity $ I(\xi):= \int_{\R^{n}} \frac{1-\cos(\xi\cdot h)}{|h|^{n+2s}}\dd{h} $. Fix $ \xi\in \R^{n} $ and choose a rotation $ R\in SO(n) $ such that $ R(| \xi|e_{1}) =  \xi $ ( where $ e_{1}= (1,0,\ldots,0) $ as usual). Breifly using the notation $ \inp{\cdot}{\cdot} $ to denote the Euclidean dot product for clarity, we see
+    \begin{align*}
+        I(\xi) &= \int_{\R^{n}} \frac{1-\cos\inp{R(|\xi| e_{1})}{h}}{|h|^{n+2s}} \dd{h} = \int_{\R^{n}} \frac{1-\cos\inp{| \xi|e_{1}}{R^{T}h}}{|h|^{n+2s}}\dd{h} \\& \overset{\widetilde{h}\usub R^{T}h}{=} \int_{\R^{n}} \frac{1-\cos\inp{| \xi|e_{1}}{\widetilde{h}}}{|\widetilde{h}|^{n+2s}}\dd{h} = I(| \xi|e_{1}).
+    \end{align*}
+    Thus, the quantity $ I(\xi) = I(| \xi|e_{1}) $ is rotation invariant. Finally, applying the substitution $ h = \frac{\widetilde{h}}{| \xi|} $ we compute
+    \[
+        I(\xi) = I(| \xi|e_{1}|) =  \int_{\R^{n}} \frac{1-\cos\inp{e_{1}}{| \xi|h}}{|h|^{n+2s}}\dd{h} = \int_{\R^{n}} \frac{1-\cos\inp{e_{1}}{\widetilde{h}}}{|\frac{\widetilde{h}}{| \xi|}|^{n+2s}}\frac{\dd{\widetilde{h}}}{| \xi|^{n}} = | \xi|^{2s}I(e_{1}) = | \xi|^{2s} C(n,s)^{-1}.
+    \]
+    In summary for all $ \xi\in \R^{n} $ we have,
+    \begin{equation}\label{lapconstant}
+        \int_{\R^{n}}\frac{1-\cos( \xi \cdot h)}{|h|^{n+2s}} \dd{h} = | \xi|^{2s} C(n,s)^{-1},
+    \end{equation}
+    whence 
+    \[
+        \mathscr{F}(\Lambda_{s}u)(\xi) = | \xi|^{2s}\mathscr{F}u(\xi) \implies \Lambda_{s}u(x) = (-\Delta )^{s}u(x).
+    \]
+
+
+\end{proof}
+
+
+This singular integral representation immediately allows us to express the Gagliardo $ W^{s,2} $-seminorm in terms of the $ H^{s} $-seminorm.
 
 \begin{proposition}[{\cite[Prop.~3.4]{hitchhiker}}]\label{fracnormislaplacian}
     Let $ s\in (0,1) $ and $ n\in \N $. Then for $ u\in W^{s,2}(\R^{n}) $, we have 
-    \begin{equation}
-        [u]_{W^{s,2}(\R^{n})}^{2} = \frac{2}{C(n,s)} \norm{(-\Delta )^{\frac{s}{2}}u}_{L^{2}(\R^{n})}^{2} = \frac{2}{C(n,s)} \int_{\R^{n}} | \xi|^{2s} |\mathscr{F}u|^{2} \dd{x} 
+    \begin{equation}\label{gagnormisbessel}
+        [u]_{W^{s,2}(\R^{n})}^{2} = \frac{2}{C(n,s)} \norm{(-\Delta )^{\frac{s}{2}}u}_{L^{2}(\R^{n})}^{2} = \frac{2}{C(n,s)} \int_{\R^{n}} | \xi|^{2s} |\mathscr{F}u|^{2} \dd{x} = \frac{2}{C(n,s)}[u]_{H^{s}(\R^{n})}
     \end{equation}
 \end{proposition}
 
 \begin{proof}
-    This is an immediate corollary of Proposition \ref{laplacianisintegral}.
+    By density, it suffices to show \ref{gagnormisbessel} for $ u\in \mathscr{S} $. Using the ansatz $ x\usub z+y $, we compute
+    \begin{align*}
+        \int_{\R^{n}}\int_{\R^{n}} \frac{|u(x)-u(y)|^{2}}{|x-y|^{n+2s}}\dd{x}\dd{y} &\overset{x\usub z+y}{=} \int_{\R^{n}}\int_{\R^{n}} \frac{|u(z+y)-u(y)|^{2}}{|z|^{n+2s}}\dd{x}\dd{y} \overset{\text{fubini}}{=}\int_{\R^{n}}\int_{\R^{n}} \frac{|u(z+y)-u(y)|^{2}}{|z|^{n+2s}}\dd{y}\dd{x} \\
+        &=\int_{\R^{n}} \norm{\frac{u(z+\bigcdot)-u(\bigcdot)}{|z|^{\frac{n}{2}+s}}}_{L^{2}_{y}(\R^{n})}^{2} \dd{z}\overset{\text{Plancherel}}{=} \int_{\R^{n}} \norm{\mathscr{F}_{y}\lr{\frac{u(z+\bigcdot)-u(\bigcdot)}{|z|^{\frac{n}{2}+s}}}}_{L^{2}_{\xi}(\R^{n})}^{2}\dd{z} \\
+        &=\int_{\R^{n}} \int_{\R^{n}} \frac{|e^{i \xi\cdot z}-1|^{2}}{|z|^{n+2s}}|\mathscr{F}u( \xi)|^{2} \dd{\xi} \dd{z}   \overset{\text{Fubini}}{=}2\int_{\R^{n}} |\mathscr{F}u( \xi)|^{2} \lr{\int_{\R^{n}} \frac{1-\cos(z\cdot \xi) }{|z|^{n+2s}} \dd{z}}  \dd{\xi} \\
+        &\overset{\ref{lapconstant}}{=} \frac{2}{C(n,s)}\int_{\R^{n}}| \xi|^{2s} |\mathscr{F}u( \xi)|^{2}   \dd{\xi} = \frac{2}{C(n,s)}[u]_{H^{s}(\R^{n})}.
+    \end{align*}
+    On the other hand, by the definition of $ (-\Delta )^{s} $ and the Plancherel identity, we see
+    \[
+        \norm{(-\Delta )^{\frac{s}{2}}u}_{L^{2}(\R^{n})}^{2} = \norm{\mathscr{F}^{-1} (| \xi|^{s}( \mathscr{F}u))} \overset{\text{Plancherel}}{=}\norm{| \xi|^{s} \mathscr{F}u}_{L^{2}(\R^{n})}^{2} = \int_{\R^{n}}| \xi|^{2s}|\mathscr{F}u|^{2}\dd{\xi}.
+    \]
 \end{proof}
+
+Finally, we will need information about the asymptotics of $ C(n,s) $ as $ s\to0^+,1^- $. These are important as we are interested in asymptotically recovering the $ H^{1} $ and $ L^2 $ norms from the continuous scale of $ H^{s} $ norms. We state the result without proof as the lengthy polar coordinate computations are not particularly enlightening. \\
+
+\begin{proposition}[{\cite[Prop.~4.1, Cor.~4.2]{hitchhiker}}]\label{constantasymp}
+    For $ n>1 $, we have the following asymptotitcs.
+    \begin{enumerate}
+        \item $\displaystyle\lim_{s\to 1^{-}}\frac{C(n,s)}{s(1-s)} = \frac{4n}{\omega_{n-1}}$
+        \item $\displaystyle\lim_{s\to 0^{+}}\frac{C(n,s)}{s(1-s)} = \frac{2}{\omega_{n-1}}$
+    \end{enumerate}
+        
+\end{proposition}
 
 \end{document}

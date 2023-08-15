@@ -85,11 +85,7 @@ We obtained such a formula by considering sets $ E $ such that the distributiona
 
 We would like a quantitative way to test whether a given function $ u\in L^{1}(\Omega) $ is of bounded variation. The above definition of $ BV(\Omega) $-seminorm is not satisfactory as it requires a function to have distributional derivative represented by a measure to be intelligible. \textit{A priori}, the distributional gradient is just a continuous linear functional on the locally convex space $ C^{\infty}_{c}(\Omega,\R^{n}) $. It is not true that such a functional is in general given by a integration against an $ \R^{n} $-valued Radon measure.
 
-Thankfully, the Riesz(-Markov-Kakutani) representation theorem (see TODO INSERT REFERENCES) gives us conditions upon which 
-% TODO insert reference to Riesz rep thm
-Since 
-
-We state the vector-valued version of the theorem, as this form may not be as familiar to the reader. 
+Thankfully, the Riesz(-Markov-Kakutani) representation theorem gives us conditions upon which which linear functionals are given by integration against measures. We state the vector-valued version of the theorem, as this form may not be as familiar to the reader. 
 \begin{theorem}[Riesz Representation Theorem]\label{rrt}
     Let $ X $ be a locally compact, Hausdorff space. Suppose $ L: C_{0}(X,\R^{n})\to \R $ is a linear functional which is bounded, i.e. 
     \[
@@ -174,7 +170,7 @@ The above proposition allows us to extend our definition of $ BV(\Omega) $-semin
 As alluded to earlier, the entire discussion around functions of (locally) bounded variation and Gauss-Green formula leads to properties of the boundary of a set. One of the first such properties one becomes intuitively ``familiar'' with is the notion of \textit{perimeter}. From a young age, we are led to believe that perimeter is an ``obvious'' concept.
 
 %TODO insert more history.
-Hence, it might surprise the reader that the notion of perimeter was not systematically (and definitively) treated until the 1950s. 
+It might surprise the reader that the notion of perimeter was not systematically (and definitively) treated until the 1950s. 
 Equipped with the Hausdorff measure, one initially jumps to thinking of the perimeter of a set in $ \R^{n} $ as the $ (n-1) $-dimensional Hausdorff measure of its boundary. Indeed, for nice enough boundaries (say $ C^1 $), this definition is good enough. Moreover,  one can show using just the Gauss-Green formula that the ``perimeter'' of a set is the total variation of its indicator function.
 \begin{factexercise}
     Let $ E\sub \R^{n} $ be a bounded open set with $ C^{2} $ boundary. Then $ \H^{n-1}(\partial E) = V(\chi_{E},\R^{n}) $.

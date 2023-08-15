@@ -6,8 +6,11 @@
 
 \section{Detour: the Bourgain-Brezis-Mironescu Formula}
 
+The main technical tool to prove Theorem \ref{sto1} is the celebrated \textit{Bourgain-Brezis-Mironescu (BBM) Formula}. In \cite{brezis:2001, brezis:2002}, Bourgain, Brezis, and Mironescu sought to gain new characterizations of Sobolev spaces whilst also contributing to the push to define a degree theory for discontinuous maps. The outcropping of this work was a new formula for Sobolev norms which contextualized a large amount of previously interpolation-theoretic literature.
+
+
 \begin{definition}
-Fron now on, $ (\rho_{i})_{i=1}^{\infty} $ will denote a sequence of \textit{radial mollifiers} in the sense that 
+From now on, $ (\rho_{i})_{i=1}^{\infty} $ will denote a sequence of \textit{radial mollifiers} in the sense that 
 \begin{equation}
     \rho_{i}\in L^{1}_{loc}((0,+\infty)),\quad \rho_{i}\geq 0
 \end{equation}
@@ -20,52 +23,65 @@ Fron now on, $ (\rho_{i})_{i=1}^{\infty} $ will denote a sequence of \textit{rad
 
 
 \end{definition}
+Throughout this section, $ \Omega $ is either a bounded Lipschitz domain or all of $ \R^{n} $.
+Define a dimensional constant $ K_{n,p} $ by 
+\[
+    K_{n,p}:= \int_{S^{n-1}} |e\cdot \sigma|^p \dd{\H^{n-1}(\sigma)}
+\]
+where $ e\in S^{n-1} $ is arbitrary.\\
 
-%TODO Replace R^n version with \Omega version 
-\begin{theorem}[\cite{brezis:2001,brezis:2002}, BBM Formula]
-    Let $ \Omega\sub \R^{n} $ be a bounded Lipschitz domain. For $ u\in L^{1}_{loc}(\Omega) $,
+The original BBM formula is as follows. 
+\begin{theorem}[\cite{brezis:2001,brezis:2002}, BBM Formula]\label{bbm}
+    Suppose $ 1< p <+\infty $.For $ u\in L^{1}_{loc}(\Omega) $,
     \[
-        \lim_{i\to\infty} \int_{\Omega}\int_{\Omega} \frac{|u(x)-u(y)|^{p}}{|x-y|^{p}} \rho_{i}(|x-y|)\dd{x} \dd{y} = \gamma_{n,p}\int_{\Omega}| Du| \dd{x}
+        \lim_{i\to\infty} \int_{\Omega}\int_{\Omega} \frac{|u(x)-u(y)|^{p}}{|x-y|^{p}} \rho_{i}(|x-y|)\dd{x} \dd{y} = K_{n,p}\int_{\Omega}| Du|^{p} \dd{x}
     \]
-    when $ Du\in L^{p}(\Omega) $ and $ \gamma_{n,p} $ is a constant given by . 
+    when $ Du\in L^{p}(\Omega) $ and $ K_{n,p} $ is a constant given by . 
 \end{theorem}
+Note that the above result does not treat the $ p=1 $ case. In their original 2001 paper \cite{brezis:2001}, Bourgain, Brezis, and Mironescu conjectured that their formula holds in the $ p=1 $ case after replacing $ W^{1,1} $ with $ BV $, but they were only able to obtain the following partial result.
+\begin{theorem}[{\cite[Cor.~5]{brezis:2001}}]
+    For $ u\in L^1(\Omega) $, there exist constants $ C_{1}, C_{2}>0  $ such that 
+    \begin{align*}
+        C_{1} [u]_{BV(\Omega)} &\leq  \liminf_{i\to\infty} \int_{\Omega}\int_{\Omega} \frac{|u(x)-u(y)|}{|x-y|} \rho_{i}(|x-y|)\dd{x} \dd{y} \\
+        &\leq \limsup_{i\to\infty} \int_{\Omega}\int_{\Omega} \frac{|u(x)-u(y)|}{|x-y|} \rho_{i}(|x-y|)\dd{x} \dd{y} \leq C_{2}[u]_{BV(\Omega)}.
+    \end{align*}
+\end{theorem}
+In 2002, H\"iam Brezis' student Juan D\'avila \cite{davila:2002} answered their conjecture in the affirmative 
 
-\begin{theorem}[\cite{davila:2002}, BBM-Davila Formula]\label{bbmd}
-    Let $ \Omega\sub \R^{n} $ be a bounded Lipschitz domain. Suppose $ u\in BV(\Omega) $. Then
+\begin{theorem}[{\cite{davila:2002}, BBM-D\'avila Formula}]\label{bbmd}
+    Let $ \Omega\sub \R^{n} $ be a bounded Lipschitz domain or all of $ \R^{n} $. Suppose $ u\in BV(\Omega) $. Then
     \[
-        \lim_{i\to\infty} \int_{\Omega}\int_{\Omega} \frac{|u(x)-u(y)|}{|x-y|} \rho_{i}(|x-y|)\dd{x} \dd{y} = \gamma_{n,1}\int_{\Omega}| Du|
+        \lim_{i\to\infty} \int_{\Omega}\int_{\Omega} \frac{|u(x)-u(y)|}{|x-y|} \rho_{i}(|x-y|)\dd{x} \dd{y} = K_{n,1}\int_{\Omega}| Du|
     \]
     where $ Du $ is the finite Radon measure corresponding to $ u $ and $ \int_{\Omega} |Du| $ denotes the quantity $ |Du |(\Omega) $.
 \end{theorem}
 
-The constant $ \gamma_{n,p} $ above is given by 
-\[
-    \gamma_{n,p}:= \int_{S^{n-1}} |e\cdot \sigma|^p \dd{\H^{n-1}(\sigma)}
-\]
-where $ e\in S^{n-1} $ is arbitrary.\\
+We will use Theorem \ref{bbmd} to obtain a characterization of $ BV(\Omega) $-norms in terms of a renormalized limit of $ W^{s,1}(\Omega) $-norms.
 
 
 
-%TODO add exposition on this
-We will outline the proof of Theorem \ref{bbmd}. This proof is the main technical novelty of this paper and we will connect it to asymptotics of fractional perimeter. \\
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Consider the Radon measures $ \mu_{i} $ given by  
-
-\[
-    \dd{\mu_{i}} := \lr{\int_{\Omega}\frac{|u(x)-u(y)|}{|x-y|} \rho_{i}(|x-y|) \dd{x}}\dd{y}
-\]
-
-
-Davila proves an extension theorem analagous to %TODO CITE EXTENSION THEOREMS IN APPENDIX
-but with an extra condition that, in addition to the BV norm in $ \R^{n} $ being controlled, we also have control over the BV measure in neighborhoods of $ \partial \Omega $.
-
-\begin{proposition}[\textcite{davila:2002}]
-    Existence of bounded extension operator $ \mc{E}: BV(\Omega)\to BV(\R^{n}) $ for nice $ \Omega\sub \R^{n} $.
-\end{proposition}
+%%TODO add exposition on this
+%We will outline the proof of Theorem \ref{bbmd}. This proof is the main technical novelty of this paper and we will connect it to asymptotics of fractional perimeter. \\
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%Consider the Radon measures $ \mu_{i} $ given by  
+%
+%\[
+%    \dd{\mu_{i}} := \lr{\int_{\Omega}\frac{|u(x)-u(y)|}{|x-y|} \rho_{i}(|x-y|) \dd{x}}\dd{y}
+%\]
+%
+%
+%Davila proves an extension theorem analagous to %TODO CITE EXTENSION THEOREMS IN APPENDIX
+%but with an extra condition that, in addition to the BV norm in $ \R^{n} $ being controlled, we also have control over the BV measure in neighborhoods of $ \partial \Omega $.
+%
+%\begin{proposition}[\textcite{davila:2002}]
+%    Existence of bounded extension operator $ \mc{E}: BV(\Omega)\to BV(\R^{n}) $ for nice $ \Omega\sub \R^{n} $.
+%\end{proposition}
 
 
 

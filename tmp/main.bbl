@@ -161,6 +161,93 @@
       \verb https://doi.org/10.1070/RM2002v057n04ABEH000533
       \endverb
     \endentry
+    \entry{caffarelli:nonlocal}{article}{}
+      \name{author}{3}{}{%
+        {{hash=19522d9553f8155b1d103ffd495510bc}{%
+           family={Caffarelli},
+           familyi={C\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=303e693c5afc48feee60fbd5a942bfa6}{%
+           family={Roquejoffre},
+           familyi={R\bibinitperiod},
+           given={J.-M.},
+           giveni={J\bibinithyphendelim M\bibinitperiod}}}%
+        {{hash=3f160c9a1a5e37e56e4877803edfb0fd}{%
+           family={Savin},
+           familyi={S\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{2eb563d4ed3d017eee504f8f67cdedf9}
+      \strng{fullhash}{2eb563d4ed3d017eee504f8f67cdedf9}
+      \strng{bibnamehash}{2eb563d4ed3d017eee504f8f67cdedf9}
+      \strng{authorbibnamehash}{2eb563d4ed3d017eee504f8f67cdedf9}
+      \strng{authornamehash}{2eb563d4ed3d017eee504f8f67cdedf9}
+      \strng{authorfullhash}{2eb563d4ed3d017eee504f8f67cdedf9}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0010-3640,1097-0312}
+      \field{journaltitle}{Comm. Pure Appl. Math.}
+      \field{number}{9}
+      \field{title}{Nonlocal minimal surfaces}
+      \field{volume}{63}
+      \field{year}{2010}
+      \field{pages}{1111\bibrangedash 1144}
+      \range{pages}{34}
+      \verb{doi}
+      \verb 10.1002/cpa.20331
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1002/cpa.20331
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1002/cpa.20331
+      \endverb
+    \endentry
+    \entry{caffarelli:limit}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3991522afc177c36148555b3758df0e0}{%
+           family={Caffarelli},
+           familyi={C\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod}}}%
+        {{hash=71baca0287af1a889a5b5936c6fb275d}{%
+           family={Valdinoci},
+           familyi={V\bibinitperiod},
+           given={Enrico},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{269010df00078147358a985379fe23dd}
+      \strng{fullhash}{269010df00078147358a985379fe23dd}
+      \strng{bibnamehash}{269010df00078147358a985379fe23dd}
+      \strng{authorbibnamehash}{269010df00078147358a985379fe23dd}
+      \strng{authornamehash}{269010df00078147358a985379fe23dd}
+      \strng{authorfullhash}{269010df00078147358a985379fe23dd}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0944-2669,1432-0835}
+      \field{journaltitle}{Calc. Var. Partial Differential Equations}
+      \field{number}{1-2}
+      \field{title}{Uniform estimates and limiting arguments for nonlocal minimal surfaces}
+      \field{volume}{41}
+      \field{year}{2011}
+      \field{pages}{203\bibrangedash 240}
+      \range{pages}{38}
+      \verb{doi}
+      \verb 10.1007/s00526-010-0359-6
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s00526-010-0359-6
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s00526-010-0359-6
+      \endverb
+    \endentry
     \entry{davila:2002}{article}{}
       \name{author}{1}{}{%
         {{hash=ca38936b1da6354748d66c9d3e887b79}{%
@@ -422,6 +509,53 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1515/ans-2018-2016
+      \endverb
+    \endentry
+    \entry{mazon:nonlocal}{book}{}
+      \name{author}{3}{}{%
+        {{hash=6690b3a309248d4173e5cc91146363be}{%
+           family={Mazón},
+           familyi={M\bibinitperiod},
+           given={José\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d633c2b54eb6b1c261fb075a532ebd3e}{%
+           family={Rossi},
+           familyi={R\bibinitperiod},
+           given={Julio\bibnamedelima Daniel},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=ef3567d0b3b85a1f7d204e7749f50ad6}{%
+           family={Toledo},
+           familyi={T\bibinitperiod},
+           given={J.\bibnamedelimi Julián},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Birkhäuser/Springer, Cham}%
+      }
+      \strng{namehash}{b927bc4b026a3aad5a083e6b166b9c9d}
+      \strng{fullhash}{b927bc4b026a3aad5a083e6b166b9c9d}
+      \strng{bibnamehash}{b927bc4b026a3aad5a083e6b166b9c9d}
+      \strng{authorbibnamehash}{b927bc4b026a3aad5a083e6b166b9c9d}
+      \strng{authornamehash}{b927bc4b026a3aad5a083e6b166b9c9d}
+      \strng{authorfullhash}{b927bc4b026a3aad5a083e6b166b9c9d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-030-06242-2; 978-3-030-06243-9}
+      \field{series}{Frontiers in Mathematics}
+      \field{title}{Nonlocal perimeter, curvature and minimal surfaces for measurable sets}
+      \field{year}{2019}
+      \field{pages}{xviii+123}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1007/978-3-030-06243-9
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-030-06243-9
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-030-06243-9
       \endverb
     \endentry
     \entry{ponce:2017}{article}{}

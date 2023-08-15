@@ -6,52 +6,62 @@
 
 \section{Fractional $s$-Perimeter}
 
-\subsection{Why study the Asymptotics}
-
-\begin{fact}
-    For any measurable subset $ E\sub \R^{n} $ of finite positive measure, the characteristic function $ \chi_{E} $ is not an element of $ H^{\frac{1}{2}}(\R^{n}) $.
-\end{fact}
-
-\begin{proof}
-    By assumption $ \chi_{E}\in L^{2}(\R^{n})$, so it suffices to show that $ \chi_{E} $ is not in the corresponding homogenous sobolev space $ \dot H^{\frac{1}{2}}(\R^{n}) $. \\  
-
-    TODO INSERT SYMMETRIC REARRANGEMENT THINGS
-
-    Let $ B $ be the ball centered at $ 0 $ with the same (finite) measure as $ E $, i.e. the symmetric decreasing rearrangement of the set $ E $. (INSERT EXPOSITION ABOUT THIS)$ \chi_{E}^{*} = \chi^{B} $ and we have that 
-    \[
-        \norm{\chi_{E}}_{\dot H^{\frac{1}{2}}(\R^{n})} \geq \norm{\chi_{E}^{*}}_{\dot H^{\frac{1}{2}}(\R^{n})} = \norm{\chi_{B}}_{\dot H^{\frac{1}{2}}(\R^{n})}
-    \]
-    \begin{align*}
-        \norm{\chi_{B}}_{\dot H^{\frac{1}{2}}(\R^{n})} = \int_{\R^{n}} (1+| \xi|^{2})^{\frac{1}{2}}| \widehat{\xi_{B}}(\xi)|^{2} \dd{\xi}
-    \end{align*}
-
-    To estimate this ``symmetrized'' Gagliardo seminorm, we must compute the fourier transform of the characteristic function of a ball. Let $ R $ be the radius of $ B $ and note that, as $ \chi_{B} $ is rotationally symmetric, so is its Fourier transform. Hence we evaluate at the point $ \xi = (0,0,\ldots, 0, \rho) $ using polar coordinates
-    \begin{align*}
-        \widehat{\xi_{B_{R}(0)}}(\xi) &= \frac{1}{(2\pi)^{n/2}}\int_{B_{R}(0)} e^{-i x\cdot \xi} \dd{x} = \frac{1}{(2\pi)^{n/2}}\int_{B_{R}(0)} e^{-i \rho x_{n} } \dd{x} \\
-        &=  \frac{1}{(2\pi)^{n/2}}\int_{S^{n-1}}\int_0^{R} e^{-i \rho x_{n} } \dd{x} 
-    \end{align*}
-
-    \begin{align*}
-        \widehat{\chi_{B_{R}(0)}}(\xi) &= \frac{1}{(2\pi)^{n/2}}\int_{\R^{n}} \chi_{B_{R}(0)}(x) e^{-i x\cdot \xi} \dd{x} = \frac{1}{(2\pi)^{n/2}}\int_{\R^{n}} \chi_{B_{R}(0)}(x) e^{-i \rho x_{n}} \dd{x}  
-    \end{align*}
-\end{proof}
-
-\begin{fact}
-    For any measurable subset $ E\sub \R^{n} $ of finite positive measure, the characteristic function $ \chi_{E} $ is not an element of $ W^{1,1}(\R^{n})$.
-\end{fact}
-
-
-
-% ToDO include stuff about symmetric rearrangement
-
-
-
-
-
-
-\subsection{Motivation for the definition of fractional perimeter}
+%\subsection{Why study the Asymptotics}
+%
+%\begin{fact}
+%    For any measurable subset $ E\sub \R^{n} $ of finite positive measure, the characteristic function $ \chi_{E} $ is not an element of $ H^{\frac{1}{2}}(\R^{n}) $.
+%\end{fact}
+%
+%\begin{proof}
+%    By assumption $ \chi_{E}\in L^{2}(\R^{n})$, so it suffices to show that $ \chi_{E} $ is not in the corresponding homogenous sobolev space $ \dot H^{\frac{1}{2}}(\R^{n}) $. \\  
+%
+%    TODO INSERT SYMMETRIC REARRANGEMENT THINGS
+%
+%    Let $ B $ be the ball centered at $ 0 $ with the same (finite) measure as $ E $, i.e. the symmetric decreasing rearrangement of the set $ E $. (INSERT EXPOSITION ABOUT THIS)$ \chi_{E}^{*} = \chi^{B} $ and we have that 
+%    \[
+%        \norm{\chi_{E}}_{\dot H^{\frac{1}{2}}(\R^{n})} \geq \norm{\chi_{E}^{*}}_{\dot H^{\frac{1}{2}}(\R^{n})} = \norm{\chi_{B}}_{\dot H^{\frac{1}{2}}(\R^{n})}
+%    \]
+%    \begin{align*}
+%        \norm{\chi_{B}}_{\dot H^{\frac{1}{2}}(\R^{n})} = \int_{\R^{n}} (1+| \xi|^{2})^{\frac{1}{2}}| \widehat{\xi_{B}}(\xi)|^{2} \dd{\xi}
+%    \end{align*}
+%
+%    To estimate this ``symmetrized'' Gagliardo seminorm, we must compute the fourier transform of the characteristic function of a ball. Let $ R $ be the radius of $ B $ and note that, as $ \chi_{B} $ is rotationally symmetric, so is its Fourier transform. Hence we evaluate at the point $ \xi = (0,0,\ldots, 0, \rho) $ using polar coordinates
+%    \begin{align*}
+%        \widehat{\xi_{B_{R}(0)}}(\xi) &= \frac{1}{(2\pi)^{n/2}}\int_{B_{R}(0)} e^{-i x\cdot \xi} \dd{x} = \frac{1}{(2\pi)^{n/2}}\int_{B_{R}(0)} e^{-i \rho x_{n} } \dd{x} \\
+%        &=  \frac{1}{(2\pi)^{n/2}}\int_{S^{n-1}}\int_0^{R} e^{-i \rho x_{n} } \dd{x} 
+%    \end{align*}
+%
+%    \begin{align*}
+%        \widehat{\chi_{B_{R}(0)}}(\xi) &= \frac{1}{(2\pi)^{n/2}}\int_{\R^{n}} \chi_{B_{R}(0)}(x) e^{-i x\cdot \xi} \dd{x} = \frac{1}{(2\pi)^{n/2}}\int_{\R^{n}} \chi_{B_{R}(0)}(x) e^{-i \rho x_{n}} \dd{x}  
+%    \end{align*}
+%\end{proof}
+%
+%\begin{fact}
+%    For any measurable subset $ E\sub \R^{n} $ of finite positive measure, the characteristic function $ \chi_{E} $ is not an element of $ W^{1,1}(\R^{n})$.
+%\end{fact}
+%
+%
+%
+%% ToDO include stuff about symmetric rearrangement
+%
+%
+%
+%
+%
+%
+\subsection{Motivation and definition of the fractional perimeter}
 
 %TODO talk about where it was introduced and its usage
+
+First introduced by Caffarelli in 2011 \cite{caffarelli:nonlocal, caffarelli:limit}, the study of the fractional perimeter (and more generally nonlocal perimeters) has devloped into a highly active area of research. We mention the 2019 monograph by Maz\'on \cite{mazon:nonlocal} for an overview of the development of the field. 
+
+The quantity known as fractional perimeter initally arose as the energy functional for a nonlocal version of motion by mean curvature. We will give a much more elementary motivation in this paper.
+
+Fix a region $ \Omega $. Define a sequence of regions $ \Omega_{1}, \Omega_{2},\ldots $ and surfaces $ S_{1},S_{2}, \ldots $ as follows: 
+\begin{center}
+    
+\end{center}
+
 
 \begin{definition}\label{fracperim}
     Let $ \Omega\sub \R^{n} $ be a smooth bounded domain, $ s\in (0,1) $, and $ E\sub \R^{n} $ measurable. The \textit{fractional $ s $-perimeter of $ E $ in $ \Omega $} is the quantity
