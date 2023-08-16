@@ -7,19 +7,17 @@
 \section{Asymptotics of $ P_{s}(E,\Omega) $ as $ s\to0^{+} $}
 
 \subsection*{Proof of Theorem \ref{sto0}}
-    Suppose first that $ \Omega = \R^{n} $. Note that then $ P_{s}^{NL}(E,\R^{n}) = 0 $, so we are left with only a local term. Noting that $ | \chi_{E}(x) - \chi_{E}(y)| = | \chi_{E}(x) - \chi_{E}(y)|^{2} $ and appealing to Proposition \ref{fracnormislaplacian}, we find
+    We follow Dipierro \cite{dipierro:2013}. Suppose first that $ \Omega = \R^{n} $. Note that then $ P_{s}^{NL}(E,\R^{n}) = 0 $, so we are left with only a local term. Noting that $ | \chi_{E}(x) - \chi_{E}(y)| = | \chi_{E}(x) - \chi_{E}(y)|^{2} $ and appealing to Proposition \ref{fracnormislaplacian}, we find
     \[
         [\chi_{E}]_{W^{s,1}(\R^{n})} = [ \chi_{E} ]_{W^{\frac{s}{2},2}(\R^{n})}^{2} = \frac{2}{C(n,s)}\int_{\R^{n}}| \xi|^{2s}|\mathscr{F}u|^{2}\dd{\xi}.
     \] 
-    Hence, after normalizing by $ s $ (TODO APPEAL TO ASYMPTOTICS OF $C(n,s)$) and applying the monotone convergence theorem, we compute
+    Hence, after normalizing by $ s $ and applying the monotone convergence theorem and Proposition \ref{constantasymp}, we compute
     \begin{align*}
         \lim_{s\to 0} s P_{s}(E,\R^{n}) &= \lim_{s\to 0^{+}} \frac{s}{2}[ \chi_{E}]_{W^{s,1}(\R^{n})} = \lim_{s\to 0^{+}} \frac{s}{C(n,s)}\int_{\R^{n}}| \xi|^{2s}|\mathscr{F}\chi_{E}|^{2} \dd{\xi} \\
         &= \frac{\omega_{n-1}}{2} \norm{\mathscr{F} \chi_{E}}_{L^{2}(\R^{n})}^{2} = \frac{\omega_{n-1}}{2} \mathcal{L}^{n}(E)
     \end{align*}
 
-    % TODO insert ref to asymptotic of C(n,s)/1-s and C(n,s)/s
-
-    Now we look at the case where $ \Omega\sub \R^{n} $ is a bounded domain with Lipschitz boundary. As $ E\sub \Omega $, the interactions in Definition \ref{fracperim} simplify to 
+    Now we look at the case where $ \Omega\sub \R^{n} $ is a bounded domain with Lipschitz boundary. As $ E\sub \Omega $, the interactions in Definition \ref{def:sperim} simplify to 
     \[
         P_{s}(E,\Omega) = L(E, \Omega\setminus E) + L(E, \Omega^{c}) = L(E,E^{c}) = \frac{1}{2}[ \chi_{E}]_{W^{s,1}(\R^{n})},
     \]

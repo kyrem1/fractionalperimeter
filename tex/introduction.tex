@@ -6,29 +6,44 @@
 
 \section{Introduction}
 
-First introduced by Caffarelli in 2011 \cite{caffarelli:nonlocal, caffarelli:limit}, the study of the fractional perimeter (and more generally nonlocal perimeters) has devloped into a highly active area of research. We mention the 2019 monograph by Maz\'on \cite{mazon:nonlocal} for an overview of the development of the field. 
+Newton's law of gravitation states that the magnitude of the gravitational interaction force between two point masses is inversely proportional to the square of the distance between them. Likewise, Coulomb's law states that the magnitude of the electrostatic force between two point charges is inversely proportional to the square of the distance between them. In both of these laws, we have two particles $ \mathbf{r},\mathbf{r^{\prime}}\in \R^{3} $ with an ``interaction force'' $  \frac{1}{|\mathbf{r}-\mathbf{r^{\prime}}|^{2}} $ between them. The exponent ($ 2 $ in this case) in the denominator controls how strongly the interaction force weights distant particles. 
 
-The quantity known as fractional perimeter initally arose as the energy functional for a nonlocal version of motion by mean curvature. We will give a much more elementary motivation in this paper by appealing to physical intuition.
+Fix $ s\in (0,1) $ and consider the function $ \mathcal{I}_s:\R^{n}\times\R^{n}\setminus \{\mathbf{0}\}\to [0,+\infty] $ given by $ \mathcal{I}_{s}(x,y):= \frac{1}{|x-y|^{n+s}} $. This will be our ``interaction force'' between particles $ x $ and $ y $. Again, note that the parameter $ s $ controls how strongly distant points interact. If we have two disjoint sets $ A,B\sub \R^{n} $, their total interaction force is then given by
+\[
+    L_{s}(A,B) = \int_{A}\int_{B} \mathcal{I}_{s}(x,y) \dd{x}\dd{y} = \int_{A}\int_{B}\frac{\dd{x}\dd{y}}{|x-y|^{n+s}}.
+\]
+%We restrict to this range of exponents as the above integral diverges generally for $ s\not\in(0,1) $.
 
-Recall Newton's law of gravitation which states that the size of the gravitational interaction force between two point masses is inversely proportional to the square of the distance between them. Likewise, Coulomb's law states that the size of the electrostatic force between two point charges is inversely proportional to the square of the distance between them.
+To introduce $ s $-fractional perimeter, consider a measurable set $ E\sub \R^{n} $ and an open set $ \Omega\sub \R^{n} $. The main idea is that the points inside $ E $ ``interact'' with those outside $ E $, but we would like to ignore any interaction occuring purely outside of $ \Omega $. Explicitly, $ \Omega $ splits $ E $ and $ E^{c} $ into four sets: 
+\begin{align*}
+    E^{\prime} = E\cap \Omega &\quad O^{\prime} = \Omega\setminus E\\ 
+    E^{\prime\prime} = E\cap \Omega^{c} &\quad O^{\prime\prime} = \Omega^{c}\setminus E
+\end{align*}
+We are concerned with the interactions depicted in Figure \ref{fig:interactions} and ignore the interaction between $ E^{\prime\prime} $ and $ O^{\prime\prime} $ as they both lie outside of $ \Omega $. Finally, we sum the relevant interactions and define the $ s $-fractional perimeter of $ E $ in $ \Omega $ to be
+\[
+    P_{s}(E,\Omega) := L_{s}(E^{\prime}, O^{\prime}) + L_{s}(E^{\prime\prime}, O^{\prime}) + L_{s}(E^{\prime}, O^{\prime\prime}).
+\]
 
-In both of these examples, we have some ``interaction force'' between two particles $ \mathbf{r},\mathbf{r^{\prime}} $ given by $ \frac{1}{|\mathbf{r}-\mathbf{r^{\prime}}|^{2}} $. In sense, the power of $ 2 $ in the denominator controls how strongly this force quantity weights distant interactions.
+\begin{figure}[H]\label{fig:interactions}
+    \includesvg[scale=0.7]{figures/interactions.svg}
+    \caption{The interactions between $ E $ and $ \Omega $}
+\end{figure}
 
-
-%TODO fix these theorems
-\begin{maintheorem}\label{sto1}
-    Let $ \Omega\sub \R^{n} $ be a bounded open set with Lipschitz boundary. If $ E\sub \R^{n} $ is a Caccioppoli set, then
+The aim of this paper is to introduce the necessary background to explain why the quantity $ P_{s} $ is called the fractional ``perimeter.'' In short, the functional $ P_{s} $ approaches the classical perimeter functional $ Per $ as $ s\to1^{-} $ after suitable renormalization. This statement alone is startling as $ P_{s}(E,\Omega) $ is \textit{nonlocal} in that it depends on the behavoir of points everywhere in $ \R^{n} $, whereas the classical perimeter $ Per(E,\Omega) $ only depends upon a neighborhood of $ \partial E $ inside $ \Omega $. The main result we will show in this direction is the following theorem.
+\begin{maintheorem}[\cite{lombardini:2019}]\label{sto1}
+    Let $ \Omega\sub \R^{n} $ be a bounded open set with Lipschitz boundary. If $ E\sub \R^{n} $ is a Caccioppoli set which intersects $ \partial E $ transversally (that is, $Per(E, \partial \Omega) = 0$), then
     \begin{equation}
-        \lim_{s\to1}(1-s) Per_{s}(E, \Omega) = \omega_{n-1} Per(E,\cls{\Omega}).
+        \lim_{s\to1}(1-s) P_{s}(E, \Omega) = C_{n} Per(E,\Omega).
     \end{equation}
+    where $ C_{n} $ is a dimensional constant.
 \end{maintheorem}
-
-
-\begin{maintheorem}\label{sto0}
+Another surprising behavoir of $ P_{s} $ is that on the opposite end asymptotic, namely as $ s\to0^{+} $, the fractional perimeter approaches the Lebesgue measure after suitable renormalization. Hence, the functional $ P_{s} $ can be thought of as an interpolation between perimeter and area. Again, we emphasize stark contrast between the nonlocal nature of fractional perimeter and the local nature of the Lebesgue measure.
+\begin{maintheorem}[\cite{dipierro:2013}]\label{sto0}
     Let $ \Omega $ be either a bounded open set with Lipschitz boundary or all of $ \R^{n} $. Let $ E\sub \Omega $ be a Caccioppoli set. Then 
     \begin{equation}
-        \lim_{s\to0} sPer_{s}(E,\Omega) = \frac{\omega_{n-1}}{2} \mathcal{L}^{n}(E)
+        \lim_{s\to0} sP_{s}(E,\Omega) = \frac{\omega_{n-1}}{2} \mathcal{L}^{n}(E)
     \end{equation}
 \end{maintheorem}
+To this end, we will begin in Section \ref{sec:bv} by surveying the classical notion of perimeter and functions of bounded variation. We will develop in Section \ref{sec:sobolev} the necessary machinery from the theory of fractional Sobolev spaces to reinterpret $ P_{s} $ in a more approachable manner. Then, we will take a brief detour in Section \ref{sec:bbm} to discuss the Bourgain-Brezis-Mironescu formula: a recent technical advance in Sobolev space theory which make the analysis in Theorem \ref{sto1} possible. In Section \ref{sec:sperim} we introduce some basic properties of the fractional perimeter functional. Finally, we treat Theorem \ref{sto1} in Section \ref{sto1} and Theorem \ref{sto0} in Section \ref{sto0}.
 
 \end{document}

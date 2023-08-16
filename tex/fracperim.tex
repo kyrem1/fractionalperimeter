@@ -4,7 +4,9 @@
 
 \begin{document}
 
-\section{Fractional $s$-Perimeter}
+\section{Fractional $s$-Perimeter}\label{sec:sperim}
+First introduced by Caffarelli in 2011 \cite{caffarelli:nonlocal, caffarelli:limit}, the study of the fractional perimeter (and more generally nonlocal perimeters) has devloped into a highly active area of research. We mention the 2019 monograph by Maz\'on \cite{mazon:nonlocal} for an overview of the development of the field. 
+
 
 %\subsection{Why study the Asymptotics}
 %
@@ -15,7 +17,6 @@
 %\begin{proof}
 %    By assumption $ \chi_{E}\in L^{2}(\R^{n})$, so it suffices to show that $ \chi_{E} $ is not in the corresponding homogenous sobolev space $ \dot H^{\frac{1}{2}}(\R^{n}) $. \\  
 %
-%    TODO INSERT SYMMETRIC REARRANGEMENT THINGS
 %
 %    Let $ B $ be the ball centered at $ 0 $ with the same (finite) measure as $ E $, i.e. the symmetric decreasing rearrangement of the set $ E $. (INSERT EXPOSITION ABOUT THIS)$ \chi_{E}^{*} = \chi^{B} $ and we have that 
 %    \[
@@ -48,91 +49,38 @@
 %
 %
 %
-%
-\subsection{Motivation and definition of the fractional perimeter}
-
-%TODO talk about where it was introduced and its usage
-
-First introduced by Caffarelli in 2011 \cite{caffarelli:nonlocal, caffarelli:limit}, the study of the fractional perimeter (and more generally nonlocal perimeters) has devloped into a highly active area of research. We mention the 2019 monograph by Maz\'on \cite{mazon:nonlocal} for an overview of the development of the field. 
-
-The quantity known as fractional perimeter initally arose as the energy functional for a nonlocal version of motion by mean curvature. We will give a much more elementary motivation in this paper.
-
-Fix a region $ \Omega $. Define a sequence of regions $ \Omega_{1}, \Omega_{2},\ldots $ and surfaces $ S_{1},S_{2}, \ldots $ as follows: 
-\begin{center}
-    
-\end{center}
-
-
-\begin{definition}\label{fracperim}
-    Let $ \Omega\sub \R^{n} $ be a smooth bounded domain, $ s\in (0,1) $, and $ E\sub \R^{n} $ measurable. The \textit{fractional $ s $-perimeter of $ E $ in $ \Omega $} is the quantity
+%%TODO talk about where it was introduced and its usage
+\begin{definition}\label{def:sperim}
+    Let $ \Omega\sub \R^{n} $ be a bounded domain or all of $ \R^{n} $, $ s\in (0,1) $, and $ E\sub \R^{n} $ measurable. Following Figure \ref{fig:interactions} from the introduction, the \textit{fractional $ s $-perimeter of $ E $ in $ \Omega $} is the quantity
     \begin{align*}
-        P_{s}(E, \Omega) :&= \frac{1}{2}[\chi_{E}]_{W^{s,1}(\Omega)} + \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} 
-        %&= L_{s}(E\cap \Omega, E^{c}\cap \Omega) + L_{s}(E\cap \Omega, E^{c}\cap \Omega^{c}) + L(E\cap \Omega^{c}, E^{c} \cap \Omega)
+        P_{s}(E, \Omega) := L_{s}(E\cap \Omega, E^{c}\cap \Omega) + L_{s}(E\cap \Omega, E^{c}\cap \Omega^{c}) + L(E\cap \Omega^{c}, E^{c} \cap \Omega)
     \end{align*}
     where $ L(A,B) $ denotes the following interaction energy integral
     \[
         L(A,B) := \int_{A}\int_{B}\frac{1}{|x-y|^{n+s}}\dd{x}\dd{y} \text{ for all } A,B\sub \R^{n}
     \]
-    with the convention that $ L(A,B) = 0 $ if either $ A $ or $ B $ is empty. We denote the local and nonlocal energy terms by
+    with the convention that $ L(A,B) = 0 $ if either $ A $ or $ B $ is empty. When $ \Omega =\R^{n} $, we write $ P_{s}(E):= P_{s}(E,\R^{n}) $.
+\end{definition}
+For the reader's convenience moving forward, we record a simple characteristic function computation
+\begin{align*}
+    | \chi_{E}(x) - \chi_{E}(y)| &= | \chi_{E}(x) - \chi_{E}(y)|^{2} = \chi_{E}(x)-\chi_{E}(x) \chi_{E}(y) +\chi_{E}(y) -\chi_{E}(x) \chi_{E}(y)\\
+    &= \chi_{E}(x)(1- \chi_{E}(y)) + \chi_{E}(y)(1-\chi_{E}(x)) = \chi_{E}(x) \chi_{E^{c}}(y) + \chi_{E^{c}}(x) \chi_{E}(y).
+\end{align*}
+Now, to place the functional $ P_{s} $ in the context of Section \ref{sec:sobolev}, consider the following reformulation. 
+\begin{align*}
+    P_{s}(E,\Omega)&= L(E\cap \Omega, E^{c} \cap \Omega) + L(E^{c}\cap \Omega, E\cap \Omega^{c}) + L(E\cap \Omega, E^{c}\cap \Omega^{c}) \\
+    &= \int_{\Omega}\int_{\Omega}\frac{\chi_{E}(x) \chi_{E^{c}}(y)}{|x-y|^{n+s}}\dd{x}\dd{y} + \lr{\int_{\R^{n}\setminus\Omega}\int_{\Omega}\frac{\chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y} + \int_{\Omega}\int_{\R^{n}\setminus\Omega}\frac{\chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y} } \\
+    &\overset{\text{Fubini}}{=} \frac{1}{2}\int_{\Omega}\int_{\Omega} \frac{\chi_{E}(x) \chi_{E^{c}}(y) + \chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y} + \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{\chi_{E}(x) \chi_{E^{c}}(y) + \chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y}\\
+    &= \frac{1}{2}[\chi_{E}]_{W^{s,1}(\Omega)} + \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} 
+\end{align*}
+
+
+\begin{definition}
+    With the same setup as Definition \ref{def:sperim}, we define the local and nonlocal energy terms by
     \[
         P_{s}^{L}(E,\Omega) := \frac{1}{2}[\chi_{E}]_{W^{s,1}(\Omega)} \quad \quad P_{s}^{NL}(E,\Omega) := \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} 
     \]
-    When $ \Omega =\R^{n} $, we write $ P_{s}(E):= P_{s}(E,\R^{n}) $.
+    Hence we have a decomposition $ P_{s}(E,\Omega) = P_{s}^{L}(E,\Omega) + P_{s}^{NL}(E,\Omega) $ of the fractional perimeter into local and nonlocal energy terms.
 \end{definition}
-
-To make this definition more transparent, consider the following reformulation:
-\begin{align*}
-    P_{s}(E, \Omega) &= \frac{1}{2}\int_{\Omega}\int_{\Omega} \frac{|\chi_{E}(x)-\chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} +  \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{| \chi_{E}(x) - \chi_{E}(y)|}{|x-y|^{n+s}}\dd{x}\dd{y} \\
-    &= \frac{1}{2}\int_{\Omega}\int_{\Omega} \frac{\chi_{E}(x) \chi_{E^{c}}(y) + \chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y} +  \int_{\Omega}\int_{\R^{n}\setminus \Omega} \frac{\chi_{E}(x) \chi_{E^{c}}(y) + \chi_{E^{c}}(x) \chi_{E}(y)}{|x-y|^{n+s}}\dd{x}\dd{y}\\
-    &= L(E\cap \Omega, E^{c} \cap \Omega) + L(E^{c}\cap \Omega, E\cap \Omega^{c}) + L(E\cap \Omega, E^{c}\cap \Omega^{c}).
-\end{align*}
-
-\begin{figure}[H]
-    \includesvg[scale=0.7]{figures/interactions.svg}
-\end{figure}
-
-
-%\subsection{Supplementary Observations}
-%\begin{lemma}
-%    Let $ A, B\sub \R^{n} $ be bounded measurable sets such that $ dist(A,B)\geq C > 0  $ for some $ C>0 $. Then $ \lim_{s\to0} sL(A,B) = 0 $.
-%\end{lemma}
-%
-%\begin{proof}
-%    \begin{align*}
-%        sL(A,B) = s\int_{A}\int_{B} \frac{\dd{x}\dd{y}}{|x-y|^{n+s}} \leq s\int_{A} \int_{B} \frac{1}{C^{n+s}}\dd{x}\dd{y} = \frac{s |A| |B|}{C^{n+s}} \xrightarrow{s\to0} 0
-%    \end{align*}
-%\end{proof}
-
-
-
-%\begin{theorem}
-%    Let $ \Omega\sub \R^{n} $ be a smooth bounded domain, $ E\sub \R^{n} $ measurable, and suppose that
-%    \[
-%        \lim_{s\searrow 0} s P_{s}(E , \Omega) \quad\text{exists.}
-%    \]
-%    If we have $ E\sub \Omega $, then in fact, 
-%    \[
-%        \lim_{s\searrow 0} s P_{s}(E , \Omega) = \H^{n-1}(S^{n-1}) |E| .
-%    \]
-%\end{theorem}
-
-%\begin{proposition}
-%    Let $ \Omega $ be nice and suppose that $ f\in BV(\Omega) $ and $ \rho\in L^{1}(\R^{n}) $.
-%
-%
-%\end{proposition}
-
-%\begin{proof}
-%    Since $ \mc{E}f\in BV(\R^{n}) $, there exists a universal constant $ C>0 $ such that 
-%    \[
-%        \int_{\R^{n}} |\mc{E}f(x+h) - \mc{E}f(x)|\dd{x} \leq C|h| \quad \text{ for all } h\in \R^{n}.
-%    \]
-%    Moreover, we can take $ C = \int_{\R^{n}} |D(\mc{E}f)| $.
-%
-%
-%\end{proof}
-
-% TODO Extension operators
-
 
 \end{document}

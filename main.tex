@@ -40,7 +40,7 @@
 
 
 %--------Bibliography---------
-\usepackage[backend=biber]{biblatex}
+\usepackage[backend=biber,style=alphabetic]{biblatex}
 \addbibresource{fractional.bib}
 %----------------------------
 
@@ -69,7 +69,13 @@
 
 %--------Content-------------
 \begin{document}
+
 \maketitle
+\begin{abstract}
+  In this paper, we survey the notion of fractional $ s $-perimeter and motivate its name by proving an asymptotic relation to the classical perimeter in the sense of De Giorgi. We also prove an asymptotic relation between the $ s $-perimeter and the Lebesgue measure, clarifying the intuition that the $ s $-perimeter is an ``interpolation'' between area and perimeter.
+
+  We develop the necessary tools from the theories of $ BV $-functions and fractional Sobolev spaces in order to approach the literature on nonlocal functionals such as the $ s $-perimeter.
+\end{abstract}
 
 \tableofcontents
 
@@ -104,14 +110,14 @@
 
 %-----Appendix-----
 %\newpage
-\appendix
-
-%\subfile{./tex/appendix/integersobolev.tex}
-
-
-\subfile{./tex/appendix/symmrearr.tex}
-
-\subfile{./tex/miscfra.tex}
+%\appendix
+%
+%%\subfile{./tex/appendix/integersobolev.tex}
+%
+%
+%\subfile{./tex/appendix/symmrearr.tex}
+%
+%\subfile{./tex/miscfra.tex}
 
 
 %------Biblio------

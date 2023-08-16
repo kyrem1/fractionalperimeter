@@ -18,7 +18,7 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global}
+  \datalist[entry]{anyt/global//global/global}
     \entry{adams:sobolev}{book}{}
       \name{author}{2}{}{%
         {{hash=7a1d45e895aec3674e2d1ee0c8e193fe}{%
@@ -41,6 +41,7 @@
       \strng{authorbibnamehash}{f04513d99eb5c05a5309eb430e88548a}
       \strng{authornamehash}{f04513d99eb5c05a5309eb430e88548a}
       \strng{authorfullhash}{f04513d99eb5c05a5309eb430e88548a}
+      \field{labelalpha}{AF03}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}
@@ -52,39 +53,6 @@
       \field{volume}{140}
       \field{year}{2003}
       \field{pages}{xiv+305}
-      \range{pages}{-1}
-    \endentry
-    \entry{bergh:interpolation}{book}{}
-      \name{author}{2}{}{%
-        {{hash=0688d4b2440a6400c52586045e6bb425}{%
-           family={Bergh},
-           familyi={B\bibinitperiod},
-           given={Jöran},
-           giveni={J\bibinitperiod}}}%
-        {{hash=8df1352637ad87cabcb467b34ddfda07}{%
-           family={Löfström},
-           familyi={L\bibinitperiod},
-           given={Jörgen},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer-Verlag, Berlin-New York}%
-      }
-      \strng{namehash}{dc7a683630f4e344aac8679919748f28}
-      \strng{fullhash}{dc7a683630f4e344aac8679919748f28}
-      \strng{bibnamehash}{dc7a683630f4e344aac8679919748f28}
-      \strng{authorbibnamehash}{dc7a683630f4e344aac8679919748f28}
-      \strng{authornamehash}{dc7a683630f4e344aac8679919748f28}
-      \strng{authorfullhash}{dc7a683630f4e344aac8679919748f28}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{series}{Grundlehren der Mathematischen Wissenschaften}
-      \field{title}{Interpolation spaces. {A}n introduction}
-      \field{volume}{No. 223}
-      \field{year}{1976}
-      \field{pages}{x+207}
       \range{pages}{-1}
     \endentry
     \entry{brezis:2001}{incollection}{}
@@ -114,6 +82,7 @@
       \strng{authorbibnamehash}{33e3d302f3f2024db32079155d19c5b5}
       \strng{authornamehash}{33e3d302f3f2024db32079155d19c5b5}
       \strng{authorfullhash}{33e3d302f3f2024db32079155d19c5b5}
+      \field{labelalpha}{BBM01}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
@@ -124,6 +93,40 @@
       \field{year}{2001}
       \field{pages}{439\bibrangedash 455}
       \range{pages}{17}
+    \endentry
+    \entry{bergh:interpolation}{book}{}
+      \name{author}{2}{}{%
+        {{hash=0688d4b2440a6400c52586045e6bb425}{%
+           family={Bergh},
+           familyi={B\bibinitperiod},
+           given={Jöran},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8df1352637ad87cabcb467b34ddfda07}{%
+           family={Löfström},
+           familyi={L\bibinitperiod},
+           given={Jörgen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag, Berlin-New York}%
+      }
+      \strng{namehash}{dc7a683630f4e344aac8679919748f28}
+      \strng{fullhash}{dc7a683630f4e344aac8679919748f28}
+      \strng{bibnamehash}{dc7a683630f4e344aac8679919748f28}
+      \strng{authorbibnamehash}{dc7a683630f4e344aac8679919748f28}
+      \strng{authornamehash}{dc7a683630f4e344aac8679919748f28}
+      \strng{authorfullhash}{dc7a683630f4e344aac8679919748f28}
+      \field{labelalpha}{BL76}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Grundlehren der Mathematischen Wissenschaften}
+      \field{title}{Interpolation spaces. {A}n introduction}
+      \field{volume}{No. 223}
+      \field{year}{1976}
+      \field{pages}{x+207}
+      \range{pages}{-1}
     \endentry
     \entry{brezis:2002}{article}{}
       \name{author}{1}{}{%
@@ -139,6 +142,7 @@
       \strng{authorbibnamehash}{99f5ee3a3cd91b18bcb1cd40b73126ae}
       \strng{authornamehash}{99f5ee3a3cd91b18bcb1cd40b73126ae}
       \strng{authorfullhash}{99f5ee3a3cd91b18bcb1cd40b73126ae}
+      \field{labelalpha}{Bre02}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
@@ -185,6 +189,7 @@
       \strng{authorbibnamehash}{2eb563d4ed3d017eee504f8f67cdedf9}
       \strng{authornamehash}{2eb563d4ed3d017eee504f8f67cdedf9}
       \strng{authorfullhash}{2eb563d4ed3d017eee504f8f67cdedf9}
+      \field{labelalpha}{CRS10}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -226,6 +231,7 @@
       \strng{authorbibnamehash}{269010df00078147358a985379fe23dd}
       \strng{authornamehash}{269010df00078147358a985379fe23dd}
       \strng{authorfullhash}{269010df00078147358a985379fe23dd}
+      \field{labelalpha}{CV11}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -262,6 +268,7 @@
       \strng{authorbibnamehash}{ca38936b1da6354748d66c9d3e887b79}
       \strng{authornamehash}{ca38936b1da6354748d66c9d3e887b79}
       \strng{authorfullhash}{ca38936b1da6354748d66c9d3e887b79}
+      \field{labelalpha}{Dáv02}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -282,6 +289,58 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1007/s005260100135
+      \endverb
+    \endentry
+    \entry{dipierro:2013}{article}{}
+      \name{author}{4}{}{%
+        {{hash=9c2ccda182070635fee762323d5de5b4}{%
+           family={Dipierro},
+           familyi={D\bibinitperiod},
+           given={Serena},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5e34b95c0fc7b1e001583eb24a79a381}{%
+           family={Figalli},
+           familyi={F\bibinitperiod},
+           given={Alessio},
+           giveni={A\bibinitperiod}}}%
+        {{hash=43667f6d345b3d06e46758f878502722}{%
+           family={Palatucci},
+           familyi={P\bibinitperiod},
+           given={Giampiero},
+           giveni={G\bibinitperiod}}}%
+        {{hash=71baca0287af1a889a5b5936c6fb275d}{%
+           family={Valdinoci},
+           familyi={V\bibinitperiod},
+           given={Enrico},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{b702378e3dfe2d3a15012134e41a99c0}
+      \strng{fullhash}{6de2b9364a8466136ca917c40f5d5d7d}
+      \strng{bibnamehash}{b702378e3dfe2d3a15012134e41a99c0}
+      \strng{authorbibnamehash}{b702378e3dfe2d3a15012134e41a99c0}
+      \strng{authornamehash}{b702378e3dfe2d3a15012134e41a99c0}
+      \strng{authorfullhash}{6de2b9364a8466136ca917c40f5d5d7d}
+      \field{labelalpha}{Dip+13}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1078-0947,1553-5231}
+      \field{journaltitle}{Discrete Contin. Dyn. Syst.}
+      \field{number}{7}
+      \field{title}{Asymptotics of the {$s$}-perimeter as {$s\searrow0$}}
+      \field{volume}{33}
+      \field{year}{2013}
+      \field{pages}{2777\bibrangedash 2790}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.3934/dcds.2013.33.2777
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.3934/dcds.2013.33.2777
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3934/dcds.2013.33.2777
       \endverb
     \endentry
     \entry{hitchhiker}{article}{}
@@ -308,6 +367,7 @@
       \strng{authorbibnamehash}{a2ef9d16185580c0435912ccfc8dd53e}
       \strng{authornamehash}{a2ef9d16185580c0435912ccfc8dd53e}
       \strng{authorfullhash}{a2ef9d16185580c0435912ccfc8dd53e}
+      \field{labelalpha}{DPV12}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -328,45 +388,6 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1016/j.bulsci.2011.12.004
-      \endverb
-    \endentry
-    \entry{evans:pde}{book}{}
-      \name{author}{1}{}{%
-        {{hash=0d72932a7775f85a51622d3af75ae26e}{%
-           family={Evans},
-           familyi={E\bibinitperiod},
-           given={Lawrence\bibnamedelima C.},
-           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {American Mathematical Society, Providence, RI}%
-      }
-      \strng{namehash}{0d72932a7775f85a51622d3af75ae26e}
-      \strng{fullhash}{0d72932a7775f85a51622d3af75ae26e}
-      \strng{bibnamehash}{0d72932a7775f85a51622d3af75ae26e}
-      \strng{authorbibnamehash}{0d72932a7775f85a51622d3af75ae26e}
-      \strng{authornamehash}{0d72932a7775f85a51622d3af75ae26e}
-      \strng{authorfullhash}{0d72932a7775f85a51622d3af75ae26e}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{Second}
-      \field{isbn}{978-0-8218-4974-3}
-      \field{series}{Graduate Studies in Mathematics}
-      \field{title}{Partial differential equations}
-      \field{volume}{19}
-      \field{year}{2010}
-      \field{pages}{xxii+749}
-      \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1090/gsm/019
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1090/gsm/019
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1090/gsm/019
       \endverb
     \endentry
     \entry{evans:gmt}{book}{}
@@ -391,6 +412,7 @@
       \strng{authorbibnamehash}{e332b68e2d60bbfa99c7ec5ef339003f}
       \strng{authornamehash}{e332b68e2d60bbfa99c7ec5ef339003f}
       \strng{authorfullhash}{e332b68e2d60bbfa99c7ec5ef339003f}
+      \field{labelalpha}{EG15}
       \field{sortinit}{E}
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{labelnamesource}{author}
@@ -402,6 +424,46 @@
       \field{year}{2015}
       \field{pages}{xiv+299}
       \range{pages}{-1}
+    \endentry
+    \entry{evans:pde}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0d72932a7775f85a51622d3af75ae26e}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={Lawrence\bibnamedelima C.},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society, Providence, RI}%
+      }
+      \strng{namehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{fullhash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{bibnamehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{authorbibnamehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{authornamehash}{0d72932a7775f85a51622d3af75ae26e}
+      \strng{authorfullhash}{0d72932a7775f85a51622d3af75ae26e}
+      \field{labelalpha}{Eva10}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Second}
+      \field{isbn}{978-0-8218-4974-3}
+      \field{series}{Graduate Studies in Mathematics}
+      \field{title}{Partial differential equations}
+      \field{volume}{19}
+      \field{year}{2010}
+      \field{pages}{xxii+749}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1090/gsm/019
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1090/gsm/019
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1090/gsm/019
+      \endverb
     \endentry
     \entry{gilbarg}{book}{}
       \name{author}{2}{}{%
@@ -425,6 +487,7 @@
       \strng{authorbibnamehash}{7b31fa4bbbe430ec2608ecbe7894bf57}
       \strng{authornamehash}{7b31fa4bbbe430ec2608ecbe7894bf57}
       \strng{authorfullhash}{7b31fa4bbbe430ec2608ecbe7894bf57}
+      \field{labelalpha}{GT01}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
@@ -454,6 +517,7 @@
       \strng{authorbibnamehash}{10e9f2b445753b0567ac1e61d415746a}
       \strng{authornamehash}{10e9f2b445753b0567ac1e61d415746a}
       \strng{authorfullhash}{10e9f2b445753b0567ac1e61d415746a}
+      \field{labelalpha}{Leo23}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
@@ -489,6 +553,7 @@
       \strng{authorbibnamehash}{15644ea296d3695a33a32f73db78b224}
       \strng{authornamehash}{15644ea296d3695a33a32f73db78b224}
       \strng{authorfullhash}{15644ea296d3695a33a32f73db78b224}
+      \field{labelalpha}{Lom19}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
@@ -538,6 +603,7 @@
       \strng{authorbibnamehash}{b927bc4b026a3aad5a083e6b166b9c9d}
       \strng{authornamehash}{b927bc4b026a3aad5a083e6b166b9c9d}
       \strng{authorfullhash}{b927bc4b026a3aad5a083e6b166b9c9d}
+      \field{labelalpha}{MRT19}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
@@ -577,6 +643,7 @@
       \strng{authorbibnamehash}{d467ee950fdecf8f01446d71080a00ac}
       \strng{authornamehash}{d467ee950fdecf8f01446d71080a00ac}
       \strng{authorfullhash}{d467ee950fdecf8f01446d71080a00ac}
+      \field{labelalpha}{PS17}
       \field{sortinit}{P}
       \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
       \field{labelnamesource}{author}

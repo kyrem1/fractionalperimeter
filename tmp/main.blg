@@ -1,19 +1,19 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'tmp/main.blg'
-[69] biber:340> INFO - === Tue Aug 15, 2023, 19:19:24
-[82] Biber.pm:419> INFO - Reading 'tmp/main.bcf'
-[135] Biber.pm:979> INFO - Found 15 citekeys in bib section 0
-[149] Biber.pm:4419> INFO - Processing section 0
-[157] Biber.pm:4610> INFO - Looking for bibtex file 'fractional.bib' for section 0
-[159] bibtex.pm:1713> INFO - LaTeX decoding ...
+[67] biber:340> INFO - === Tue Aug 15, 2023, 22:18:42
+[80] Biber.pm:419> INFO - Reading 'tmp/main.bcf'
+[134] Biber.pm:979> INFO - Found 16 citekeys in bib section 0
+[147] Biber.pm:4419> INFO - Processing section 0
+[156] Biber.pm:4610> INFO - Looking for bibtex file 'fractional.bib' for section 0
+[157] bibtex.pm:1713> INFO - LaTeX decoding ...
 [180] bibtex.pm:1519> INFO - Found BibTeX data source 'fractional.bib'
-[286] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[287] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[287] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[287] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[300] bbl.pm:660> INFO - Writing 'tmp/main.bbl' with encoding 'UTF-8'
-[305] bbl.pm:763> INFO - Output to tmp/main.bbl
-[305] Biber.pm:131> WARN - ISBN '978-3-030-06242-2; 978-3-030-06243-9' in entry 'mazon:nonlocal' is invalid - run biber with '--validate_datamodel' for details.
-[305] Biber.pm:131> WARN - legacy year field '[2023] ©2023' in entry 'leoni:sobolev' is not an integer - this will probably not sort properly.
-[305] Biber.pm:131> WARN - ISBN '[9781470468989]; [9781470472535]; [9781470472528]' in entry 'leoni:sobolev' is invalid - run biber with '--validate_datamodel' for details.
-[305] Biber.pm:133> INFO - WARNINGS: 3
+[294] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[294] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[294] Biber.pm:4239> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[294] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[309] bbl.pm:660> INFO - Writing 'tmp/main.bbl' with encoding 'UTF-8'
+[314] bbl.pm:763> INFO - Output to tmp/main.bbl
+[314] Biber.pm:131> WARN - legacy year field '[2023] ©2023' in entry 'leoni:sobolev' is not an integer - this will probably not sort properly.
+[314] Biber.pm:131> WARN - ISBN '[9781470468989]; [9781470472535]; [9781470472528]' in entry 'leoni:sobolev' is invalid - run biber with '--validate_datamodel' for details.
+[314] Biber.pm:131> WARN - ISBN '978-3-030-06242-2; 978-3-030-06243-9' in entry 'mazon:nonlocal' is invalid - run biber with '--validate_datamodel' for details.
+[314] Biber.pm:133> INFO - WARNINGS: 3

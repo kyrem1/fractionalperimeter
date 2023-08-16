@@ -4,10 +4,10 @@
 
 \begin{document}
 
-\section{Sobolev Space Preliminaries}
+\section{Sobolev Space Preliminaries}\label{sec:sobolev}
 
 
-The theory behind fractional perimeter is written in the language of fractional Sobolev spaces. As such, we will motivate and define these function spaces as well as discuss their most relevant properties. For brevity, the majority of proofs are either omitted or relegated to Appendix \ref{appendix:misc}. There are plenty of good monographs on the subject. We mention the recent book by Leoni \cite{leoni:sobolev}, the book by Adams \cite{adams:sobolev}, and the Hitchhikers Guide \cite{hitchhiker}. For an overview of the theory of classical Sobolev spaces, see the books by Evans \cite{evans:pde, evans:gmt}.
+The theory behind fractional perimeter is written in the language of fractional Sobolev spaces. As such, we will motivate and define these function spaces as well as discuss their most relevant properties. There are plenty of good monographs on the subject. We mention the recent book by Leoni \cite{leoni:sobolev}, the book by Adams \cite{adams:sobolev}, and the Hitchhikers Guide \cite{hitchhiker}. For an overview of the theory of classical Sobolev spaces, see the books by Evans \cite{evans:pde, evans:gmt}.
 
 
 \subsection{Fractional Sobolev Spaces}
@@ -26,8 +26,7 @@ Like classical Sobolev spaces, fractional Sobolev spaces attempt to capture the 
     \]
     The presence of the singular kernel $ |h|^{-n} $ ensures that the norm also captures oscillatory behavoir. This is the approach we will take throughout the paper.\\
 
-    \item \textit{Abstractly}: as interpolation spaces between $ W^{1,p} $ and $ L^{p} $. Using the interpolation methods first developed by Lions and Peetre in the 1960s (that is, the K- and J-methods), one can abstractly construct the spaces $ W^{s,p} $ as the ones which arise from \textit{real interpolation}. For an introduction to interpolation methods, see Bergh`s book \cite{bergh:interpolation} and Tice`s notes \cite{}
-    %TODO add Tice citation to bibtex https://www.math.cmu.edu/~iantice/notes/interpolation_notes.pdf 
+    \item \textit{Abstractly}: as interpolation spaces between $ W^{1,p} $ and $ L^{p} $. Using the interpolation methods first developed by Lions and Peetre in the 1960s (that is, the K- and J-methods), one can abstractly construct the spaces $ W^{s,p} $ as the ones which arise from \textit{real interpolation}. For an introduction to interpolation methods, see Bergh's book \cite{bergh:interpolation}.
 
     Although we will not take this approach in the following paper, it does provide some context for why we are able to recover $ W^{1,p} $-norms from $ W^{s,p} $-norms. Moreover, the fact that the interpolation spaces between $ W^{1,1} $ and $ L^{1} $ are the same as those between $ BV $ and $ L^{1} $ explains why we are able to recover $ BV $-norms from $ W^{s,1} $-norms. See \cite{ponce:2017} for details.
 \end{itemize}
@@ -42,8 +41,6 @@ Like classical Sobolev spaces, fractional Sobolev spaces attempt to capture the 
         \norm{u}_{W^{s,p}(\Omega)} := \norm{u}_{L^{p}(\Omega)}+[u]_{W^{s,p}(\Omega)}.
     \]
     We remark that $ C^{\infty}_{c}(\Omega)\sub W^{s,p}(\Omega) $ and we write $ W_{0}^{s,p}(\Omega) $ for the closure of $ C^{\infty}_{c}(\Omega) $ inside $ W^{s,p}(\Omega) $. It is a fact that when $ \Omega = \R^{n} $, these two spaces are equal; however, this is not necessarily true for general $ \Omega $.
-    %TODO talk about true for sufficiently regular $ \Omega $ when sp\leq 1 
-    %TODO insert counterexample
 
     In the case $ p=2 $, $ W^{s,2}(\Omega) $ is in fact a Hilbert space with inner product given by 
     \[
@@ -58,10 +55,8 @@ Like classical Sobolev spaces, fractional Sobolev spaces attempt to capture the 
 
 Althought these spaces and (semi)norms seem somewhat natural from the viewpoint of being an analogue of the H\"{o}lder condition for $ L^{p} $ spaces instead of $ L^{\infty} $, when presented as above they are ultimately quite artificial. Where would one find such spaces appearing in nature?
 
-If one takes for granted that integer sobolev spaces ``appear in nature,'' then the answer to the previous question is that \textit{fractional sobolev spaces are the correct image of the trace operator} (see TODOINSERT THIS for background on the trace operator).
-%TODO cite evans and maybe adams for info on classical trace 
+If one takes for granted that integer sobolev spaces ``appear in nature,'' then the answer to the previous question is that \textit{fractional sobolev spaces are the correct image of the trace operator} (see \cite[Chapter 5]{evans:pde} for background on the trace operator).
 
-%TODO maybe do different trace theorem like the one for $ W^1,p $
 
 \begin{proposition}
     Suppose $ \Omega\sub \R^{n} $ is a nice domain (see definition \ref{extndomain}) and $ k\in \N $. Then there is a split exact sequence of Hilbert spaces

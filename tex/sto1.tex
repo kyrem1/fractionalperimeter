@@ -49,11 +49,7 @@ where $ N_{\delta}(\partial \Omega) $ denotes the $ \delta $-tubular neighborhoo
 
 
 %TODO find the right place for this.
-Recall the following fact from point-set topology.
-\begin{fact}\label{distancefact}
-    If $ X\sub \R^{n} $ is nonempty and $ y\in \R^{n}\setminus\Int{X} $, then $ d(y,X) = d(y,\partial X) = d(y, \partial X^{c})$.
-\end{fact}
-\newpage
+
 
 
 
@@ -115,6 +111,11 @@ To estimate these interactions, we need the following claim. %TODO possibly adju
 \begin{claim}
     If $ y\in \Omega $ and $ \rho_{y}:= \sup\{\rho>0: B_{\rho}(y)\sub D_{i}\} $, then $ \rho_{y}\geq d_{i} $ and thus $ B_{d_{i}}(y)\sub D_{i} $.
 \end{claim}
+
+To prove this claim, recall the following fact from point-set topology. 
+\begin{fact}\label{distancefact}
+    If $ X\sub \R^{n} $ is nonempty and $ y\in \R^{n}\setminus\Int{X} $, then $ d(y,X) = d(y,\partial X) = d(y, \partial X^{c})$.
+\end{fact}
 This claim follows by taking $ X=D_{i}^{c} $ in Fact \ref{distancefact} and then noting that $ B_{d(y,D_{i}^{c})}(y)\sub D_{i} $ holds by definition.
 
 Now for $ y\in \Omega $, by the following claim we estimate
@@ -157,7 +158,7 @@ As this holds for all $ i $, it follows that
 \[
     \limsup_{s\to1^{-}}(1-s)P_{s}^{NL}(E,\Omega) \leq \lim_{i\to\infty}\omega_{n-1}K_{n,1}Per(E,T_{i}) = \omega_{n-1}K_{n,1}Per(E,\partial \Omega).
 \]
-When the RHS is zero, the claim follows.
+When the RHS is zero, the result follows.
 
 
 
