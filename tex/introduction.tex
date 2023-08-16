@@ -15,10 +15,10 @@ Fix $ s\in (0,1) $ and consider the function $ \mathcal{I}_s:\R^{n}\times\R^{n}\
 %We restrict to this range of exponents as the above integral diverges generally for $ s\not\in(0,1) $.
 
 To introduce $ s $-fractional perimeter, consider a measurable set $ E\sub \R^{n} $ and an open set $ \Omega\sub \R^{n} $. The main idea is that the points inside $ E $ ``interact'' with those outside $ E $, but we would like to ignore any interaction occuring purely outside of $ \Omega $. Explicitly, $ \Omega $ splits $ E $ and $ E^{c} $ into four sets: 
-\begin{align*}
-    E^{\prime} = E\cap \Omega &\quad O^{\prime} = \Omega\setminus E\\ 
-    E^{\prime\prime} = E\cap \Omega^{c} &\quad O^{\prime\prime} = \Omega^{c}\setminus E
-\end{align*}
+\[
+    E^{\prime} = E\cap \Omega, \quad O^{\prime} = \Omega\setminus E, \quad
+    E^{\prime\prime} = E\cap \Omega^{c}, \quad O^{\prime\prime} = \Omega^{c}\setminus E.
+\]
 We are concerned with the interactions depicted in Figure \ref{fig:interactions} and ignore the interaction between $ E^{\prime\prime} $ and $ O^{\prime\prime} $ as they both lie outside of $ \Omega $. Finally, we sum the relevant interactions and define the $ s $-fractional perimeter of $ E $ in $ \Omega $ to be
 \[
     P_{s}(E,\Omega) := L_{s}(E^{\prime}, O^{\prime}) + L_{s}(E^{\prime\prime}, O^{\prime}) + L_{s}(E^{\prime}, O^{\prime\prime}).

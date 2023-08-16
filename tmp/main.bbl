@@ -155,9 +155,6 @@
       \field{year}{2002}
       \field{pages}{59\bibrangedash 74}
       \range{pages}{16}
-      \verb{doi}
-      \verb 10.1070/RM2002v057n04ABEH000533
-      \endverb
       \verb{urlraw}
       \verb https://doi.org/10.1070/RM2002v057n04ABEH000533
       \endverb
@@ -526,7 +523,7 @@
       \field{series}{Graduate Studies in Mathematics}
       \field{title}{A first course in fractional {S}obolev spaces}
       \field{volume}{229}
-      \field{year}{[2023] ©2023}
+      \field{year}{2023}
       \field{pages}{xv+586}
       \range{pages}{-1}
       \verb{doi}

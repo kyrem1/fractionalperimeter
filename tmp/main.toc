@@ -1,6 +1,6 @@
 \contentsline {section}{\tocsection {}{1}{Introduction}}{1}{section.1}%
-\contentsline {section}{\tocsection {}{2}{Bounded Variation and Cacciopoli Sets}}{3}{section.2}%
-\contentsline {subsection}{\tocsubsection {}{2.1}{The Spaces $ BV $ and $ BV_{loc} $}}{3}{subsection.2.1}%
+\contentsline {section}{\tocsection {}{2}{Bounded Variation and Caccioppoli Sets}}{3}{section.2}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{The Space $ BV $}}{3}{subsection.2.1}%
 \contentsline {subsection}{\tocsubsection {}{2.2}{Classical Perimeter}}{5}{subsection.2.2}%
 \contentsline {section}{\tocsection {}{3}{Sobolev Space Preliminaries}}{6}{section.3}%
 \contentsline {subsection}{\tocsubsection {}{3.1}{Fractional Sobolev Spaces}}{6}{subsection.3.1}%
@@ -13,4 +13,5 @@
 \contentsline {section}{\tocsection {}{7}{Asymptotics of $ P_{s}(E,\Omega ) $ as $ s\to 1^{-} $}}{13}{section.7}%
 \contentsline {subsection}{\tocsubsection {}{7.1}{Local Contribution to $ P_{s}(E,\Omega ) $}}{13}{subsection.7.1}%
 \contentsline {subsection}{\tocsubsection {}{7.2}{Nonlocal Contribution to $ P_{s}(E,\Omega ) $}}{14}{subsection.7.2}%
-\contentsline {section}{\tocsection {}{}{References}}{17}{section*.3}%
+\contentsline {section}{\tocsection {}{}{Acknowledgement}}{16}{section*.3}%
+\contentsline {section}{\tocsection {}{}{References}}{17}{section*.4}%
