@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber tmp/main"] 1692153195 "tmp/main.bcf" "tmp/main.bbl" "tmp/main" 1692153345 0
+["biber tmp/main"] 1692153195 "tmp/main.bcf" "tmp/main.bbl" "tmp/main" 1692804183 0
   "./fractional.bib" 1692153195 8070 5fd820ec99b8f9783d2d5c7864c564a5 ""
-  "tmp/main.bcf" 1692153345 109903 9d3e79d1ba81115b9be4020e98b657cd "pdflatex"
+  "tmp/main.bcf" 1692804183 109903 9d3e79d1ba81115b9be4020e98b657cd "pdflatex"
   (generated)
   "tmp/main.bbl"
   "tmp/main.blg"
   (rewritten before read)
-["pdflatex"] 1692153343 "main.tex" "tmp/main.pdf" "main" 1692153345 0
-  "/dev/null" 1692115556 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1692804182 "main.tex" "tmp/main.pdf" "main" 1692804183 0
+  "/dev/null" 1692802980 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/home/kyrem1/texmf/tex/latex/kyrem1sty/kyrem1sty.sty" 1692055715 4508 46ae651b6c8509aa2d4540bc2c098924 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
@@ -275,7 +275,7 @@
   "figures/indicator.svg" 1690142909 19265 b84af0fbd0c52be72da95b0ab5ad5232 ""
   "figures/interactionOmegaPlusDecompose.svg" 1691705248 53531 c0d287bdf80db5ab6adf8bcded897107 ""
   "figures/interactions.svg" 1691692529 24435 662e0efc77332232637c93e439c59182 ""
-  "main.tex" 1692153238 3187 432235acf38c220ea5e026a0c027d75c ""
+  "main.tex" 1692716809 3187 432235acf38c220ea5e026a0c027d75c ""
   "svg-inkscape/approximation1_svg-tex.pdf" 1691703528 3777 c2749204500f0f89097e554be3478826 ""
   "svg-inkscape/approximation1_svg-tex.pdf_tex" 1691703528 2100 7ffc43739d740788956817bc7d7e6d59 ""
   "svg-inkscape/indicator_svg-tex.pdf" 1690222816 3442 35481d54ad4fadc06a4573b256ae870c ""
@@ -287,15 +287,15 @@
   "tex/bbm.tex" 1692152060 4239 ce739c0f381af50bc3c17fbb20fd04da ""
   "tex/bvandcacc.tex" 1692153275 14916 d7c11166e57772a9d8ad22d97bb86ec6 ""
   "tex/fracperim.tex" 1692152699 5534 6a684b854294d49cd9c2ba23ba8f9853 ""
-  "tex/fracsobolev.tex" 1692151429 21027 0feea420fba0cd21b0057bd6bee6922c ""
-  "tex/introduction.tex" 1692153343 5161 721003d47919db6e72514c1d575224d0 ""
-  "tex/sto0.tex" 1692150732 1816 f19d72a1d760fd6a3931cd6d765cb69a ""
+  "tex/fracsobolev.tex" 1692804111 21027 15881fdbb6db95726e7c81b8cd35be09 ""
+  "tex/introduction.tex" 1692382809 5160 677b1a8dfe48601ecafb84ad500b7e38 ""
+  "tex/sto0.tex" 1692804181 1825 d249d742b11b93abb80c13f27aec3d00 ""
   "tex/sto1.tex" 1692150484 9839 734a97fc9dd8635f6d67f74e560d3976 ""
-  "tmp/main.aux" 1692153345 9957 0e8d96852988584a3bd51123f33dee51 "pdflatex"
+  "tmp/main.aux" 1692804183 9957 0e8d96852988584a3bd51123f33dee51 "pdflatex"
   "tmp/main.bbl" 1692153196 25337 ea77617968f19a40523958bd4416267d "biber tmp/main"
-  "tmp/main.out" 1692153345 1770 46b64ddc052f58044ddd586fc0d7ce22 "pdflatex"
-  "tmp/main.run.xml" 1692153345 2311 663b7714d33375caa25ee7105fcdbac2 "pdflatex"
-  "tmp/main.toc" 1692153345 1681 fd95b290c40cc98de4fc21f2897123ba "pdflatex"
+  "tmp/main.out" 1692804183 1770 46b64ddc052f58044ddd586fc0d7ce22 "pdflatex"
+  "tmp/main.run.xml" 1692804183 2311 663b7714d33375caa25ee7105fcdbac2 "pdflatex"
+  "tmp/main.toc" 1692804183 1681 fd95b290c40cc98de4fc21f2897123ba "pdflatex"
   (generated)
   "tmp/main.aux"
   "tmp/main.bcf"
